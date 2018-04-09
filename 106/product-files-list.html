@@ -1,0 +1,63 @@
+<center>
+    <h2>Produkt</h2>
+
+    <table width="100%" style="border-collapse: collapse;border-spacing: 0;margin:0px;padding:0px;color:#333; border: 1px solid #b0b1b4;">
+        <tr style="border-bottom:10px;background:#fcd1ea;text-align:left;margin:0px 5px;">
+            <th width="15%" style="text-align: center; padding: 8px 0px; border-right: 1px solid #b0b1b4">
+                ID zamówienia
+            </th>
+            <th width="15%" style="text-align: center; padding: 8px 0px; border-right: 1px solid #b0b1b4">
+                ID produktu
+            </th>
+            <th width="45%" style="text-align: center; padding: 8px 0px; border-right: 1px solid #b0b1b4">
+                Nazwa
+            </th>
+            <th width="15%" style="text-align: center; padding: 8px 0px;">
+                Nakład
+            </th>
+        </tr>
+        <tr>
+            <td style="text-align: center; padding: 8px 0px; border-right: 1px solid #b0b1b4">{{product.orderID}}</td>
+            <td style="text-align: center; padding: 8px 0px; border-right: 1px solid #b0b1b4">{{product.ID}}</td>
+            <td style="text-align: center; padding: 8px 0px; border-right: 1px solid #b0b1b4">{{product.names[lang]}}</td>
+            <td style="text-align: center; padding: 8px 0px;">{{product.volume}}</td>
+        </tr>
+    </table>
+
+    <h2>Pliki</h2>
+
+    <table width="100%" style="border-collapse: collapse;border-spacing: 0;margin:0px;padding:0px;color:#333; border: 1px solid #b0b1b4;">
+        <tr style="border-bottom:10px;background:#fcd1ea;text-align:left;margin:0px 5px;">
+            <th width="30%" style="text-align: center; padding: 8px 0px; border-right: 1px solid #b0b1b4;">
+                Nazwa pliku
+            </th>
+            <th width="40%" style="text-align: center; padding: 8px 0px; border-right: 1px solid #b0b1b4;">
+                Plik
+            </th>
+            <th width="15%" style="text-align: center; padding: 8px 0px; border-right: 1px solid #b0b1b4;">
+                Data
+            </th>
+            <th width="15%" style="text-align: center; padding: 8px 0px;">
+                Akceptacja
+            </th>
+        </tr>
+        {% for file in files %}
+        <tr style="{% if colorRow and file.accept == -1 %}background-color: #ff170091;{% elseif colorRow %}background-color: #00bd3975;{% endif %}" >
+            <td style="padding: 8px; border-right: 1px solid #b0b1b4;">{{file.name}}</td>
+            <td style="border-right: 1px solid #b0b1b4;">
+                <a href="{{file.url}}" target="_blank">
+                    <img src="{{file.minUrl}}" alt="{{file.name}}" style="max-width: 400px; max-height: 100px; padding: 5px;" />
+                </a>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #b0b1b4;">{{file.created}}</td>
+            <td style="text-align: center;">
+                {% if file.accept == 1 %}
+                TAK
+                {% else %}
+                NIE
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>

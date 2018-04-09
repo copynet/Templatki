@@ -1,0 +1,794 @@
+<!-- produkt widok -->
+<div class="container" id="container-product">
+
+    <div class="row" id="row-product-description">
+        <div class="col-xs-12 rwd_no-padding">
+            <div class="border-h1">
+                <h1 class="page-header">{{currentType.names[currentLang.code]}}</h1>
+            </div>
+            <div class="col-md-6" style="padding-left: 0px;">
+
+                <div class="center-block thumbnail-margin" ng-repeat="thumbnail in thumbnails| orderBy: 'order' | filter:hasFormats" ng-if="thumbnail.files.length > 0">
+                    <a ng-repeat="file in thumbnail.files" ng-click="setThumb(file)" data-target="#showThumbnail" data-toggle="modal" class="ng-scope">
+                        <img class="img-responsive" ng-src="{{file.url}}">
+                        <span class="zoom">&nbsp;</span>
+                    </a>
+                </div>
+
+                <div id="showThumbnail" class="modal" tabindex="-1" role="dialog" aria-labelledby="showThumbnail" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body modalImage">
+                                <img alt="" class="img-responsive" ng-src="{{actualFile.url}}">
+                                <button type="button" class="btn btn-gray modalImage" data-dismiss="modal">
+                                    <i class="fa fa-times modalImage" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="panel with-nav-tabs rwd_padding5">
+                    <div class="panel-heading">
+
+                        <ul class="nav nav-tabs">
+                            <li>
+                                <a data-target="#patterns-tab" href="#"
+                                   data-toggle="tab">{{ 'download_files' | translate }}</a>
+                            </li>
+                            <li ng-repeat="description in descriptions | orderBy: 'order' | filter:hasFormats">
+                                <a data-target="{{'#description-tab-' + $index }}" href="#"
+                                   data-toggle="tab">{{ description.langs[currentLang.code].name }}</a>
+                            </li>
+                            <li ng-repeat="gallery in galleries | orderBy: 'order' | filter:hasFormats "
+                                ng-if="gallery.items.length > 0">
+                                <a data-target="{{ '#gallery-tab-' + $index }}" href="#"
+                                   data-toggle="tab">{{ gallery.langs[currentLang.code].name }}</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="panel-body no-padding">
+
+                        <div class="tab-content">
+                            <div class="tab-pane"
+                                 id="patterns-tab">
+                                <span ng-repeat="pattern in patterns | filter:hasOneFormat">
+                                    <a href="{{ pattern.patternFile }}" target="_blank">
+                                        <img src="{{ pattern.patternIcon }}"/>
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="tab-pane"
+                                 ng-repeat="description in descriptions | orderBy: 'order' | filter:hasFormats"
+                                 ng-attr-id="{{ 'description-tab-' + $index }}">
+            
+                                <div ng-if="description.showLess">
+                                    <div ng-show="description.initHide" ng-bind-html="description.showLess"></div>
+                                    <div ng-show="!description.initHide" ng-bind-html="description.langs[currentLang.code].description"></div>
+            
+                                    <div class="pull-right">
+                                        <button ng-show="description.initHide" ng-click="description.initHide=false;" class="btn-sm btn btn-info">
+                                            {{ 'expand' | translate }}
+                                            <i class="fa fa-chevron-down"></i>
+                                        </button>
+                                        <button ng-show="!description.initHide" ng-click="description.initHide=true;" class="btn-sm btn btn-info">
+                                            {{ 'collapse' | translate }}
+                                            <i class="fa fa-chevron-up"></i>
+                                        </button>
+                                    </div>
+                                </div>
+            
+                                <div ng-if="!description.showLess">
+                                    <div ng-bind-html="description.langs[currentLang.code].description"></div>
+                                </div>
+            
+                            </div>
+                            <div class="tab-pane"
+                                 ng-repeat="gallery in galleries | orderBy: 'order' | filter:hasFormats"
+                                 ng-if="gallery.items.length > 0"
+                                 ng-attr-id="{{ 'gallery-tab-' + $index }}">
+                                <ng-gallery images="gallery.items" thumbs-num="gallery.items.length"></ng-gallery>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div ng-if="!emptyProduct" class="row">
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default" id="panel-product-parameters">
+                        <div class="kalkulacja panel-heading">
+                            <span class="numbers">
+                                1
+                            </span>
+                            <h3 class="panel-title">{{ 'specify_parameters' | translate }}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form ng-submit="calculate(productItem.amount, productItem.volume)" class="form-horizontal">
+
+                                <div class="form-group select-product-form">
+                                    <div class="input-group-btn select">
+                                        <input ng-change="filterSearchProduct()" ng-click="filterSearchProduct()" type="text" ng-model="query.productName" class="form-control dropdown-toggle"
+                                            data-toggle="dropdown" aria-expanded="false" id="changeProductInput" placeholder="{{currentType.names[currentLang.code]}}"
+                                            onfocus="this.placeholder = ''" onblur="this.placeholder = currentType.names[currentLang.code]"
+                                        />
+                                        <i ng-click="filterSearchProduct()" class="fa fa-caret-down" data-toggle="dropdown" aria-expanded="false" aria-hidden="true"></i>
+                                        <ul class="dropdown-menu option" role="menu">
+                                            <li ng-repeat="item in filteredProducts">
+                                                <a ng-click="selectType(item)">{{ item.names[currentLang.code]}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12 no-padding">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">{{ 'order_name' | translate }}</span>
+                                            <input ng-model="productItem.name" type="text" placeholder="{{ 'own_name' | translate }}" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <fieldset ng-repeat="complexProduct in complexProducts">
+                                    <legend ng-if="!complexProduct.names[currentLang.code]">{{ complexProduct.name}}</legend>
+                                    <legend ng-if="complexProduct.names[currentLang.code]">{{ complexProduct.names[currentLang.code].name}}</legend>
+
+                                    <div class="form-group" ng-if="complexProduct.products.length != 1">
+                                        <label class="col-md-5 control-label">{{ 'product' | translate }}</label>
+                                        <div class="col-md-7 rwd_no-padding">
+                                            <select class="form-control" ng-model="complexProduct.selectedProduct" ng-change="selectComplexProduct(complexProduct, complexProduct.selectedProduct)"
+                                                ng-options="product as product.typeName for product in complexProduct.products"></select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-if="!!complexProduct.selectedProduct.data.relatedFormats.length">
+                                        <label ng-if="complexProduct.selectedProduct.data.customFormatInfo.customName[currentLang.code]" class="col-md-5 control-label"
+                                            tooltip-html-unsafe="{{complexProduct.selectedProduct.data.customFormatInfo.tooltip[currentLang.code]}}"
+                                            tooltip-placement="right">
+                                            {{complexProduct.selectedProduct.data.customFormatInfo.customName[currentLang.code]}}
+                                            <i ng-if="complexProduct.selectedProduct.data.customFormatInfo.tooltip[currentLang.code]" class="fa fa-info-circle" aria-hidden="true"></i>
+                                        </label>
+                                        <label ng-if="!complexProduct.selectedProduct.data.customFormatInfo.customName[currentLang.code]" class="col-md-5 control-label"
+                                            tooltip-html-unsafe="{{complexProduct.selectedProduct.data.customFormatInfo.tooltip[currentLang.code]}}"
+                                            tooltip-placement="right">
+                                            {{ 'format' | translate }}
+                                            <i ng-if="complexProduct.selectedProduct.data.customFormatInfo.tooltip[currentLang.code]" class="fa fa-info-circle" aria-hidden="true"></i>
+                                        </label>
+                                        <div class="col-md-7 rwd_no-padding">
+                                            <select class="form-control" ng-model="complexProduct.selectedProduct.data.currentFormat" ng-change="selectFormat(complexProduct.selectedProduct.data, complexProduct.selectedProduct.data.currentFormat)"
+                                                ng-options="item as item.langs[currentLang.code].name for item in complexProduct.selectedProduct.data.relatedFormats"></select>
+                                        </div>
+                                    </div>
+
+                                    <!-- custom format width -->
+                                    <div class="form-group" ng-if="!!complexProduct.selectedProduct.data.currentFormat.custom">
+                                        <label class="col-md-5 control-label">
+                                            {{ 'width' | translate }} (mm)
+                                        </label>
+                                        <div class="col-md-7 rwd_no-padding">
+                                            <div class="input-group spincontainer">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="spinCustomWidth(complexProduct, 0)" data-dir="dwn">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                </div>
+                                                <input class="form-control" ng-if="!complexProduct.selectedProduct.data.currentFormat.maxWidth" ng-model="complexProduct.selectedProduct.data.currentFormat.customWidth"
+                                                    type="text" min="{{ complexProduct.selectedProduct.data.currentFormat.minWidth - complexProduct.selectedProduct.data.currentFormat.slope * 2}}"
+                                                    ng-change="selectCustomFormat(complexProduct)" />
+                                                <!-- when maxWidth exist -->
+                                                <input class="form-control" ng-if="complexProduct.selectedProduct.data.currentFormat.maxWidth" ng-model="complexProduct.selectedProduct.data.currentFormat.customWidth"
+                                                    type="text" min="{{ complexProduct.selectedProduct.data.currentFormat.minWidth - complexProduct.selectedProduct.data.currentFormat.slope * 2}}"
+                                                    max="{{ complexProduct.selectedProduct.data.currentFormat.maxWidth - complexProduct.selectedProduct.data.currentFormat.slope * 2}}"
+                                                    ng-change="selectCustomFormat(complexProduct)" />
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="spinCustomWidth(complexProduct, 1)" data-dir="up">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- custom format height -->
+                                    <div class="form-group" ng-if="!!complexProduct.selectedProduct.data.currentFormat.custom">
+                                        <label class="col-md-5 control-label">
+                                            {{ 'height' | translate }} (mm)
+                                        </label>
+                                        <div class="col-md-7 rwd_no-padding">
+                                            <div class="input-group spincontainer">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="spinCustomHeight(complexProduct, 0)" data-dir="dwn">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                </div>
+                                                <input class="form-control" ng-if="!complexProduct.selectedProduct.data.currentFormat.maxHeight" ng-model="complexProduct.selectedProduct.data.currentFormat.customHeight"
+                                                    type="text" min="{{ complexProduct.selectedProduct.data.currentFormat.minHeight - complexProduct.selectedProduct.data.currentFormat.slope * 2}}"
+                                                    ng-change="selectCustomFormat(complexProduct)" />
+                                                <!-- when maxHeight exist  -->
+                                                <input class="form-control" ng-if="complexProduct.selectedProduct.data.currentFormat.maxHeight" ng-model="complexProduct.selectedProduct.data.currentFormat.customHeight"
+                                                    type="text" min="{{ complexProduct.selectedProduct.data.currentFormat.minHeight - complexProduct.selectedProduct.data.currentFormat.slope * 2}}"
+                                                    max="{{ complexProduct.selectedProduct.data.currentFormat.maxHeight - complexProduct.selectedProduct.data.currentFormat.slope * 2}}"
+                                                    ng-change="selectCustomFormat(complexProduct)" />
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="spinCustomHeight(complexProduct, 1)" data-dir="up">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Lack of related format -->
+                                    <div ng-if="complexProduct.selectedProduct.data.currentFormat === null" class="alert alert-info">
+                                        {{ 'no_format_for_product' | translate }}
+                                    </div>
+
+                                    <!-- pages -->
+
+                                    <div class="form-group" ng-if="complexProduct.selectedProduct.data.pages.length">
+                                        <label ng-if="complexProduct.selectedProduct.data.customPageInfo.customName[currentLang.code]" class="col-md-5 control-label"
+                                            tooltip-html-unsafe="{{complexProduct.selectedProduct.data.customPageInfo.tooltip[currentLang.code]}}"
+                                            tooltip-placement="right">
+                                            {{ complexProduct.selectedProduct.data.customPageInfo.customName[currentLang.code]}}
+                                            <i ng-if="complexProduct.selectedProduct.data.customPageInfo.tooltip[currentLang.code]" class="fa fa-info-circle" aria-hidden="true"></i>
+                                        </label>
+                                        <label ng-if="!complexProduct.selectedProduct.data.customPageInfo.customName[currentLang.code]" class="col-md-5 control-label"
+                                            tooltip-html-unsafe="{{complexProduct.selectedProduct.data.customPageInfo.tooltip[currentLang.code]}}"
+                                            tooltip-placement="right">
+                                            {{ 'pages' | translate }}
+                                            <i ng-if="complexProduct.selectedProduct.data.customPageInfo.tooltip[currentLang.code]" class="fa fa-info-circle" aria-hidden="true"></i>
+                                        </label>
+                                        <div class="col-md-7 rwd_no-padding">
+                                            <select class="form-control" ng-if="complexProduct.selectedProduct.data.pages[0].pages" ng-model="complexProduct.selectedProduct.data.currentPages"
+                                                ng-change="selectPages(complexProduct.selectedProduct.data, complexProduct.selectedProduct.data.currentPages)">
+                                                <option ng-if="item.pages >= getMinimumThickness(complexProduct.selectedProduct.data) && item.pages <= getMaximumThickness(complexProduct.selectedProduct.data)"
+                                                    ng-repeat="item in complexProduct.selectedProduct.data.pages" value="{{item.pages}}">
+                                                    {{ item.pages}}
+                                                </option>
+                                            </select>
+                                            <div class="input-group spincontainer" ng-if="!!complexProduct.selectedProduct.data.pages[0].minPages">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="spinPage(complexProduct, 0)" data-dir="dwn">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                </div>
+                                                <input type="text" class="form-control" min="{{getMinimumThickness(complexProduct.selectedProduct.data)}}" data-old-min="complexProduct.selectedProduct.data.pages[0].minPages}}"
+                                                    max="{{getMaximumThickness(complexProduct.selectedProduct.data)}}" step="{{complexProduct.selectedProduct.data.pages[0].step}}"
+                                                    ng-model="complexProduct.selectedProduct.data.currentPages" ng-change="selectPages(complexProduct.selectedProduct.data, complexProduct.selectedProduct.data.currentPages)">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="spinPage(complexProduct, 1)" data-dir="up">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" ng-repeat="attribute in complexProduct.selectedProduct.data.attributes" ng-if="!!complexProduct.selectedProduct.data.currentFormat && !!countAttrNotExcludedOptions(complexProduct.selectedProduct.data, attribute) && (attribute.filteredOptions[0].invisible != 1 || attribute.filteredOptions.length > 1)">
+                                        <label tooltip-html-unsafe="{{attribute.tooltip[currentLang.code]}}" tooltip-placement="right" class="col-md-5 control-label">
+                                            <span ng-if="attribute.names[currentLang.code].name">{{ ::attribute.names[currentLang.code].name}}</span>
+                                            <span ng-if="!attribute.names[currentLang.code].name">{{ ::attribute.attrName}}</span>
+                                            <i ng-if="attribute.tooltip[currentLang.code]" class="fa fa-info-circle" aria-hidden="true"></i>
+                                        </label>
+
+                                        <!-- NOWY WYGLĄD OBRAZKIEM -->
+                                        <div class="col-md-12" ng-if="attribute.selectByPicture == 1">
+
+                                            <ul class="select-by-picture list-group row">
+                                                <li ng-repeat="item in attribute.filteredOptions" ng-if="!(attribute.minPages !== null && attribute.filteredOptions.length <= 1)"
+                                                    ng-click="selectOptionImage(complexProduct.selectedProduct.data, item, attribute)"
+                                                    class="col-md-3 col-xs-6">
+                                                    <div ng-class="{'list-group-item-info': complexProduct.selectedProduct.data.selectedOptions[attribute.attrID] == item.ID}"
+                                                        class="list-group-item">
+                                                        <span data-target="#showOptionPicture" ng-click="setOptionPicture($event, item);" data-toggle="modal" ng-if="item.iconID"
+                                                            class="text-danger open-picture fa fa-search-plus"></span>
+                                                        <img class="img-responsive view" ng-src="{{item.icon.minUrl}}" alt="" />
+                                                        <span class="text-center">{{ item.names[currentLang.code].name}}</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+
+                                            <div id="showOptionPicture" class="modal calcModal" tabindex="-1" role="dialog" aria-labelledby="showOptionPicture" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body modalImage">
+                                                            <button type="button" class="btn btn-gray calcModal" data-dismiss="modal">
+                                                                <i class="fa fa-times modalImage" aria-hidden="true"></i>
+                                                            </button>
+                                                            <img alt="" class="center-block img-responsive" ng-src="{{optionPicture.url}}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-7 rwd_no-padding">
+
+                                            <div ng-if="attribute.selectByPicture == 0">
+                                                <select ng-if="!(attribute.minPages !== null && attribute.filteredOptions.length <= 1)" ng-class="{'one-element-select': attribute.filteredOptions.length == 1}"
+                                                    ng-disabled="attribute.filteredOptions.length == 1" ng-model="complexProduct.selectedProduct.data.selectedOptions[attribute.attrID]"
+                                                    ng-change="selectOption(complexProduct.selectedProduct.data, attribute.attrID)"
+                                                    ng-options="item.ID as item.names[currentLang.code].name for item in attribute.filteredOptions"
+                                                    class="form-control">
+                                                </select>
+                                            </div>
+
+                                            <div class="clearfix"></div>
+                                            <div class="input-group spincontainer" ng-show="!checkEmptyChoice(complexProduct, attribute.attrID);" ng-if="attribute.minPages !== null && attribute.step !== null">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="releaseSpinner(complexProduct, attribute.attrID, 0)" data-dir="dwn">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                </div>
+                                                <input type="text" class="form-control" min="{{ attribute.minPages}}" max="{{ attribute.maxPages}}" ng-model="complexProduct.selectedProduct.data.attrPages[attribute.attrID]"
+                                                    ng-change="selectAttrPages(complexProduct, attribute.attrID)">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="releaseSpinner(complexProduct, attribute.attrID, 1)" data-dir="up">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- NOWY WYGLĄD OBRAZKIEM END -->
+
+                                        <!--<div class="col-md-7 no-padding-right">
+                                                <select ng-if="!(attribute.minPages !== null && attribute.filteredOptions.length <= 1)" ng-model="complexProduct.selectedProduct.data.selectedOptions[attribute.attrID]" ng-change="selectOption(complexProduct.selectedProduct.data, attribute.attrID)" ng-options="item.ID as item.names[currentLang.code].name for item in attribute.filteredOptions" class="form-control"></select>
+                                                <div class="clearfix"></div>
+                                                <div class="input-group spincontainer" ng-show="!checkEmptyChoice(complexProduct, attribute.attrID);" ng-if="attribute.minPages !== null && attribute.step !== null">
+                                                    <div class="input-group-btn">
+                                                        <button type="button" class="btn btn-default" ng-click="releaseSpinner(complexProduct, attribute.attrID, 0)" data-dir="dwn">
+                                                            <i class="fa fa-minus"></i>
+                                                        </button>
+                                                    </div>
+                                                    <input type="text" class="form-control" min="{{ attribute.minPages}}" max="{{ attribute.maxPages}}" ng-model="complexProduct.selectedProduct.data.attrPages[attribute.attrID]" ng-change="selectAttrPages(complexProduct, attribute.attrID)">
+                                                    <div class="input-group-btn">
+                                                        <button type="button" class="btn btn-default" ng-click="releaseSpinner(complexProduct, attribute.attrID, 1)" data-dir="up">
+                                                            <i class="fa fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>-->
+                                    </div>
+
+                                    <div ng-if="attribute.filteredOptions.length == 1 && attribute.filteredOptions[0].invisible == 1">
+                                        <input type="hidden" ng-model="complexProduct.selectedProduct.data.selectedOptions[attribute.attrID]" ng-value="attribute.filteredOptions[0].ID"
+                                        />
+                                    </div>
+                                </fieldset>
+
+                                <div class="form-group">
+                                    <label class="col-md-5 control-label">{{ 'volume' | translate }}</label>
+                                    <div class="col-md-7 rwd_no-padding">
+                                        <select class="form-control" ng-model="productItem.volume" ng-change="changeVolume()" ng-options="item.volume as ( item.volume) for item in volumes| orderBy:'volume' "></select>
+                                    </div>
+                                </div>
+                                <div class="form-group" ng-hide="hideAmount">
+                                    <label class="col-md-5 control-label">{{ 'number_of_sets' | translate }}</label>
+                                    <div class="col-md-7 rwd_no-padding">
+                                        <input ng-change="changeAmount()" ng-model="productItem.amount" ng-init="productItem.amount = 1" type="number" min="1" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-5 control-label">{{ 'realizationTime' | translate }}</label>
+                                    <div class="col-md-7 rwd_no-padding">
+                                        <select ng-model="productItem.realisationTime" ng-change="changeRealisationTime()" ng-options="rt.ID as rt.names[currentLang.code] for rt in realisationTimes| orderBy:'order' | filter:filterRealisationTime"
+                                            class="form-control"></select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" ng-if="taxes.length > 0">
+                                    <label class="col-md-5 control-label">{{ 'select_tax' | translate }}</label>
+                                    <div class="col-md-7 rwd_no-padding">
+                                        <select ng-model="productItem.taxID" ng-options="tax.ID as tax.name for tax in taxes" ng-change="changeTax()" required class="form-control">
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <script type="text/ng-template" id="tableVolume.html">
+                        <table ng-show="!loadVolumes" class="table table-volume">
+                        <thead>
+                        <th>{{ 'volume' | translate }}</th>
+                        <th ng-repeat="realisationTime in realisationTimes | orderBy:'order'" class="th-realisation-time">
+                        <span class="realization-time-label">
+                        {{realisationTime.names[currentLang.code]}}
+                        </span>
+                        <span class="shipping-time">
+                        <span class="text"> {{ 'delivery_send' | translate }}</span>
+                        <span class="date" ng-if="!realisationTime.overwriteDate">{{realisationTime.date}}</span>
+                        <span class="text-danger date" ng-if="realisationTime.overwriteDate">{{realisationTime.overwriteDate}}</span>
+                        </span>
+                        <span class="info">
+                        {{ 'price' | translate }} netto/{{ 'gross' | translate }}
+                        </span>
+                        </th>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="volume in volumes | orderBy:'volume'" id="row-volume-{{  volume.volume }}">
+                        <td class="col-volume">
+                            <span class="volume-icon">
+                                    <img class="price-list-icon" alt="" src="{{ volume.calculation.priceListIcon.url }}" />
+                            </span>
+                        <span class="fa fa-pencil text-info custom-volume" ng-if="volume.custom"></span>
+                        {{ volume.volume }}
+                        </td>
+                        <td ng-repeat="realisationTime in realisationTimes | orderBy:'order'">
+                        <div class="col-box-volume" ng-class="(rtVolume.volume == activeVolume.volume && activeVolume.rtID == realisationTime.ID) ? 'bg-success' : '' " ng-click="checkVolume(realisationTime, rtVolume)" ng-if="rtVolume.volume == volume.volume && rtVolume.active == true" ng-repeat="rtVolume in realisationTime.volumes | orderBy:'volume'">
+                        <span ng-class="{'price-special': rtVolume.oldPrice}" class="price-regular">
+                        <span class="price-net">{{ rtVolume.price }} {{ currentCurrency.symbol }}</span>
+                        <br>
+                        <span class="price-gross">{{ rtVolume.priceBrutto }} {{ currentCurrency.symbol }}</span>
+                        </span>
+                        <span ng-show="rtVolume.oldPrice" class="price-old">
+                        <span class="price-old-net">{{ rtVolume.oldPrice }} {{ currentCurrency.symbol }}</span>
+                        <br>
+                        <span class="price-old-gross">{{ rtVolume.oldPriceBrutto }} {{ currentCurrency.symbol }}</span>
+                        </span>
+                        </div>
+                        </td>
+                        </tr>
+                        </tbody>
+                        </table>
+                    </script>
+                    <div class="panel panel-default" id="panel-product-volumes">
+                        <div class="kalkulacja panel-heading">
+                            <span class="numbers">
+                                2
+                            </span>
+                            <h3 class="panel-title">
+                                {{ 'volume_of_product_and_date_of_realization' | translate }}
+                            </h3>
+                        </div>
+                        <div class="box-volume-header">
+
+                            <table class="table table-volume-header">
+                                <thead>
+                                    <th class="th-volume">{{ 'volume' | translate }}</th>
+                                    <th ng-repeat="realisationTime in realisationTimes| orderBy:'order'" class="th-realisation-time">
+                                        <span class="realization-time-label">
+                                            {{realisationTime.names[currentLang.code]}}
+                                        </span>
+                                        <span class="shipping-time">
+                                            <span class="text"> {{ 'delivery_send' | translate }}</span>
+                                            <span class="date" ng-if="!realisationTime.overwriteDate">{{realisationTime.date}}</span>
+                                            <span class="text-danger date" ng-if="realisationTime.overwriteDate">{{realisationTime.overwriteDate}}</span>
+                                        </span>
+                                        <span class="info">
+                                            {{ 'price' | translate }} netto/{{ 'gross' | translate }}
+                                        </span>
+                                    </th>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="loading text-center text-primary" ng-show="loadVolumes" style="position: absolute;
+                             top: 50%;
+                             left: 50%;
+                             margin-left: -17%;">
+                            <i class="fa fa-spinner fa-pulse fa-fw"></i>
+                            <span>{{ 'please_wait' | translate }}</span>
+                        </div>
+
+                        <div ng-switch="volumes.length < 30">
+                            <div ng-switch-when="true">
+                                <div ng-include="'tableVolume.html'"></div>
+                            </div>
+                            <div ng-switch-default="">
+                                <div ng-scrollbars ng-class="'box-volume'" ng-scrollbars-config="scrollbarVolume.config" ng-scrollbars-update="scrollbarVolume.update"
+                                    data-mcs-theme="dark-3" id="scrollbar-volume" class="ng-isolate-scope mCustomScrollbar _mCS_2 box-volume">
+                                    <div id="mCSB_2" class="mCustomScrollBox mCS-dark-3 mCSB_vertical_horizontal mCSB_inside" tabindex="0" style="max-height: none;">
+                                        <div id="mCSB_2_container_wrapper" class="mCSB_container_wrapper mCS_x_hidden mCS_no_scrollbar_x">
+                                            <div id="mCSB_2_container" class="mCSB_container" style="position: relative; top: 0px; left: 0px; width: 100%;" dir="ltr">
+                                                <div ng-include="'tableVolume.html'"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="input-group" ng-if="customVolume.custom">
+                                <input max="{{customVolume.maxVolume}}" step="1" min="{{customVolume.minVolume}}" type="number" ng-model="customVolume.newVolume"
+                                    class="form-control" placeholder="{{ 'volume' | translate }}" aria-describedby="basic-addon2">
+                                <span class="input-group-addon btn" ng-click="addVolume()" id="basic-addon2">+ {{ 'add_your_volume' | translate }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-12 no-padding">
+                <div class="panel panel-default no-margin-bottom" id="panel-product-delivery">
+                    <div class="kalkulacja panel-heading">
+                        <button class="btn btn-xs btn-success address" ng-click="addressesEdit();" ng-show="logged == true && !oneTimeUser">
+                            <i class="fa fa-plus"></i> {{ 'add_address' | translate }}
+                        </button>
+                        <span class="numbers-dostawa">
+                            3
+                        </span>
+                        <h3 class="panel-title">{{ 'delivery' | translate }}</h3>
+                    </div>
+                    <div class="table-responsive" ng-show="logged == true && !oneTimeUser">
+                        <table class="table" wt-responsive-table>
+                            <thead>
+                                <tr>
+                                    <th class="col-delivery">{{ 'cl_delivery' | translate }}</th>
+                                    <th class="col-delivery-address" ng-if="addresses.length > 0">{{ 'delivery_address' | translate }}</th>
+                                    <th class="col-volumes">{{ 'volumes' | translate }}</th>
+                                    <th class="col-packages">{{ 'packages' | translate }}</th>
+                                    <th class="col-weight">{{ 'weight' | translate }}</th>
+                                    <th class="col-price">{{ 'price' | translate }}</th>
+                                    <th class="col-action" ng-show=" productAddresses.length > 1"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="address in productAddresses">
+                                    <td class="no-padding-left">
+                                        <select class="form-control" ng-change="allDeliveryPrice();" ng-model="address.deliveryID" ng-options="item.ID as item.names[currentLang.code] for item in address.deliveries"></select>
+                                    </td>
+                                    <td ng-if="addresses.length > 0">
+                                        <select ng-disabled="address.turnOffAddress" ng-options="item.ID as item.addressName for item in addresses" ng-model="address.addressID"
+                                            class="form-control"></select>
+                                    </td>
+                                    <td>
+                                        <input ng-model="address.volume" ng-change="changeVolumes();" class="form-control" type="text" name="" placeholder="{{ 'enter_volume' | translate }}">
+                                    </td>
+                                    <td>
+                                        <span ng-model="address.no_of_pkgs">{{ address.no_of_pkgs}}</span>
+                                    </td>
+                                    <td ng-model="address.grossweight" class="col-weight text-nowrap">
+                                        {{ address.grossweight}} kg
+                                    </td>
+                                    <td ng-model="address.price" class="col-price text-nowrap">
+                                        {{ address.price}} {{ currentCurrency.symbol}}
+                                    </td>
+                                    <td ng-show=" productAddresses.length > 1">
+                                        <button ng-click="removeProductAddress($index);" class="btn btn-xs btn-danger btn-delete" tooltip="{{ 'remove' | translate }}">
+                                            <i class="fa fa-remove"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-responsive" ng-show="logged == false || oneTimeUser">
+                        <table class="table" wt-responsive-table>
+                            <thead>
+                                <tr>
+                                    <th class="col-delivery">{{ 'cl_delivery' | translate }}</th>
+                                    <th class="col-volumes">{{ 'volumes' | translate }} ({{ 'pcs' | translate }}.)</th>
+                                    <th class="col-packages">{{ 'packages' | translate }}</th>
+                                    <th class="col-weight">{{ 'weight' | translate }}</th>
+                                    <th class="col-price">{{ 'price' | translate }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="address in productAddresses">
+                                    <td>
+                                        <select class="form-control" ng-change="allDeliveryPrice();
+                                                    checkDelivery(address);" ng-model="address.deliveryID" ng-options="item.ID as item.names[currentLang.code] for item in deliveries"></select>
+                                    </td>
+                                    <td ng-model="address.volume">
+                                        {{ address.volume}} ({{ 'pcs' | translate }})
+                                    </td>
+                                    <td ng-model="address.no_of_pkgs">
+                                        {{ address.no_of_pkgs}}
+                                    </td>
+                                    <td ng-model="address.weight" class="col-weight text-nowrap">
+                                        {{ address.weight}} kg
+                                    </td>
+                                    <td ng-model="address.price" class="col-price">
+                                        {{ address.price}} {{ currentCurrency.symbol}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-body no-padding" ng-show="logged && !oneTimeUser && (deliveryLackOfVolume > 0 || productItem.volume > 1)">
+
+                        <div class="col-md-12" ng-if="addresses.length == 0">
+                            <div class="alert alert-info">
+                                {{ 'delivery_empty_address_info' | translate }}
+                            </div>
+                        </div>
+
+                        <div class="col-md-7 col-sm-7">
+                            <div class="alert alert-danger" ng-show="logged && !oneTimeUser && deliveryLackOfVolume > 0">
+                                {{ 'delivery_lack_of_volume' | translate }}: {{deliveryLackOfVolume}}
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-5 no-padding-right">
+                            <div class="input-group" ng-show="productItem.volume > 1 && addresses.length > 0">
+                                <input ng-show="productItem.volume > 1" class="form-control" type="text" placeholder="{{ 'separate_volume' | translate }}..."
+                                    ng-model="separateVolume">
+                                <span ng-show="productItem.volume > 1" ng-click="separateDelivery();" class="input-group-addon btn">
+                                    <i class="fa fa-plus"></i> {{'separate_delivery'| translate }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 no-padding">
+                <div class="col-md-7">
+                    <div class="panel panel-info panel-configuration">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                {{ 'configuration_product' | translate }}:
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div ng-repeat="complexProduct in complexProducts" ng-init="tmpProduct = complexProduct.selectedProduct.data">
+
+                                <div ng-if="complexProducts.length > 1">
+                                    <h4 ng-if="!tmpProduct.info.langs[currentLang.code]">{{ tmpProduct.info.name}}</h4>
+                                    <h4 ng-if="tmpProduct.info.langs[currentLang.code]">{{ tmpProduct.info.langs[currentLang.code].name}}</h4>
+                                </div>
+                                <dl class="dl-horizontal">
+
+                                    <dt ng-if="tmpProduct.customFormatInfo.customName[currentLang.code]">{{ tmpProduct.customFormatInfo.customName[currentLang.code]}}</dt>
+                                    <dt ng-if="!tmpProduct.customFormatInfo.customName[currentLang.code]">{{ 'format' | translate }}</dt>
+                                    <dd>{{ tmpProduct.currentFormat.name}}</dd>
+
+                                    <dt ng-if="tmpProduct.currentPages > 0 && tmpProduct.customPageInfo.customName[currentLang.code]">{{ tmpProduct.customPageInfo.customName[currentLang.code]}}</dt>
+                                    <dt ng-if="tmpProduct.currentPages > 0 && !tmpProduct.customPageInfo.customName[currentLang.code]">{{'pages'| translate}}</dt>
+                                    <dd ng-if="tmpProduct.currentPages > 0">{{tmpProduct.currentPages}}</dd>
+
+                                    <div ng-repeat="attribute in complexProduct.selectedProduct.data.attributes">
+                                        <div ng-show="attribute.filteredOptions.length > 0 && !checkEmptyChoice(complexProduct, attribute.attrID)">
+                                            <dt>{{ showAttribute(complexProduct, attribute.attrID)}}</dt>
+                                            <dd>{{ showOption(complexProduct, attribute.attrID, tmpOption)}}</dd>
+                                        </div>
+                                    </div>
+
+                                    <div ng-if="tmpProduct.currentPages > 2 && tmpProduct.thickness.current > 0">
+                                        <dt>{{ 'thickness' | translate }}</dt>
+                                        <dd>{{ tmpProduct.thickness.current | number:2 }} mm</dd>
+                                    </div>
+
+                                </dl>
+                            </div>
+                            <div>
+                                <dl class="dl-horizontal">
+                                    <dt>{{ 'volume' | translate }}</dt>
+                                    <dd>{{ productItem.volume}}</dd>
+
+                                    <dt ng-if="productItem.taxID > 0">{{'vat_rate'| translate}}</dt>
+                                    <dd ng-if="productItem.taxID > 0">{{ showTax(productItem.taxID)}}</dd>
+
+                                    <dt ng-if="productItem.realisationTime > 0">{{ 'realization_time' | translate }}</dt>
+                                    <dd ng-if="productItem.realisationTime > 0">{{ showRealizationTime(productItem.realisationTime)}}</dd>
+
+                                    <dt ng-if="getTotalThickness() > 0 && complexProducts.length > 1">{{'total_thickness'| translate}}</dt>
+                                    <dd ng-if="getTotalThickness() > 0 && complexProducts.length > 1">{{ getTotalThickness()}} mm</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="panel-footer bg-info">
+                            {{ 'term_realization_info' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 no-padding-right rwd_no-padding">
+                    <div class="panel panel-default panel-success panel-summary">
+                        <div class="kalkulacja panel-heading">
+                            <span class="numbers">
+                                4
+                            </span>
+                            <h3 class="panel-title">
+                                {{ 'summary' | translate }}
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 no-padding-left no-margin-bottom">
+                                    <div class="bg-info summary-price summary-price-net">
+                                        <b>{{ 'net_price' | translate }}:</b>
+                                        <span class="text-nowrap">
+                                            <span class="value" ng-bind="showSumPrice()"></span>
+                                            <span class="currency">{{ currentCurrency.symbol}}</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 no-padding-right no-margin-bottom">
+                                    <div class="bg-info summary-price summary-price-gross">
+                                        <b>{{ 'gross_price' | translate }}:</b>
+                                        <span class="text-nowrap">
+                                            <span class="value" ng-bind="showSumGrossPrice()"></span>
+                                            <span class="currency">{{ currentCurrency.symbol}}</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 no-padding-left">
+                                    <div class="bg-default price-per-item price-per-item-net">
+                                        {{ 'net' | translate }} 1 {{ 'pcs' | translate}}:
+                                        <span class="text-nowrap">{{net_per_pcs}} {{ currentCurrency.symbol}}</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 no-padding-right">
+                                    <div class="bg-default price-per-item price-per-item-gross">
+                                        {{ 'gross' | translate }} 1 {{ 'pcs' | translate}}:
+                                        <span class="text-nowrap">
+                                            <span class="value">{{gross_per_pcs}}</span>
+                                            <span class="currency">{{ currentCurrency.symbol}}</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <form ng-action="editorHost" action="" method="POST" ng-if="currentType.isEditor == 1 && !currentCalc">
+                                        <button class="btn btn-sm btn-block btn-info">{{ 'go_to_editor' | translate }}</button>
+                                        <input type="hidden" ng-value="getToken()" name="access_token">
+                                        <textarea style="display:none;" ng-model="productItem.jsonText" name="products"></textarea>
+                                    </form>
+                                    <a ng-if="!currentCalc" ng-click="printOffer()" class="btn btn-block btn-offer">
+                                        <i class="fa fa-print" aria-hidden="true"></i> {{ 'print_offer' | translate }}</a>
+                                    <a ng-if="!currentCalc" ng-disabled="deliveryLackOfVolume > 0" ng-click="toCart()" class="btn btn-success btn-block btn-lg">
+                                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>{{ 'add_to_cart' | translate }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container rwd_no-padding">
+    <div class="col-md-12 center_boxy_pi rwd_no-padding">
+        <div class="width1">
+            <a ui-sref="przygotowanie-plikow" class="link">
+                <img src="https://static.digitalprint.pro/684/styles/przygotowanie_do_druku_172px.jpg" alt="Przygotowanie plików do druku"
+                    title="Przygotowanie plików do druku">
+            </a>
+        </div>
+        <div class="width1">
+            <a ui-sref="druk-eco" class="link">
+                <img src="https://static.digitalprint.pro/684/styles/eco_blue_172px.jpg" alt="Druk ECO" title="Druk ECO">
+            </a>
+        </div>
+        <div class="width1">
+            <a ui-sref="rabat-pierwszy-koszyk" class="link">
+                <img src="https://static.digitalprint.pro/684/styles/rabat-gray_172px.jpg" alt="Rabat na pierwszy koszyk" title="Rabat na pierwszy koszyk">
+            </a>
+        </div>
+        <div class="width1">
+            <a ui-sref="program-partnerski" class="link">
+                <img src="https://static.digitalprint.pro/684/styles/pr_partnerski-gray_172px.jpg" alt="Program partnerski" title="Program partnerski">
+            </a>
+        </div>
+        <div class="width1 last">
+            <a ui-sref="terminy-realizacji" class="link">
+                <img src="https://static.digitalprint.pro/684/styles/terminy-gray_172px.jpg" alt="Terminy realizacji" title="Terminy realizacji">
+            </a>
+        </div>
+    </div>
+</div>

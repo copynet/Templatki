@@ -1,0 +1,33 @@
+<div class="container" id="content-form">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="border-h1">
+                <h1 class="page-header">{{ 'contact' | translate }}</h1>
+            </div>
+            <p></p>
+
+            <div class="row">
+                <div  class="col-md-12 col-xs-12">
+                    <div class="contact_map_1200px">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2117.3586909595256!2d20.640668188883982!3d50.868606655867474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b8cb7fb5beb1eea!2sCopy-Net!5e0!3m2!1spl!2spl!4v1509008303336" width="1140" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                    <div class="contact_map_767px">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2117.3586909595256!2d20.640668188883982!3d50.868606655867474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b8cb7fb5beb1eea!2sCopy-Net!5e0!3m2!1spl!2spl!4v1509008303336" width="738" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                    <div class="contact_map_599px">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2117.3586909595256!2d20.640668188883982!3d50.868606655867474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b8cb7fb5beb1eea!2sCopy-Net!5e0!3m2!1spl!2spl!4v1509008303336" width="569" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                    <!--<div id="map"></div>-->
+                </div>
+                <div class="col-md-4 contact_info_md4">
+                    <div ng-static-contents class="staticContentBox" content="static.contact"></div>
+                </div>
+                <div class="col-md-8 contact_info_md8">				
+                    <div  class="col-md-12 col-xs-12 no-padding-right rwd_no-padding">
+                        <div ui-view="contact-form"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

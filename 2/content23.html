@@ -1,0 +1,98 @@
+<!-- kategoria produktów -->
+<div class="container" id="content-main">
+    <div class="row" ng-repeat="item in items | orderBy: 'sort'">
+        <div class="col-xs-12">
+            <h2 class="page-header">{{ item.langs[currentLang.code].name }} </h2>
+            <div class="row">
+                <div class="col-xs-12">
+                    <accordion>
+                        <accordion-group ng-repeat="description in item.descriptions | orderBy: 'order' " is-open="description.isOpen" ng-class="{ 'panel-accordion':true, 'active':description.isOpen}">
+                            <accordion-heading>
+                                {{ description.langs[currentLang.code].name }}
+                                <i class="pull-right fa" ng-class="{'fa-chevron-down': description.isOpen, 'fa-chevron-right': !description.isOpen}"></i>
+                            </accordion-heading>
+                            <div ng-bind-html="description.langs[currentLang.code].description"></div>
+                        </accordion-group>
+                    </accordion>
+                </div>
+            </div>
+            <div class="row" ng-repeat="gallery in item.galleries | orderBy: 'order' | filter:hasFormats " ng-if="gallery.items.length > 0">
+                <div class="col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                {{ gallery.langs[currentLang.code].name }} </h3>
+                        </div>
+                        <div class="panel-body">
+                            <ng-gallery images="gallery.items" thumbs-num="gallery.items.length"></ng-gallery>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-products-list">
+                <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="child in item.childs | orderBy: 'sort'">
+                    <div class="thumbnail clearfix">
+                        <a ui-sref="category({categoryurl: child.langs[currentLang.code].url})" ng-show="!child.icons[currentLang.code] && !child.icon" class="thumbnail-link">
+                            <img src="{{STATIC_URL}}{{companyID}}/images/productholder.png" alt="" class="img-responsive" />
+                        </a>
+                        <a ng-if="child.icon" ui-sref="category({categoryurl: child.langs[currentLang.code].url})" class="thumbnail-link">
+                            <img ng-if="child.icon" src="{{child.icon.url}}" alt="" class="img-responsive" />
+                        </a>
+                        <div class="caption">
+                            <h3>
+                                <a ui-sref="category({categoryurl: child.langs[currentLang.code].url})">
+                                    {{ child.langs[currentLang.code].name }}
+                                </a>
+                            </h3>
+                            <div class="description" ng-show="child.icons[currentLang.code]" data-ng-bind-html="child.icons[currentLang.code]"></div>
+                        </div>
+                        <a ui-sref="category({categoryurl: child.langs[currentLang.code].url})" class="btn btn-block btn-info btn-flat btn-more">
+                            {{ 'show_more' | translate }}
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="product in products[item.ID] | orderBy: 'sort'">
+                    <div class="thumbnail clearfix" ng-if="product.relType == 1">
+                        <a class="thumbnail-link" ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupid: product.ID})" class="product-list-link" ng-if="!product.icons[currentLang.code] && !product.icon">
+                            <img ng-show="!product.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive" />
+                        </a>
+                        <a ng-if="product.icon" class="thumbnail-link" ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupid: product.ID})">
+                            <img ng-if="product.icon" src="{{product.icon.url}}" alt="" class="img-responsive" />
+                        </a>
+                        <div class="caption">
+                            <h3>
+                                <a ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupid: product.ID})">
+                                    {{ product.names[currentLang.code] }}
+                                </a>
+                            </h3>
+                            <div class="description" ng-show="product.icons[currentLang.code]" data-ng-bind-html="product.icons[currentLang.code]"></div>
+                        </div>
+                        <a ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupid: product.ID})" class="btn btn-block btn-info btn-flat btn-more">
+                            {{ 'show_more' | translate }}
+                        </a>
+                    </div>
+                    <div class="thumbnail clearfix" ng-if="product.relType == 2">
+                        <a class="thumbnail-link" ui-sref="calculate({categoryurl: item.langs[currentLang.code].url, groupid: product.groupID, typeid: product.ID})" class="product-list-link" ng-if="!product.icons[currentLang.code] && !product.icon">
+                            <img ng-if="!product.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive" />
+                        </a>
+                        <a ng-if="product.icon" class="thumbnail-link" ui-sref="calculate({categoryurl: item.langs[currentLang.code].url, groupid: product.groupID, typeid: product.ID})">
+                            <img ng-if="product.icon" src="{{product.icon.url}}" alt="" class="img-responsive" />
+                        </a>
+                        <div class="caption">
+                            <h3>
+                                <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url, groupid: product.groupID, typeid: product.ID})">
+                                    {{ product.names[currentLang.code] }}
+                                </a>
+                            </h3>
+                            <div class="description" ng-show="product.icons[currentLang.code]" data-ng-bind-html="product.icons[currentLang.code]"></div>
+
+                        </div>
+                        <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url, groupid: product.groupID, typeid: product.ID})" class="btn btn-block btn-info btn-flat btn-more">
+                            {{ 'show_more' | translate }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ 'merge_deliveries' | translate }}</h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-6">
+            <form ng-submit="save()">
+                <div class="col-md-12 input-group">
+                    <select class="form-control" ng-init="joinDeliveryID=activeAddressToJoin[0].deliveryID;changeDelivery();"
+                            ng-model="joinDeliveryID" ng-change="changeDelivery()"
+                        ng-options="item.ID as item.names[currentLang.code] for item in deliveries"></select>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            {{ summary.selectedDelivery.names[currentLang.code] }}<br>
+            {{ 'total_weight' | translate }}: {{ summary.overallWeight }} kg<br>
+            {{ 'packages' | translate }}: {{ summary.numberOfPackages }}<br><br>
+
+            {{ 'price' | translate }}: <b>{{ summary.priceGross }} {{ currentCurrency.code }}</b>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-default left-save" ng-click="$dismiss()">{{ 'close' | translate }}</button>
+    <form ng-submit="save()">
+        <button type="submit" class="btn btn-success">{{ 'save' | translate }}</button>
+    </form>
+</div>

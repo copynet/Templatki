@@ -1,0 +1,71 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ 'shipping_addresses' | translate }}</h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table" ng-if="logged" wt-responsive-table>
+                <thead>
+                <tr>
+                    <th>{{ 'cl_delivery' | translate }}</th>
+                    <th>{{ 'sender' | translate }}</th>
+                    <th>{{ 'delivery_address' | translate }}</th>
+                    <th>{{ 'volumes' | translate }}</th>
+                    <th>{{ 'packages' | translate }}</th>
+                    <th>{{ 'weight' | translate }}</th>
+                    <th>{{ 'price' | translate }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="address in selectedProduct.addresses">
+                    <td>
+                        {{ address.deliveryNames[currentLang.code] }}
+                    </td>
+                    <td>
+                        {{ address.senderName }}
+                    </td>
+                    <td>
+                        {{ address.details.addressName }}<br>
+                        {{ address.details.street }} {{ address.details.house }}
+                        <span ng-if="address.details.apartment.length > 0">/{{address.details.apartment}}</span>
+                    </td>
+                    <td>{{ address.volume }}</td>
+                    <td>
+                        {{ address.no_of_pkgs }}
+                    </td>
+                    <td class="text-nowrap">
+                        {{ address.grossweight }}kg
+                    </td>
+                    <td class="price text-nowrap">
+                        {{ address.priceGross }} {{ currentCurrency.symbol }}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table" ng-if="!logged">
+                <thead>
+                <tr>
+                    <th>{{ 'cl_delivery' | translate }}</th>
+                    <th>{{ 'volumes' | translate }}</th>
+                    <th>{{ 'packages' | translate }}</th>
+                    <th>{{ 'weight' | translate }}</th>
+                    <th>{{ 'price' | translate }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="address in selectedProduct.addresses">
+                    <td>{{ address.deliveryID }}</td>
+                    <td>{{ address.volume }}</td>
+                    <td>{{ address.no_of_pkgs }}</td>
+                    <td class="text-nowrap">{{ address.grossweight }}kg</td>
+                    <td class="price text-nowrap">{{ address.price }} {{ currentCurrency.symbol }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="$dismiss()">{{ 'close' | translate }}</button>
+</div>
