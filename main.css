@@ -6501,3 +6501,10 @@ a:after, a:focus {
 #cookie-block .cookies-close {
     right: 50px;
 }
+
+/* CUSTOM PRODUCT */
+#content-custom-product .photo {
+    text-align: center;
+    margin: 0 0 40px 0;
+}
+/* CUSTOM PRODUCT END */
