@@ -3123,6 +3123,9 @@ h1.page-header {
     text-transform: uppercase;
     border-bottom: none;
 }
+h1.custom {
+    font-size: 23px;
+}
 @media (max-width: 767px) {
     h1.page-header {
         font-size: 22px;

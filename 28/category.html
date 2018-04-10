@@ -81,7 +81,7 @@
                     {{ 'show_more' | translate }}
                 </a>
             </div>
-            <div class="thumbnail clearfix" ng-if="product.relType == 2 && !product.isEditor" && !product.isCustomProduct">
+            <div class="thumbnail clearfix" ng-if="product.relType == 2 && !product.isEditor && !product.isCustomProduct">
                 <div class="transform">
                     <a class="thumbnail-link" ui-sref="calculate({categoryurl: category.langs[currentLang.code].url,
                 groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})" class="product-list-link"
