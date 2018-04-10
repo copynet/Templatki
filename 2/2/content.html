@@ -4,7 +4,7 @@
 
     <div class="row menu-magenta">
         <div class="col-xs-12 rwd_main">
-            <div ng-if="!_.isEmpty(startCategories)" class="btn-group-vertical" >
+            <div ng-if="!_.isEmpty(startCategories)" class="btn-group-vertical">
                 <button ng-click="setActiveMainButton()" ng-class="{active: mainButtonActive}" class="btn magenta-active btn-default">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </button>
@@ -31,7 +31,7 @@
                             <li ng-repeat="child in item.childs| orderBy: 'sort'">
                                 <a class="icon-box" ui-sref="category({categoryurl: child.langs[currentLang.code].url})">
                                     <div class="product-list-image">
-                                        <div ng-show="child.icons[currentLang.code]" data-ng-bind-html="child.icons[currentLang.code]" ></div>
+                                        <div ng-show="child.icons[currentLang.code]" data-ng-bind-html="child.icons[currentLang.code]"></div>
                                         <img ng-show="!child.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" />
                                     </div>
                                 </a>
@@ -46,8 +46,10 @@
                             <li ng-repeat="product in products[item.ID]| orderBy: 'sort'">
                                 <div class="thumbnail clearfix" ng-if="product.relType == 1">
                                     <div class="transform">
-                                        <a class="thumbnail-link" ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupurl: product.slugs[currentLang.code]})" class="product-list-link" ng-if="!product.icons[currentLang.code] && !product.icon">
-                                            <img ng-show="!product.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive" />
+                                        <a class="thumbnail-link" ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupurl: product.slugs[currentLang.code]})"
+                                            class="product-list-link" ng-if="!product.icons[currentLang.code] && !product.icon">
+                                            <img ng-show="!product.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive"
+                                            />
                                         </a>
                                         <a ng-if="product.icon" class="thumbnail-link" ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupurl: product.slugs[currentLang.code]})">
                                             <img ng-if="product.icon" src="{{product.icon.url}}" alt="" class="img-responsive" />
@@ -56,10 +58,14 @@
                                 </div>
                                 <div class="thumbnail clearfix" ng-if="product.relType == 2">
                                     <div class="transform">
-                                        <a class="thumbnail-link" ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,                         groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"" class="product-list-link" ng-if="!product.icons[currentLang.code] && !product.icon">
-                                            <img ng-if="!product.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive" />
+                                        <a class="thumbnail-link" ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,
+                                            groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"
+                                            ng-if="!product.icons[currentLang.code] && !product.icon">
+                                            <img ng-if="!product.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive"
+                                            />
                                         </a>
-                                        <a ng-if="product.icon" class="thumbnail-link" ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,                         groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"">
+                                        <a ng-if="product.icon" class="thumbnail-link" ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,
+                                                groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})">
                                             <img ng-if="product.icon" src="{{product.icon.url}}" alt="" class="img-responsive" />
                                         </a>
                                     </div>
@@ -75,12 +81,12 @@
                                 <!-- <div class="product-list-excerpt">{{ product.description }}</div> -->
 
                                 <span ng-if="product.relType == 1">
-                                    <!-- <a ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupurl: product.slugs[currentLang.code]})" class="product-list-link">{{ 'show_more' | translate }}</a> -->
-                                    <a ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupurl: product.slugs[currentLang.code]})" class="product-list-link">{{ product.names[currentLang.code]}}</a>
+                                    <!-- <a ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupid: product.ID})" class="product-list-link">{{ 'show_more' | translate }}</a> -->
+                                    <a ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupid: product.ID})" class="product-list-link">{{ product.names[currentLang.code]}}</a>
                                 </span>
                                 <span ng-if="product.relType == 2">
-                                    <!-- <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,                         groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"" class="product-list-link">{{ 'show_more' | translate }}</a> -->
-                                    <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,                         groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"" class="product-list-link">{{ product.names[currentLang.code]}}</a>
+                                    <!-- <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url, groupid: product.groupID, typeid: product.ID})" class="product-list-link">{{ 'show_more' | translate }}</a> -->
+                                    <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url, groupid: product.groupID, typeid: product.ID})" class="product-list-link">{{ product.names[currentLang.code]}}</a>
                                 </span>
                                 <!--<div class="product-list-price">
                                         {{ 'only_now_price_from' | translate }} 10{{ 'currency' | translate }}
@@ -97,10 +103,18 @@
 <!-- koniec produkty polecane -->
 <div class="container-fluid boxy_pi">
     <div class="container moj_c">
-        <div class="width1 eco"><a ui-sref="druk-eco" class="link" alt="Druk ECO" title="Druk ECO">&nbsp;</a></div>
-        <div class="width2 rabat"><a ui-sref="rabat-pierwszy-koszyk" class="link" alt="Rabat na pierwszy koszyk" title="Rabat na pierwszy koszyk">&nbsp;</a></div>
-        <div class="width1 program"><a ui-sref="program-partnerski" class="link" alt="Program Partnerski" title="Program Partnerski">&nbsp;</a></div>
-        <div class="width1 termin"><a ui-sref="terminy-realizacji" class="link" alt="Terminy realizacji" title="Terminy realizacji">&nbsp;</a></div>
+        <div class="width1 eco">
+            <a ui-sref="druk-eco" class="link" alt="Druk ECO" title="Druk ECO">&nbsp;</a>
+        </div>
+        <div class="width2 rabat">
+            <a ui-sref="rabat-pierwszy-koszyk" class="link" alt="Rabat na pierwszy koszyk" title="Rabat na pierwszy koszyk">&nbsp;</a>
+        </div>
+        <div class="width1 program">
+            <a ui-sref="program-partnerski" class="link" alt="Program Partnerski" title="Program Partnerski">&nbsp;</a>
+        </div>
+        <div class="width1 termin">
+            <a ui-sref="terminy-realizacji" class="link" alt="Terminy realizacji" title="Terminy realizacji">&nbsp;</a>
+        </div>
     </div>
 </div>
 <!-- net^^atak -->
