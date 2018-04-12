@@ -4334,6 +4334,15 @@ h3.bold{
     margin-top:0;
 }
 
+.ssl-img {
+    margin: -80px 0 0 80px;
+    float: left;
+}
+
+.ssl-img img {
+
+}
+
 .footer_bg{
     padding: 0px;
 }
@@ -5071,8 +5080,18 @@ h4.h4_title {
     }
 }
 .btn-default.rwd_continue {
+    background: #fcd1ea;
+    color: #333;
     padding: 20px 12px;
+    font-size: 20px;
     font-weight: bold;
+    border: 2px solid #F5008E;
+}
+.btn-default.rwd_continue:after, .btn-default.rwd_continue:focus, .btn-default.rwd_continue:active, .btn-default.rwd_continue:active:focus, .btn-default.rwd_continue:hover {
+    background: #F5008E; 
+    border-color: transparent!important;
+    outline-color: transparent!important;
+    color: #fff;
 }
 .cart-empty > .btn-default {
 
@@ -5105,9 +5124,19 @@ caption {
     text-transform: uppercase;
     padding: 10px 0px;
 }
+.cart-row .table-file-list caption {
+    background: #eee;
+    color: #808080;
+    border: 1px solid #a7a9ac;
+    border-bottom: none;
+}
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     border-top: none;
     vertical-align: middle;
+}
+.product_in_order.table>tbody>tr>td, .product_in_order.table>tbody>tr>th, .product_in_order.table>tfoot>tr>td,
+.product_in_order.table>tfoot>tr>th, .product_in_order.table>thead>tr>td, .product_in_order.table>thead>tr>th {
+    border-top: 1px solid #ddd;
 }
 .table.table-volume>tbody>tr>td, .table.table-volume>tbody>tr>th, .table.table-volume>tfoot>tr>td, .table.table-volume>tfoot>tr>th, .table.table-volume>thead>tr>td, .table.table-volume>thead>tr>th {
     width: 30%;
@@ -5116,7 +5145,7 @@ table.table-volume-header .th-volume, table.table-volume .col-volume {
     width: 4em!important;
 }
 table.table-file-list>tbody>tr>td, table.table-file-list>tbody>tr>th, table.table-file-list>tfoot>tr>td, table.table-file-list>tfoot>tr>th, table.table-file-list>thead>tr>td, table.table-file-list>thead>tr>th {
-    border-top: 1px solid #ddd;
+    /*border-top: 1px solid #ddd;*/
 }
 table.table-file-list tbody td {
     background: transparent;

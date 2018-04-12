@@ -111,14 +111,14 @@
                                 <!-- <div class="product-list-excerpt">{{ product.description }}</div> -->
 
                                 <span ng-if="product.relType == 1">
-                                        <!-- <a ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupid: product.ID})" class="product-list-link">{{ 'show_more' | translate }}</a> -->
-                                        <a ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupid: product.ID})" class="product-list-link">{{ product.names[currentLang.code]}}</a>
-                                    </span>
-                                    <span ng-if="product.relType == 2">
-                                        <!-- <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url, groupid: product.groupID, typeid: product.ID})" class="product-list-link">{{ 'show_more' | translate }}</a> -->
-                                        <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url, groupid: product.groupID, typeid: product.ID})" class="product-list-link">{{ product.names[currentLang.code]}}</a>
-                                    </span>
-                                    <!--<div class="product-list-price">
+                                    <!-- <a ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupid: product.ID})" class="product-list-link">{{ 'show_more' | translate }}</a> -->
+                                    <a ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupid: product.ID})" class="product-list-link">{{ product.names[currentLang.code]}}</a>
+                                </span>
+                                <span ng-if="product.relType == 2">
+                                    <!-- <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url, groupid: product.groupID, typeid: product.ID})" class="product-list-link">{{ 'show_more' | translate }}</a> -->
+                                    <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url, groupid: product.groupID, typeid: product.ID})" class="product-list-link">{{ product.names[currentLang.code]}}</a>
+                                </span>
+                                <!--<div class="product-list-price">
                                             {{ 'only_now_price_from' | translate }} 10{{ 'currency' | translate }}
                                     </div>-->
                             </li>
@@ -137,16 +137,13 @@
             <a ui-sref="druk-eco " class="link " alt="Druk ECO " title="Druk ECO ">&nbsp;</a>
         </div>
         <div class="width2 rabat ">
-            <a ui-sref="rabat-pierwszy-koszyk " class="link " alt="Rabat na pierwszy koszyk
-                                        " title="Rabat na pierwszy koszyk ">&nbsp;</a>
+            <a ui-sref="rabat-pierwszy-koszyk " class="link " alt="Rabat na pierwszy koszyk" title="Rabat na pierwszy koszyk ">&nbsp;</a>
         </div>
         <div class="width1 program ">
-            <a ui-sref="program-partnerski " class="link " alt="Program Partnerski " title="Program
-                                        Partnerski ">&nbsp;</a>
+            <a ui-sref="program-partnerski " class="link " alt="Program Partnerski " title="Program Partnerski ">&nbsp;</a>
         </div>
         <div class="width1 termin ">
-            <a ui-sref="terminy-realizacji " class="link " alt="Terminy realizacji " title="Terminy
-                                        realizacji ">&nbsp;</a>
+            <a ui-sref="terminy-realizacji " class="link " alt="Terminy realizacji " title="Terminy realizacji ">&nbsp;</a>
         </div>
     </div>
 </div>

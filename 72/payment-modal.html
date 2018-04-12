@@ -14,7 +14,7 @@
                     </h3>
                 </div>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table product_in_order">
                         <thead>
                         <tr>
                             <th>{{ 'name' | translate }}</th>
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="row" ng-show="order.products.length > 0">
-                <div class="col-md-8 col-md-offset-4">
+                <div class="col-md-8 col-md-offset-2">
                     <div class="alert alert-info text-center">
                         {{ 'selected_method_payment' | translate }}: {{selectedPayment.names[currentLang.code]}}
                     </div>
@@ -82,7 +82,7 @@
             </div>
             <div class="row">
                 <div ng-if="paymentsOffset > 0" class="col-md-{{paymentsOffset}} col-lg-{{paymentsOffset}}"></div>
-                <div class="col-lg-3 col-md-3 col-sm-6" ng-repeat="payment in payments">
+                <div class="col-lg-6 col-md-3 col-sm-6" ng-repeat="payment in payments">
                     <button ng-disabled="preventPayment" ng-click="paymentConfirm(payment.ID)" class="btn btn-block btn-success btn-payment">
                         {{ payment.names[currentLang.code] }}
                     </button>
