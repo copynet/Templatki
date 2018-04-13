@@ -11,7 +11,9 @@
     <div class="container footer">
 
         <div class="newsletter">
-            <p style="text-align:right; font-size: 17px; text-transform:uppercase;"><b>Kontakt</b></p>
+            <p style="text-align:right; font-size: 17px; text-transform:uppercase;">
+                <b>Kontakt</b>
+            </p>
             <a href="mailto:bok@goprint24.pl?subject=Zapytanie ze sklepu goprint24.pl">bok@goprint24.pl</a>
             <a href="mailto:info@goprint24.pl">info@goprint24.pl</a>
             <form class="newsletter">
@@ -21,17 +23,26 @@
             <div class="tooltip-footer">
                 <i class="fa fa-info-circle"></i>
                 <span class="tooltiptext">
-                    Wyrażam zgodę na przetwarzanie moich danych osobowych przez Sprzedawcę (Copy Net, ul. Solidarności 9, 25-323 Kielce) w zakresie niezbędnym do prowadzenia marketingu produktów i usług Sprzedawcy zgodnie z ustawą z dnia 29.08.1997 r. o ochronie danych osobowych (Dz. U. z 2002 e., Nr 101, poz. 926 ze zm.). Oświadczam, że zostałem poinformowany, iż pszysługuje mi prawo dostępu do treści moich danych oraz możliwość ich poprawiania, a także, że podanie danych jest dobrowolne.
+                    Wyrażam zgodę na przetwarzanie moich danych osobowych przez Sprzedawcę (Copy Net, ul. Solidarności 9, 25-323 Kielce) w zakresie
+                    niezbędnym do prowadzenia marketingu produktów i usług Sprzedawcy zgodnie z ustawą z dnia 29.08.1997
+                    r. o ochronie danych osobowych (Dz. U. z 2002 e., Nr 101, poz. 926 ze zm.). Oświadczam, że zostałem poinformowany,
+                    iż pszysługuje mi prawo dostępu do treści moich danych oraz możliwość ich poprawiania, a także, że podanie
+                    danych jest dobrowolne.
                 </span>
             </div>
         </div>
 
         <div class="address">
-            <p><b>GOPRINT24.PL</b><br />
-                Drukarnia: Copy Net<br />
-                ul. Solidarności 9&nbsp;&nbsp;|&nbsp;&nbsp;25 - 323 Kielce<br />
+            <p>
+                <b>GOPRINT24.PL</b>
+                <br /> Drukarnia: Copy Net
+                <br /> ul. Solidarności 9&nbsp;&nbsp;|&nbsp;&nbsp;25 - 323 Kielce
+                <br />
                 <span class="text-small">
-                    tel. +48 41 344 50 70&nbsp;&nbsp;|&nbsp;&nbsp;<a href="mailto:bok@goprint24.pl?subject=Zapytanie ze sklepu goprint24.pl">bok@goprint24.pl</a><br /><br />
+                    tel. +48 41 344 50 70&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="mailto:bok@goprint24.pl?subject=Zapytanie ze sklepu goprint24.pl">bok@goprint24.pl</a>
+                    <br />
+                    <br />
                 </span>
                 <a class="footer_icon" href="http://copynet.digitalprint.pro/pl/strona/terminy-realizacji">
                     <img src="https://static.digitalprint.pro/684/styles/footer_24_7.png">
@@ -68,13 +79,17 @@
                 <li>
                     <a href="/pl/przygotowanie-plikow">Przygotowanie plików</a>
                 </li>
+                <li>
+                    <a href="/pl/instrukcja-zamawiania">Jak złożyć zamówienie?</a>
+                </li>
             </ul>
             <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>
     </div>
     <div class="ssl-img">
-        <img src="https://static.digitalprint.pro/684/images/certum_logo_new.png" alt="Certum Commercial Wildcard" title="Certum Commercial Wildcard" />
+        <img src="https://static.digitalprint.pro/684/images/certum_logo_new.png" alt="Certum Commercial Wildcard" title="Certum Commercial Wildcard"
+        />
     </div>
     <div class="clearfix"></div>
 </div>
@@ -92,15 +107,13 @@
 
 <!-- CUSTOM JS -->
 <script>
-    $(function ()
-    {
+    $(function () {
         var targets = $('[rel~=tooltip]'),
-                target = false,
-                tooltip = false,
-                title = false;
+            target = false,
+            tooltip = false,
+            title = false;
 
-        targets.bind('mouseenter', function ()
-        {
+        targets.bind('mouseenter', function () {
             target = $(this);
             tip = target.attr('title');
             tooltip = $('<div id="tooltip"></div>');
@@ -110,51 +123,45 @@
 
             target.removeAttr('title');
             tooltip.css('opacity', 0)
-                    .html(tip)
-                    .appendTo('body');
+                .html(tip)
+                .appendTo('body');
 
-            var init_tooltip = function ()
-            {
+            var init_tooltip = function () {
                 if ($(window).width() < tooltip.outerWidth() * 1.5)
                     tooltip.css('max-width', $(window).width() / 2);
                 else
                     tooltip.css('max-width', 340);
 
                 var pos_left = target.offset().left + (target.outerWidth() / 2) - (tooltip.outerWidth() / 2),
-                        pos_top = target.offset().top - tooltip.outerHeight() - 20;
+                    pos_top = target.offset().top - tooltip.outerHeight() - 20;
 
-                if (pos_left < 0)
-                {
+                if (pos_left < 0) {
                     pos_left = target.offset().left + target.outerWidth() / 2 - 20;
                     tooltip.addClass('left');
                 } else
                     tooltip.removeClass('left');
 
-                if (pos_left + tooltip.outerWidth() > $(window).width())
-                {
+                if (pos_left + tooltip.outerWidth() > $(window).width()) {
                     pos_left = target.offset().left - tooltip.outerWidth() + target.outerWidth() / 2 + 20;
                     tooltip.addClass('right');
                 } else
                     tooltip.removeClass('right');
 
-                if (pos_top < 0)
-                {
+                if (pos_top < 0) {
                     var pos_top = target.offset().top + target.outerHeight();
                     tooltip.addClass('top');
                 } else
                     tooltip.removeClass('top');
 
-                tooltip.css({left: pos_left, top: pos_top})
-                        .animate({top: '+=10', opacity: 1}, 50);
+                tooltip.css({ left: pos_left, top: pos_top })
+                    .animate({ top: '+=10', opacity: 1 }, 50);
             };
 
             init_tooltip();
             $(window).resize(init_tooltip);
 
-            var remove_tooltip = function ()
-            {
-                tooltip.animate({top: '-=10', opacity: 0}, 50, function ()
-                {
+            var remove_tooltip = function () {
+                tooltip.animate({ top: '-=10', opacity: 0 }, 50, function () {
                     $(this).remove();
                 });
 

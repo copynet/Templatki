@@ -741,6 +741,9 @@ table.cart-item tbody tr td {
     background-color: #F5008E;
     line-height: 30px;
 }
+.progress .progress-bar.green {
+    background-color: #5cb85c;
+}
 .big-button {
     width: 100%;
     height: 50px;
@@ -2776,6 +2779,9 @@ a {
     text-transform: uppercase;
     font-size: 12px;
     padding: 3px 0px;
+}
+.panel .panel-heading.dostawa_laczna h3.panel-title {
+    font-size: 18px;
 }
 .panel .panel-heading h3.title_h3 {
     background-color: #fff;
@@ -6537,3 +6543,40 @@ a:after, a:focus {
     margin: 0 0 40px 0;
 }
 /* CUSTOM PRODUCT END */
+
+/* KOSZYK DOSTAWA */
+.dostawa_koszyk > tbody > tr > .dostawa_koszyk {
+    text-align: center;
+    font-weight: bold;
+    width: 22%;
+}
+.dostawa_koszyk > tbody > tr > td > button {
+    
+}
+.dostawa_koszyk > tbody > tr > td {
+    border: 1px solid #b0b1b4;
+}
+/* KOSZYK DOSTAWA END */
+
+ /* INSTRUKCJA ZAMAWIANIA */
+.instrukcja-zamawiania {
+
+}
+.instrukcja-zamawiania .text span.number {
+    display: block;
+    color: #ec008c;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 0 40px 0;
+}
+.instrukcja-zamawiania .text {
+    text-align: center;
+    padding: 40px 0;
+}
+.instrukcja-zamawiania .image img {
+    max-width: 540px;
+}
+.instrukcja-zamawiania .image_big img {
+    max-width: 760px;
+}
+ /* INSTRUKCJA ZAMAWIANIA END */
