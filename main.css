@@ -4286,6 +4286,10 @@ h3.bold{
     margin-top: 0px;
     margin-bottom: 20px;
 }
+.border-h2.long {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
 .border-h3{
     background: url('border-h3.jpg') left center repeat-x;
     position: relative;
@@ -6580,3 +6584,51 @@ a:after, a:focus {
     max-width: 760px;
 }
  /* INSTRUKCJA ZAMAWIANIA END */
+
+ .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+     outline-color: transparent;
+ }
+
+ /* REKLAMACJA PODSTRONA */
+.instrukcja-reklamacji {
+
+}
+.instrukcja-reklamacji span.text {
+    text-align: justify;
+    line-height: 20px;
+}
+.instrukcja-reklamacji ol.listowanie-rzymskie {
+    list-style-type: upper-roman;
+}
+.instrukcja-reklamacji .pliki-do-pobrania {
+    border-top: 1px solid;
+    padding: 10px 0 0 0;
+    margin: 20px 0 0 0;
+}
+.instrukcja-reklamacji .pliki-do-pobrania a.pdf {
+    background-image: url("https://static.digitalprint.pro/uploadedFiles/684/modelsIcons/pdf.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    display: block;
+    width: 230px;
+    height: 56px;
+    padding: 15px 0 0 0;
+}
+.instrukcja-reklamacji-strona {
+
+}
+.instrukcja-reklamacji-strona span.text {
+    line-height: 20px;
+}
+.instrukcja-reklamacji-strona .text span.number {
+    display: block;
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 0 40px 0;
+}
+.instrukcja-reklamacji-strona .image_big img {
+    max-width: 760px;
+} 
+
+ /* REKLAMACJA PODSTRONA END */

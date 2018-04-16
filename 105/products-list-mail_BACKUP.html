@@ -16,7 +16,7 @@
      	        Kalkulacja: {{product.calcID}}/{{product.ver}}<br><br>
 
 		{% if product.calcProducts|length > 1 %}
-		<!-- NAZWA PRODUKTU POGRUBIONA --><b>{{ product.names[lang] }}</b><br><br>
+		<b>{{ product.names[lang] }}</b><br><br>
 		{% endif %}
 
                 {% if product.name %}
@@ -25,7 +25,7 @@
 
                 {% for calcProduct in product.calcProducts %}
 
-                <!-- NAZWA PRODUKTU KURSYWA --><i>{{ calcProduct.typeName }}
+                <i>{{ calcProduct.typeName }}<br>
 			
 		    {% if calcProduct.customFormatName[lang] %}
                     	{{ calcProduct.customFormatName[lang] }}
@@ -33,30 +33,31 @@
                         Format:
                     {% endif %}
 
-		    <!-- WYBRANY FORMAT PRODUKTU -->{% if calcProduct.formatLangs[lang].name %}
+		    {% if calcProduct.formatLangs[lang].name %}
 		    	{{ calcProduct.formatLangs[lang].name }}
 		    {% else %}
 		    	{{ calcProduct.formatName }}
-            {% endif %}
-            <!-- WŁASNY FORMAT -->
+		    {% endif %}
+
                     {% if calcProduct.formatWidth %}
-                    {{ calcProduct.formatWidth }} x {{ calcProduct.formatHeight}}mm<br>
+                    {{ calcProduct.formatWidth }} x {{ calcProduct.formatHeight}}mm<br><br>
                     {% else %}
+                    <br><br>
                     {% endif %}</i>
 
-            <br>
-            <!-- WŁASNA ILOŚĆ STRON -->
+		    <br>
+
 		    {% if calcProduct.customPageName[lang] %}
 			{{ calcProduct.customPageName[lang] }}
 		    {% else %}
-            <!-- WYBRANE STRONY -->
-            Strony:
+			Strony:
 		    {% endif %}	                    
 			{{ calcProduct.pages }}			
 
+		    <br>
                     {% if calcProduct.attributes is iterable %}
                         {% for attribute in calcProduct.attributes %}
-            <br>            
+                        
 			{% if attribute.langs[lang].name %}
 				{{ attribute.langs[lang].name }}:
 			{% else %}
