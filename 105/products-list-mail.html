@@ -2,37 +2,29 @@
 <center>
     <table width="100%" style="border-collapse: collapse;border-spacing: 0;height:100%;margin:0px;padding:0px;">
     <tr style="border-bottom:10px;background-color:#e3e3e3;color:#333;">
-        <th width="55%" style="padding: 8px 0px;">Nazwa</th>
-        <th width="15%" style="padding: 8px 0px;">Ilość sztuk</th>
-        <th width="15%" style="padding: 8px 0px;">Cena Netto</th>
-        <th width="15%" style="padding: 8px 0px;">Cena Brutto</th>
+        <th width="65%" style="padding: 3px 0px;">Nazwa</th>
+        <th width="11%" style="padding: 3px 0px;">Ilość sztuk</th>
+        <th width="11%" style="padding: 3px 0px;">Cena Netto</th>
+        <th width="11%" style="padding: 3px 0px;">Cena Brutto</th>
     </tr>
     {% for product in products %}
         <tr style="margin-bottom:10px;border-bottom: 1px solid #e5e5e5; border-right: 1px solid #e5e5e5; border-left: 1px solid #e5e5e5;{% if loop.index % 2 == 0 %}background: #e5e5e5;{% else %}{% endif %}">
-            <td style="padding: 10px 10px 10px 20px; border-right: 1px solid #e5e5e5;{% if loop.index % 2 == 0 %}border-right: 1px solid #fff;{% else %}{% endif %}">
+            <td style="padding: 5px; border-right: 1px solid #e5e5e5;{% if loop.index % 2 == 0 %}border-right: 1px solid #fff;{% else %}{% endif %}">
  		
-		<b>Numer produktu: {{ product.productID }}</b><br>	
- 
-     	        Kalkulacja: {{product.calcID}}/{{product.ver}}<br><br>
-
 		{% if product.calcProducts|length > 1 %}
-		<!-- NAZWA PRODUKTU POGRUBIONA --><b>{{ product.names[lang] }}</b><br><br>
+		<!-- NAZWA PRODUKTU POGRUBIONA --><b>{{ product.names[lang] }}</b><br>
 		{% endif %}
 
                 {% if product.name %}
                     {{ product.name }}
                 {% endif %}
-
                 {% for calcProduct in product.calcProducts %}
-
-                <!-- NAZWA PRODUKTU KURSYWA --><i>{{ calcProduct.typeName }}
-			
-		    {% if calcProduct.customFormatName[lang] %}
+                <b>{{ calcProduct.typeName }}</b><br>
+                <i>{% if calcProduct.customFormatName[lang] %}
                     	{{ calcProduct.customFormatName[lang] }}
 		    {% elseif calcProduct.formatLangs[lang].name %}
                         Format:
                     {% endif %}
-
 		    <!-- WYBRANY FORMAT PRODUKTU -->{% if calcProduct.formatLangs[lang].name %}
 		    	{{ calcProduct.formatLangs[lang].name }}
 		    {% else %}
@@ -40,10 +32,9 @@
             {% endif %}
             <!-- WŁASNY FORMAT -->
                     {% if calcProduct.formatWidth %}
-                    {{ calcProduct.formatWidth }} x {{ calcProduct.formatHeight}}mm<br>
+                    {{ calcProduct.formatWidth }} x {{ calcProduct.formatHeight}}mm
                     {% else %}
                     {% endif %}</i>
-
             <br>
             <!-- WŁASNA ILOŚĆ STRON -->
 		    {% if calcProduct.customPageName[lang] %}
@@ -52,8 +43,7 @@
             <!-- WYBRANE STRONY -->
             Strony:
 		    {% endif %}	                    
-			{{ calcProduct.pages }}			
-
+			{{ calcProduct.pages }}:		
                     {% if calcProduct.attributes is iterable %}
                         {% for attribute in calcProduct.attributes %}
             <br>            
@@ -66,16 +56,13 @@
 				{{ attribute.optLangs[lang].name }}
 			{% else %}
 				{{attribute.optName}}
-			{% endif %}
-			                        
+			{% endif %}       
 			{% if attribute.attrPages %}
                             ({{ attribute.attrPages}})
                         {% endif %}
-                        <br>
+                        
                         {% endfor %}
-                        <br>
                     {% endif %}
-
                 {% endfor %}
             </td>
             <td style="text-align: center; border-right: 1px solid #e5e5e5;{% if loop.index % 2 == 0 %}border-right: 1px solid #fff;{% else %}{% endif %}">{{ product.amount}} x {{ product.volume }} </td>
