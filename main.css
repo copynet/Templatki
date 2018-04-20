@@ -2722,6 +2722,9 @@ a {
     padding: 10px 15px;
     white-space: nowrap;
 }
+#navbar .nav > li > a:hover {
+    color: #F5008E;
+}
 #navbar .nav > li > a.myZoneTop {
     right: 80px;
 }
@@ -4659,9 +4662,11 @@ h3.bold{
     padding: 2px 0px;
 }
 .footer .menu ul li::before {
-    content: "• ";
-    color: #f3d8e8;
-    padding-right: 5px;
+    content: " ";
+    padding: 0 20px 0 0;
+    background: url('https://static.digitalprint.pro/684/styles/footer_li.png');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .footer .menu ul li a {
     color: #fff;
@@ -5721,7 +5726,7 @@ button.modalImage > i, button.calcModal > i {
     min-height: 89px;
 }
 .select-by-picture li .list-group-item {
-    min-height: 87px;
+    min-height: 112px;
     text-align: center;
 }
 .select-by-picture li .list-group-item .open-picture {
@@ -6632,3 +6637,23 @@ a:after, a:focus {
 } 
 
  /* REKLAMACJA PODSTRONA END */
+
+ /* KOLOR ZAZNACZENIA TEKSTU */
+.spis-adnotacja::selection, .regulamin-punkty::selection {
+    background: #ec008c;
+    color: #fff;
+}
+.spis-adnotacja::-moz-selection, .regulamin-punkty::-moz-selection {
+    background: #ec008c;
+    color: #fff;
+}
+ /* KOLOR ZAZNACZENIA TEKSTU END */
+
+ .pull-center {
+     float: none;
+     text-align: center;
+     margin: 10px 0 0 0;
+ }
+ #panel-product-delivery .col-volumes {
+     width: 10%;
+ }

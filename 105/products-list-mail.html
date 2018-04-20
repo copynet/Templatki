@@ -43,19 +43,18 @@
             <!-- WYBRANE STRONY -->
             Strony:
 		    {% endif %}	                    
-			{{ calcProduct.pages }}:		
+			{{ calcProduct.pages }}		
                     {% if calcProduct.attributes is iterable %}
                         {% for attribute in calcProduct.attributes %}
-            <br>            
+                        <br>           
 			{% if attribute.langs[lang].name %}
-				{{ attribute.langs[lang].name }}:
-			{% else %}
-				{{ attribute.attrName }}:
+				{{ attribute.langs[lang].name }}
+			{% else %}: {{ attribute.attrName }}
 			{% endif %}
 			{% if attribute.optLangs[lang].name %}
-				{{ attribute.optLangs[lang].name }}
+				: {{ attribute.optLangs[lang].name }}
 			{% else %}
-				{{attribute.optName}}
+				: {{attribute.optName}}
 			{% endif %}       
 			{% if attribute.attrPages %}
                             ({{ attribute.attrPages}})

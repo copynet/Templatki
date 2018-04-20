@@ -41,14 +41,19 @@
                                     </li>
                                     <li class="divider"></li>
                                     <li ng-repeat="type in item.allTypes">
-                                        <a ng-if="!type.isEditor" ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,
-                                        groupurl: type.group.slugs[currentLang.code], typeurl: type.slugs[currentLang.code]})">
-                                            {{ type.names[currentLang.code] }}
-                                        </a>
-                                        <a ng-if="type.isEditor" ui-sref="select-project({categoryurl: item.langs[currentLang.code].url,
-                                        groupurl: type.group.slugs[currentLang.code], typeurl: type.slugs[currentLang.code]})">
-                                            {{ type.names[currentLang.code] }}
-                                        </a>
+                                        <a ng-if="!type.isEditor && !type.isCustomProduct" ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,
+                                            groupurl: type.group.slugs[currentLang.code], typeurl: type.slugs[currentLang.code]})">
+                                                {{ type.names[currentLang.code] }}
+                                            </a>
+                                            <a ng-if="type.isEditor && !type.isCustomProduct" ui-sref="select-project({categoryurl: item.langs[currentLang.code].url,
+                                            groupurl: type.group.slugs[currentLang.code], typeurl: type.slugs[currentLang.code]})">
+                                                {{ type.names[currentLang.code] }}
+                                            </a>
+                                            <a ng-if="!type.isEditor && type.isCustomProduct" ui-sref="custom-product({categoryurl: item.langs[currentLang.code].url,
+                                            groupurl: type.group.slugs[currentLang.code],
+                                            typeurl: type.slugs[currentLang.code]})">
+                                                {{ type.names[currentLang.code] }}
+                                            </a>
                                     </li>
                                 </ul>
                             </li>
@@ -63,8 +68,9 @@
                             <li><a ui-sref="formy-platnosci">{{'formy-platnosci'| translate}}</a></li> 
                             <li><a ui-sref="terminy-realizacji">{{'terminy-realizacji'| translate}}</a></li>
                             <li><a href="/pl/kategoria/druk-cyfrowy/grupa/produkt-niestandardowy/zapytanie-niestandardowe/produkt-niestandardowy">{{'prace-niestandardowe'| translate}}</a></li>
-                            <li><a ui-sref="faq">{{'faq'| translate}}</a></li>
                             <li><a ui-sref="instrukcja-zamawiania">{{'ordering instructions'| translate}}</a></li>
+                            <li><a ui-sref="reklamacje">{{'The_complaints'| translate}}</a></li>
+                            <li><a ui-sref="faq">{{'faq'| translate}}</a></li>
                         </ul>
                     </li>
                     <li><a ui-sref="contact">{{ 'contact' | translate }}</a></li>

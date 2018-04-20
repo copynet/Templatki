@@ -71,9 +71,9 @@
                                             <span ng-show="attribute.optLangs[currentLang.code].name">{{ attribute.optLangs[currentLang.code].name}}</span>
                                             <span ng-show="!attribute.optLangs[currentLang.code].name">{{attribute.optName}}</span>
                                         </div>
-                                        <div>
+                                        <!--<div>
                                             {{ product.volume}}
-                                        </div>
+                                        </div>-->
                                     </div>
                                 </td>
                                 <td class="center">
@@ -105,7 +105,7 @@
                         <tbody>
                             <tr>
                                 <td class="dostawa_koszyk">
-                                    {{ 'cart_addresses_text' | translate }}
+                                    <i class="fa fa-fw fa-truck"></i> {{ 'cart_addresses_text' | translate }}
                                 </td>
                                 <td class="center" ng-if="logged == true">
                                     <button ng-click="showDelivery(product)" class="btn btn-sm btn-info">
@@ -115,6 +115,7 @@
                             </tr>
                         </tbody>
                     </table>
+
                 </div>
                 <div class="panel-footer">
                     <div class="row">
