@@ -351,19 +351,19 @@
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="login">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-7">
                             <h2 class="page-header drukarnia">{{ 'login_with_system_account' | translate }} </h2>
                             <form class="form-horizontal" ng-submit="login(credentials)" method="post">
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label lightpink" for="user-email">{{ 'login' | translate }}</label>
-                                    <div class="col-md-8 padding0">
+                                    <label class="col-md-3 control-label lightpink" for="user-email">{{ 'login' | translate }}</label>
+                                    <div class="col-md-9 padding0">
                                         <input ng-keyup="$event.keyCode == 13 ? login(credentials) : null" class="form-control" type="text" placeholder="{{ 'login' | translate }}"
                                             name="email" ng-model="credentials.email" required id="user-email">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label lightpink" for="user-password">{{ 'password' | translate }}</label>
-                                    <div class="col-md-8 padding0">
+                                    <label class="col-md-3 control-label lightpink" for="user-password">{{ 'password' | translate }}</label>
+                                    <div class="col-md-9 padding0">
                                         <input ng-keyup="$event.keyCode == 13 ? login(credentials) : null" class="form-control" type="password" placeholder="{{ 'password' | translate }}"
                                             name="password" ng-model="credentials.password" required id="user-password">
                                     </div>
@@ -380,20 +380,20 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <h2 class="page-header">{{ 'or_by_other_account' | translate }} </h2>
                             <ul class="list-unstyled list-social koszyk-social">
                                 <li>
                                     <a class="btn btn-block btn-social btn-lg btn-google" ng-click="loginGoogle()">
                                         <span class="fa fa-google"></span>
-                                        Sign in with Google
+                                        {{ 'sign_in_with_google' | translate }}
                                     </a>
                                     <br />
                                 </li>
                                 <li>
                                     <a class="btn btn-block btn-social btn-lg btn-facebook" ng-click="FBlogin()">
                                         <span class="fa fa-facebook"></span>
-                                        Sign in with Facebook
+                                        {{ 'sign_in_with_facebook' | translate }}
                                     </a>
                                 </li>
                             </ul>

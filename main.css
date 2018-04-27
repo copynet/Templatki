@@ -4350,7 +4350,7 @@ h3.bold{
 
 .ssl-img {
     display: block;
-    margin: -80px 0 0 80px;
+    margin: -100px 0 0 70px;
     float: left;
 }
 
@@ -4408,7 +4408,7 @@ h3.bold{
     right:0;
     top:0;
     border:0;
-    width:190px;
+    width:215px;
 }
 
 .footer form.newsletter{
@@ -5589,6 +5589,14 @@ td.cart_plus {
     font-size: 1.3em;
     line-height: 33px;
 }
+.panel-login .btn-social.btn-lg, .koszyk-social .btn-social.btn-lg {
+    width: 100%;
+}
+@media screen and (max-width: 1199px) {
+    .btn-social.btn-lg {
+        width: 100%;
+    }
+}
 select {
     background: #ec008c;
 }
@@ -6008,11 +6016,12 @@ i.fa-info-circle {
     opacity: .95;
 }
 .tooltip-inner {
-    background-color: #838585;
-    max-width: 600px;
+    background-color: #777;
+    max-width: 900px;
     text-align: left;
 }
 .tooltip-inner > p {
+    font-size: 11px;
     margin: 5px 0px;
 }
 .border-radius0 {
@@ -6042,12 +6051,12 @@ i.fa-info-circle {
     border-color: #424242;
 }
 .tooltip.right .tooltip-arrow {
-    border-right-color: #838585;
+    border-right-color: #777;
 }
 .tooltip.top .tooltip-arrow {
     border-top-color: #838585;
 }
-.tooltip-inner > p > b {
+.tooltip-inner > p > b, .tooltip-inner > p > b > b, .tooltip-inner b {
     color: #fff!important;
 }
 .btn-group-xs>.btn, .btn-xs {
@@ -6432,6 +6441,7 @@ ul.mega-dropdown-menu a.link-image .img-responsive {
     font-size: 13px;
     font-weight: normal;
     text-align: justify;
+    padding-bottom: 10px;
 }
 
 .regulamin-punkty li ol > li:before {
@@ -6481,6 +6491,25 @@ ul.mega-dropdown-menu a.link-image .img-responsive {
     text-align: center;
 }
 /* REGULAMIN END */
+
+/* POLITYKA PRYWATNOŚCI */
+table.polityka-prywatnosci {
+
+}
+table.polityka-prywatnosci > thead > tr > td,
+table.polityka-prywatnosci > tbody > tr > td {
+    border: 1px solid #b0b1b4;
+    padding: 10px;
+    vertical-align: top;
+}
+table.polityka-prywatnosci > thead > tr > td {
+    background: #f3d8e8;
+    color: #333;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+/* POLITYKA PRYWATNOŚCI END */
 
 .btn-default.active.focus, .btn-default.active:focus,
 .btn-default.active:hover, .btn-default:active.focus,
@@ -6680,4 +6709,7 @@ a:after, a:focus {
 
  .col-box-volume .price-special {
      font-weight: bold;
+ }
+ .footer .address span.text-small .footer-time {
+
  }
