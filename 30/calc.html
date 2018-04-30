@@ -37,17 +37,13 @@
 
                         <ul class="nav nav-tabs">
                             <li ng-if="patterns.length">
-                                <a data-target="#patterns-tab" href="#"
-                                   data-toggle="tab">{{ 'download_files' | translate }}</a>
+                                <a data-target="#patterns-tab" href="#" data-toggle="tab">{{ 'download_files' | translate }}</a>
                             </li>
                             <li ng-repeat="description in descriptions | orderBy: 'order' | filter:hasFormats">
-                                <a data-target="{{'#description-tab-' + $index }}" href="#"
-                                   data-toggle="tab">{{ description.langs[currentLang.code].name }}</a>
+                                <a data-target="{{'#description-tab-' + $index }}" href="#" data-toggle="tab">{{ description.langs[currentLang.code].name }}</a>
                             </li>
-                            <li ng-repeat="gallery in galleries | orderBy: 'order' | filter:hasFormats "
-                                ng-if="gallery.items.length > 0">
-                                <a data-target="{{ '#gallery-tab-' + $index }}" href="#"
-                                   data-toggle="tab">{{ gallery.langs[currentLang.code].name }}</a>
+                            <li ng-repeat="gallery in galleries | orderBy: 'order' | filter:hasFormats " ng-if="gallery.items.length > 0">
+                                <a data-target="{{ '#gallery-tab-' + $index }}" href="#" data-toggle="tab">{{ gallery.langs[currentLang.code].name }}</a>
                             </li>
                         </ul>
 
@@ -55,22 +51,19 @@
                     <div class="panel-body no-padding">
 
                         <div class="tab-content">
-                            <div class="tab-pane"
-                                 id="patterns-tab">
+                            <div class="tab-pane" id="patterns-tab">
                                 <span ng-repeat="pattern in patterns | filter:hasOneFormat">
                                     <a href="{{ pattern.patternFile }}" target="_blank">
-                                        <img src="{{ pattern.patternIcon }}"/>
+                                        <img src="{{ pattern.patternIcon }}" />
                                     </a>
                                 </span>
                             </div>
-                            <div class="tab-pane"
-                                 ng-repeat="description in descriptions | orderBy: 'order' | filter:hasFormats"
-                                 ng-attr-id="{{ 'description-tab-' + $index }}">
-            
+                            <div class="tab-pane" ng-repeat="description in descriptions | orderBy: 'order' | filter:hasFormats" ng-attr-id="{{ 'description-tab-' + $index }}">
+
                                 <div ng-if="description.showLess">
                                     <div ng-show="description.initHide" ng-bind-html="description.showLess"></div>
                                     <div ng-show="!description.initHide" ng-bind-html="description.langs[currentLang.code].description"></div>
-            
+
                                     <div class="pull-center">
                                         <button ng-show="description.initHide" ng-click="description.initHide=false;" class="btn-sm btn btn-info">
                                             {{ 'expand' | translate }}
@@ -82,16 +75,14 @@
                                         </button>
                                     </div>
                                 </div>
-            
+
                                 <div ng-if="!description.showLess">
                                     <div ng-bind-html="description.langs[currentLang.code].description"></div>
                                 </div>
-            
+
                             </div>
-                            <div class="tab-pane"
-                                 ng-repeat="gallery in galleries | orderBy: 'order' | filter:hasFormats"
-                                 ng-if="gallery.items.length > 0"
-                                 ng-attr-id="{{ 'gallery-tab-' + $index }}">
+                            <div class="tab-pane" ng-repeat="gallery in galleries | orderBy: 'order' | filter:hasFormats" ng-if="gallery.items.length > 0"
+                                ng-attr-id="{{ 'gallery-tab-' + $index }}">
                                 <ng-gallery images="gallery.items" thumbs-num="gallery.items.length"></ng-gallery>
                             </div>
                         </div>
@@ -289,7 +280,7 @@
                                             <ul class="select-by-picture list-group row">
                                                 <li ng-repeat="item in attribute.filteredOptions" ng-if="!(attribute.minPages !== null && attribute.filteredOptions.length <= 1)"
                                                     ng-click="selectOptionImage(complexProduct.selectedProduct.data, item, attribute)"
-                                                    class="col-md-3 col-xs-6">
+                                                    class="col-md-4 col-xs-6">
                                                     <div ng-class="{'list-group-item-info': complexProduct.selectedProduct.data.selectedOptions[attribute.attrID] == item.ID}"
                                                         class="list-group-item">
                                                         <span data-target="#showOptionPicture" ng-click="setOptionPicture($event, item);" data-toggle="modal" ng-if="item.iconID"
@@ -432,14 +423,14 @@
                         <td ng-repeat="realisationTime in realisationTimes | orderBy:'order'">
                         <div class="col-box-volume" ng-class="(rtVolume.volume == activeVolume.volume && activeVolume.rtID == realisationTime.ID) ? 'bg-success' : '' " ng-click="checkVolume(realisationTime, rtVolume)" ng-if="rtVolume.volume == volume.volume && rtVolume.active == true" ng-repeat="rtVolume in realisationTime.volumes | orderBy:'volume'">
                         <span ng-class="{'price-special': rtVolume.oldPrice}" class="price-regular">
-                        <span class="price-net">{{ rtVolume.price }} {{ currentCurrency.symbol }}</span>
+                        <span class="price-net">{{ rtVolume.price | priceFilter }} {{ currentCurrency.symbol }}</span>
                         <br>
                         <span class="price-gross">{{ rtVolume.priceBrutto }} {{ currentCurrency.symbol }}</span>
                         </span>
                         <span ng-show="rtVolume.oldPrice" class="price-old">
-                        <span class="price-old-net">{{ rtVolume.oldPrice }} {{ currentCurrency.symbol }}</span>
+                        <span class="price-old-net">{{ rtVolume.oldPrice | priceFilter }} {{ currentCurrency.symbol }}</span>
                         <br>
-                        <span class="price-old-gross">{{ rtVolume.oldPriceBrutto }} {{ currentCurrency.symbol }}</span>
+                        <span class="price-old-gross">{{ rtVolume.oldPriceBrutto | priceFilter }} {{ currentCurrency.symbol }}</span>
                         </span>
                         </div>
                         </td>

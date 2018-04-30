@@ -26,7 +26,7 @@
                             <li ng-repeat="item in menuItems| menutypes | orderBy: 'sort'" class="col-lg-2 col-md-3 col-sm-4 col-xs-12 col-centered">
                                 <ul data-target="#submenu-{{key}}">
                                     <li class="dropdown-header">{{ item.langs[currentLang.code].name}}</li>
-                                    <li ng-if="item.icon" class="divider"></li>
+                                    <!-- <li ng-if="item.icon" class="divider"></li>
                                     <li ng-if="item.icon">
                                         <a ui-sref="category({categoryurl: item.langs[currentLang.code].url})" class="link-image">
                                             <img src="{{ item.icon.url}}" class="img-responsive" alt="">
@@ -38,7 +38,7 @@
                                             {{ 'view_all' | translate }}
                                             <span class="fa fa-chevron-right pull-right"></span>
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li class="divider"></li>
                                     <li ng-repeat="type in item.allTypes">
                                         <a ng-if="!type.isEditor && !type.isCustomProduct" ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,
@@ -131,11 +131,11 @@
 </nav>
 
 <!-- STATIC SLIDER -->
-<div ng-if="$state.current.name == 'druk-eco'">
-    <div class="container-fluid top_slider">
+    <div ng-if="$state.current.name == 'druk-eco'">
+        <!-- <div class="container-fluid top_slider">
 
+        </div> -->
     </div>
-</div>
 <!-- STATIC SLIDER END -->
 
 <!-- SLIDER PANEL -->

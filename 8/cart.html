@@ -213,6 +213,22 @@
         </div>
     </div>
 
+    <div ng-if="userCanRecalculateCart && logged && cart.products.length > 1" class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <button type="button" class="btn btn-primary btn-block reCountButton" ng-click="reCalculateCart()">
+                {{ 're-count_cart_value' | translate }}
+            </button>
+        </div>
+    </div>
+
+    <div ng-if="userCanRecalculateCart && logged && reCountProductExist" class="row row-margin-top">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="bg-info text-center">
+                {{ 'products_were_counted_again' | translate }}
+            </div>
+        </div>
+    </div>
+
     <div class="col-md-12 row rwd_no-padding" ng-if="cart.products.length > 0">
         <div class="col-md-4 col-md-offset-4 col-sm-12 rwd_no-padding">
             <div class="well well-sm" style="margin-top: 20px;">
@@ -261,7 +277,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>{{ 'cost_of_delivery' | translate }} <i class="fa fa-info-circle" tooltip="{{ 'delivery_suggestion' | translate }}"></i>
+                            <th>{{ 'cost_of_delivery' | translate }}
+                                <i class="fa fa-info-circle" tooltip="{{ 'delivery_suggestion' | translate }}"></i>
                             </th>
                             <td class="dostawa">{{ cart.deliveryGrossPrice}} {{ currentCurrency.symbol}}</td>
                         </tr>

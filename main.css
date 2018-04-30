@@ -3458,7 +3458,7 @@ h2.second-title {
     }
 }
 .container.moj_c {
-    padding: 0px;
+    /* padding: 0px; */
 }
 @media screen and (max-width: 767px) {
     .container.moj_c {
@@ -4349,9 +4349,8 @@ h3.bold{
 }
 
 .ssl-img {
-    display: block;
-    margin: -100px 0 0 70px;
     float: left;
+    margin: 30px 0 0 20px;
 }
 
 .ssl-img img {
@@ -4649,16 +4648,17 @@ h3.bold{
 }
 @media (min-width: 768px) {
     .footer .address {
+        float: right;
         margin: 0px 20px;
     }
 }
 
 /* FOOTER MENU */
 .footer .menu {
+    float: left;
     display: inline-block;
     position: relative;
-    left: 91px;
-    margin: -130px 0 0 0;
+    padding: 0 50px 0 0;
 }
 .footer .menu ul {
     margin: 0;
@@ -4691,6 +4691,16 @@ h3.bold{
     }
 }
 /* FOOTER MENU END */
+
+/* FOOTER SOCIAL MEDIA */
+.footer .social_media {
+    float: right;
+}
+.footer .social_media img {
+    width: 40px;
+    height: auto;
+}
+/* FOOTER SOCIAL MEDIA END */
 
 .div_product-view label{
     display:block;
@@ -5298,7 +5308,7 @@ ul.navbar-right {
 a.footer_icon {
     display: block;
     float: left;
-    margin: 0px 20px 0px 0px;
+    margin: 0px 0px 0px 20px;
 }
 p.register {
     background-color: #eee;
@@ -6713,3 +6723,21 @@ a:after, a:focus {
  .footer .address span.text-small .footer-time {
 
  }
+ /* PODSTRONA DOSTAWA */
+.dostawa {
+
+}
+.dostawa span.text {
+    text-align: justify;
+}
+.dostawa img {
+    max-width: 350px;
+}
+hr.dostawa {
+    display: block;
+    float: left;
+    width: 100%;
+    border-top: 1px solid #E5097F;
+    margin: 40px 0;
+}
+ /* PODSTRONA DOSTAWA END */
