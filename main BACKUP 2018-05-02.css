@@ -2000,11 +2000,11 @@ ul.products-list > li a img {
     margin: -10px auto 27px;
     display: block;
     max-height: 140px;
-    /* filter: grayscale(100%) brightness(170%);
+    filter: grayscale(100%) brightness(170%);
     -webkit-filter: grayscale(100%) brightness(170%);
     -moz-filter: grayscale(100%) brightness(170%);
     -o-filter: grayscale(100%) brightness(170%);
-    -ms-filter: grayscale(100%) brightness(170%); */
+    -ms-filter: grayscale(100%) brightness(170%);
 }
 ul.products-list > li > .thumbnail > .transform {
     transition: all .5s ease-in-out;
@@ -2021,7 +2021,7 @@ ul.products-list > li:hover > .thumbnail > .transform {
     transform: rotateY(360deg);
 }
 ul.products-list > li:hover > .thumbnail > .transform > a img {
-    /* filter: brightness(100%); */
+    filter: brightness(100%);
     /*    transform: translate(-50%,0%);*/
     /* width: 210px;
     max-width: 210px;
@@ -6754,8 +6754,4 @@ hr.dostawa {
     .megamenu-baner {
         display: none;
     }
-}
-
-.panel-heading .btn:active:focus, .panel-heading .btn:focus {
-    color: #333;
 }
