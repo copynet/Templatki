@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-7 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default" ng-class="isOnline ? (transactionConfirm ? 'panel-success' : 'panel-danger') : 'panel-info'" id="panel-cart-verify">
                 <div class="panel-heading">
                     <h3 class="panel-title" ng-if="isOnline && transactionConfirm">
@@ -21,7 +21,7 @@
                 <div class="panel-body">
 
                     <div class="order-verify-summary">
-                        <h4>{{ 'thank_you_for_order' | translate }} - nr.{{ order.ID}}</h4>
+                        <h4>{{ 'thank_you_for_order' | translate }} - nr.<span class="order-id">{{ order.ID}}</span></h4>
                         {{ 'ordered_products' | translate }}:
                         <br>
                         <ul>

@@ -6741,3 +6741,17 @@ hr.dostawa {
     margin: 40px 0;
 }
  /* PODSTRONA DOSTAWA END */
+
+.order-verify-summary span.order-id {
+    font-size: 25px;
+}
+.megamenu-baner {
+    position: absolute;
+    right: 155px;
+    top: 474px;
+}
+@media screen and (max-width: 767px) {
+    .megamenu-baner {
+        display: none;
+    }
+}
