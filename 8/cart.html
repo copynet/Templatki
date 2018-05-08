@@ -513,7 +513,7 @@
 
                             <div class="form-group ad-phone">
                                 <label class="col-sm-2 control-label lightpink" for="user-ad-areaCode">{{ 'phone' | translate }}</label>
-                                <div class="col-sm-2">
+                                <div class="col-sm-2 no-padding-left">
                                     <div class="input-group">
                                         <span class="input-group-addon" tooltip="{{ 'without_plus_prefix' | translate }}">
                                             <i class="fa fa-plus"></i>
@@ -521,7 +521,7 @@
                                         <input type="tel" ng-model="form.ad_areaCode" class="form-control" placeholder="{{ '48' | translate }}" id="user-ad-areaCode">
                                     </div>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-3 no-padding">
                                     <input type="tel" ng-model="form.ad_telephone" class="form-control" placeholder="{{ 'phone' | translate }}">
                                 </div>
                             </div>
@@ -824,7 +824,7 @@
                                     <input type="tel" ng-model="noRegisterForm.ad_areaCode" class="form-control" placeholder="{{ '48' | translate }}">
                                 </div>
                             </div>
-                            <div class="col-sm-5 no-padding-left">
+                            <div class="col-sm-5 no-padding">
                                 <input type="tel" ng-model="noRegisterForm.ad_telephone" class="form-control" placeholder="{{ 'phone' | translate }}" id="no-register-ad-areacode">
                             </div>
                         </div>
@@ -932,11 +932,12 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12 text-right">
+                        <div class="col-md-8 text-right">
                             <button type="submit" class="moj_button btn btn-success btn-lg btn-submit">
                                 {{ 'go_to_payment_confirm' | translate }}
                             </button>
                         </div>
+                        <div class="clearfix"></div>
                         <p>* {{'required_field'| translate }}</p>
                     </form>
                 </div>

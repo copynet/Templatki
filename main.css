@@ -3067,7 +3067,8 @@ a {
 .thumbnail h3 a {
     color: #838585;
     font-weight: normal;
-    font-size: 14px;
+    text-transform: uppercase;
+    font-size: 12px;
 }
 .thumbnail .btn-more {
     display:none;
@@ -3103,6 +3104,9 @@ a {
     z-index: 2;
     border: 1px solid #d2d2d2;
     border-top: none;
+}
+#content-group .thumbnail .caption {
+    width: 101%;
 }
 ul.products-list > li:hover > .thumbnail {
     border: 1px solid #ec008c;
@@ -5709,27 +5713,24 @@ button.modalImage > i, button.calcModal > i {
     transform: rotateY(360deg);
 }
 #row-category-list > .col-xs-6:hover > .thumbnail > .transform a img, .row-products-list > .col-sm-6:hover > .thumbnail > .transform a img {
-    filter: brightness(100%);
-    width: 210px;
-    max-width: 210px;
-    height: 166px;
-    max-height: 166px;
-    left: -12px;
-    top: -5px;
+    max-width: 183px;
+    max-height: 150px;
+    left: 0px;
+    top: 0px;
 }
 #row-category-list > .col-xs-6 > .thumbnail > .transform a img, .row-products-list > .col-sm-6 > .thumbnail a img {
     display: block;
     margin: 0 auto 27px;
-    max-width: 190px;
+    max-width: 183px;
     max-height: 150px;
     position: absolute;
     left: 0;
     top: 0;
-    filter: grayscale(100%) brightness(200%);
+    /* filter: grayscale(100%) brightness(200%);
     -webkit-filter: grayscale(100%) brightness(200%);
     -moz-filter: grayscale(100%) brightness(200%);
     -o-filter: grayscale(100%) brightness(200%);
-    -ms-filter: grayscale(100%) brightness(200%);
+    -ms-filter: grayscale(100%) brightness(200%); */
 }
 #row-category-list > .col-xs-6:hover > .thumbnail > .caption, .row-products-list > .col-sm-6:hover > .thumbnail > .caption {
     border: 1px solid #ec008c;
@@ -6740,6 +6741,12 @@ hr.dostawa {
     border-top: 1px solid #E5097F;
     margin: 40px 0;
 }
+.dostawa .maps {
+    margin: 15px 0 0 0;
+}
+.dostawa .maps img {
+    max-width: 50px;
+}
  /* PODSTRONA DOSTAWA END */
 
 .order-verify-summary span.order-id {
@@ -6758,4 +6765,9 @@ hr.dostawa {
 
 .panel-heading .btn:active:focus, .panel-heading .btn:focus {
     color: #333;
+}
+
+p.register .fa-user-plus {
+    font-size: 20px;
+    margin: 0 0 0 10px;
 }
