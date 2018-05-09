@@ -5762,6 +5762,7 @@ button.modalImage > i, button.calcModal > i {
 .select-by-picture li .list-group-item {
     min-height: 112px;
     text-align: center;
+    padding: 10px;
 }
 .select-by-picture li .list-group-item .open-picture {
     color: #f5f5f5;
@@ -6747,6 +6748,7 @@ hr.dostawa {
 .dostawa .maps img {
     max-width: 50px;
 }
+
  /* PODSTRONA DOSTAWA END */
 
 .order-verify-summary span.order-id {
@@ -6770,4 +6772,8 @@ hr.dostawa {
 p.register .fa-user-plus {
     font-size: 20px;
     margin: 0 0 0 10px;
+}
+
+.choose-img {
+    min-height: 36px;
 }
