@@ -6814,7 +6814,27 @@ tr#row-volume-1 td:last-child {
 .rodzaje-papierow img {
     max-width: 100%;
 }
+.rodzaje-papierow a {
+    color: #808080;
+}
 /* RODZAJE PAPIERÓW END */
+
+/* SPIS TREŚCI RODZAJE PAPIERÓW */
+.papier-spis {
+    display: inline-block;
+    margin: 0 0 40px 0;
+}
+.papier-spis ul {
+    list-style-type: none;
+}
+.papier-spis ul li {
+    float: left;
+    width: 14%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+}
+/* SPIS TREŚCI RODZAJE PAPIERÓW END */
 
 /* LIGHTBOX */
 .rodzaje-papierow.ukryte {
@@ -6949,3 +6969,49 @@ tr#row-volume-1 td:last-child {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
   }
 /* LIGHTBOX END */
+
+/* Pre-Loader */
+#mainLoader {
+    opacity:    1;
+    background: #ffffff;
+    background: url('https://static.digitalprint.pro/684/images/logo_only.png') no-repeat 50% 50%;
+    width:      100%;
+    height:     100%;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    position:   fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#mainLoader .main-pre-loader {
+   /* position: absolute; */
+
+   /* left: 45%;
+   top: 45%;
+   border: 16px solid #F5008E;
+   border-top: 16px solid #fcd1ea;
+   border-radius: 50%;
+   width: 120px;
+   height: 120px;
+   animation: spin 3s linear infinite; */
+
+    border: 4px solid #f50057;
+    border-left-color: transparent;
+    border-bottom: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    -webkit-animation: spin 1s cubic-bezier(.42, .61, .58, .41) infinite;
+    animation: spin 1s cubic-bezier(.42, .61, .58, .41) infinite;
+}
+
+@keyframes spin { 
+   from { 
+           transform: rotate(0deg); 
+   } to { 
+           transform: rotate(360deg); 
+   }
+}
+/* Pre-Loader END */
