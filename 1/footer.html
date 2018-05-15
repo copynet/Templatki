@@ -8,10 +8,11 @@
 </div>
 
 <div class="container-fluid footer_bg">
-    <div class="ssl-img">
-        <img src="https://static.digitalprint.pro/684/images/certum_logo_new.png" alt="Certum Commercial Wildcard" title="Certum Commercial Wildcard"
-        />
-    </div>
+    <!-- <div class="ssl-img">
+        <a ui-sref="protokol-ssl">
+            <img src="https://static.digitalprint.pro/684/images/bezpieczenstwo_zakupow.png" alt="Bezpieczeństwo zakupów" title="Bezpieczeństwo zakupów">
+        </a>
+    </div> -->
     <div class="container footer">
 
         <!-- <div class="newsletter">
@@ -38,7 +39,7 @@
 
         <div class="menu">
             <h4>
-                {{ 'informations' | translate }}
+                Informacje
             </h4>
             <ul>
                 <li>
@@ -56,13 +57,19 @@
                 <li>
                     <a href="/pl/terminy-realizacji">Terminy realizacji</a>
                 </li>
+                <li>
+                    <a href="/pl/rodzaje-papierow">Rodzaje papierów</a>
+                </li>
+                <li>
+                    <a href="/pl/protokol-ssl">Bezpieczeństwo zakupów</a>
+                </li>
             </ul>
             <div class="clearfix"></div>
         </div>
 
         <div class="menu">
             <h4>
-                {{ 'help' | translate }}
+                Pomoc
             </h4>
             <ul>
                 <li>
@@ -108,8 +115,12 @@
                 </a>
             </div>
         </div>
-
         <div class="clearfix"></div>
+        <div class="copyright">
+            <p>
+                Copyright © 2018 CopyNet
+            </p>
+        </div>
     </div>
     <div class="clearfix"></div>
 </div>
@@ -193,4 +204,49 @@
         });
     });
 </script>
+
+<!-- LIGHTBOX -->
+<script>
+        // Open the Modal
+        function openModal() {
+          document.getElementById('myModal').style.display = "block";
+        }
+        
+        // Close the Modal
+        function closeModal() {
+          document.getElementById('myModal').style.display = "none";
+        }
+        
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("demo");
+          var captionText = document.getElementById("caption");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+          captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+        </script>
+<!-- LIGHTBOX END -->
 <!-- CUSTOM JS END -->
