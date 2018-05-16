@@ -1110,7 +1110,7 @@ ul.products-list {
 @media (max-width: 389px) {
     ul.products-list {
         width: 100%;
-        margin: 0 24%;
+        /* margin: 0 24%; */
     }
 }
 /*
@@ -3443,10 +3443,10 @@ h1.custom {
 }
 a.product-list-link {
     background: rgba(157, 158, 158, 1);
-    bottom: -11px!important;
-    height: auto!important;
-    min-height: 35px!important;
-    line-height: 20px!important;
+    bottom: -11px;
+    height: auto;
+    min-height: 35px;
+    line-height: 20px;
 }
 h2.second-title {
     font-size: 28px;
@@ -3482,7 +3482,7 @@ h2.second-title {
     }
 }
 ul.products-list li {
-    width: 185px!important;
+    width: 185px;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
@@ -4218,14 +4218,35 @@ ul.products-list li{
     margin:27px;
     position:relative;
 }
+@media (min-width: 768px) and (max-width: 1199px) {
+    ul.products-list li {
+
+    }
+}
 @media (max-width: 767px) {
     ul.products-list li {
         margin: 5px;
     }
 }
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (max-width:389px) {
     ul.products-list li {
-
+        width: 140px;
+    }
+    .thumbnail {
+        width: 140px;
+        max-width: 140px;
+        height: 129px;
+        max-height: 129px;
+    }
+    .thumbnail>img, .thumbnail > .transform > a>img {
+        max-width: 138px;
+    }
+    ul.products-list > li a {
+        font-size: 11px;
+    }
+    a.product-list-link {
+        min-height: 25px;
+        line-height: 15px;
     }
 }
 
@@ -6781,7 +6802,7 @@ p.register .fa-user-plus {
 
 #content-group .caption .description p {
     font-size: 10px;
-    margin: 0 0 10px 0;
+    margin: 0;
 }
 
 select.one-element-select.form-control {
@@ -6801,6 +6822,12 @@ tr#row-volume-1 td:last-child {
 .container.footer .copyright {
     float: right;
     margin: 25px 0 0 0;
+}
+.container.footer .copyright a {
+    color: #ffffff;
+}
+.container.footer .copyright a:hover {
+    color: #F5008E;
 }
 
 /* RODZAJE PAPIERÓW */
@@ -7015,3 +7042,46 @@ tr#row-volume-1 td:last-child {
    }
 }
 /* Pre-Loader END */
+
+/* PRZYGOTOWANIE PLIKÓW */
+.pliki-ikony {
+    text-align: center;
+}
+.pliki-ikony .box {
+    box-shadow: none;
+    padding: 0;
+}
+.pliki-ikony .box img {
+    max-width: 100px;
+    height: auto;
+    margin: 0 0 10px 0;
+}
+.pliki-ikony .box span {
+    font-weight: bold;
+}
+/* PRZYGOTOWANIE PLIKÓW END */
+
+/* PRZYGOTOWANIE PLIKÓW COREL */
+.instrukcja-corel {
+
+}
+.instrukcja-corel .text {
+    text-align: center;
+    padding: 40px 0;
+}
+.instrukcja-corel .text span {
+    display: block;
+    color: #ec008c;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 0 40px 0;
+}
+.instrukcja-corel .image img {
+    max-width: 540px;
+}
+.instrukcja-corel .image_big img {
+    display: block;
+    margin: 0 auto;
+    max-width: 760px;
+}
+/* PRZYGOTOWANIE PLIKÓW COREL END */
