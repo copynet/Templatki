@@ -1,0 +1,109 @@
+<div class="container no-padding kategorie" id="content-search">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="border-h1">
+                <h1 class="page-header ng-binding">{{ 'search_result_for_phrase' | translate }} -
+                    <small>{{ searchText }}</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <div ng-if="results.length == 0" class="row">
+
+        <div class="col-md-6 col-md-offset-3">
+            <div class="alert alert-info text-center">{{ 'results_is_empty' | translate }}</div>
+        </div>
+
+    </div>
+
+    <div ng-if="results.length > 0" class="row">
+
+        <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="item in results | orderBy: 'sort'">
+
+            <div class="thumbnail clearfix" ng-if="item.isEditor && !item.isCustomProduct">
+                <div class="transform">
+                    <a class="thumbnail-link" ui-sref="select-project({categoryurl: item.langs[currentLang.code].url,
+                        groupurl: item.group.slugs[currentLang.code], typeurl: item.slugs[currentLang.code]})" class="product-list-link"
+                        ng-if="!item.icons[currentLang.code] && !item.icon">
+                        <img ng-if="!item.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive"
+                        />
+                    </a>
+                    <a ng-if="item.icon" class="thumbnail-link" ui-sref="select-project({categoryurl: item.langs[currentLang.code].url,
+                        groupurl: item.group.slugs[currentLang.code], typeurl: item.slugs[currentLang.code]})">
+                        <img ng-if="item.icon" src="{{item.icon.url}}" alt="" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="caption">
+                    <h3>
+                        <a ui-sref="select-project({categoryurl: item.langs[currentLang.code].url,
+                        groupurl: item.group.slugs[currentLang.code], typeurl: item.slugs[currentLang.code]})">
+                            {{ item.names[currentLang.code] }}
+                        </a>
+                    </h3>
+                </div>
+                <a ui-sref="select-project({categoryurl: item.langs[currentLang.code].url,
+                        groupurl: item.group.slugs[currentLang.code], typeurl: item.slugs[currentLang.code]})" class="btn btn-block btn-info btn-flat btn-more">
+                    {{ 'show_more' | translate }}
+                </a>
+            </div>
+
+            <div class="thumbnail clearfix" ng-if="!item.isEditor && !item.isCustomProduct">
+                <div class="transform">
+                    <a class="thumbnail-link" ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,
+                        groupurl: item.group.slugs[currentLang.code], typeurl: item.slugs[currentLang.code]})" class="product-list-link"
+                        ng-if="!item.icons[currentLang.code] && !item.icon">
+                        <img ng-if="!item.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive"
+                        />
+                    </a>
+                    <a ng-if="item.icon" class="thumbnail-link" ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,
+                        groupurl: item.group.slugs[currentLang.code], typeurl: item.slugs[currentLang.code]})">
+                        <img ng-if="item.icon" src="{{item.icon.url}}" alt="" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="caption">
+                    <h3>
+                        <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,
+                        groupurl: item.group.slugs[currentLang.code], typeurl: item.slugs[currentLang.code]})">
+                            {{ item.names[currentLang.code] }}
+                        </a>
+                    </h3>
+                    </div>
+                <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,
+                        groupurl: item.group.slugs[currentLang.code], typeurl: item.slugs[currentLang.code]})" class="btn btn-block btn-info btn-flat btn-more">
+                    {{ 'show_more' | translate }}
+                </a>
+            </div>
+
+            <div class="thumbnail clearfix" ng-if="!item.isEditor && item.isCustomProduct">
+                <div class="transform">
+                    <a class="thumbnail-link" ui-sref="custom-product({categoryurl: item.langs[currentLang.code].url,
+                        groupurl: item.group.slugs[currentLang.code], typeurl: item.slugs[currentLang.code]})" class="product-list-link"
+                        ng-if="!item.icons[currentLang.code] && !item.icon">
+                        <img ng-if="!item.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive"
+                        />
+                    </a>
+                    <a ng-if="item.icon" class="thumbnail-link" ui-sref="custom-product({categoryurl: item.langs[currentLang.code].url,
+                        groupurl: item.group.slugs[currentLang.code], typeurl: item.slugs[currentLang.code]})">
+                        <img ng-if="item.icon" src="{{item.icon.url}}" alt="" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="caption">
+                    <h3>
+                        <a ui-sref="custom-product({categoryurl: item.langs[currentLang.code].url,
+                        groupurl: item.group.slugs[currentLang.code], typeurl: item.slugs[currentLang.code]})">
+                            {{ item.names[currentLang.code] }}
+                        </a>
+                    </h3>
+                    </div>
+                <a ui-sref="custom-product({categoryurl: item.langs[currentLang.code].url,
+                        groupurl: item.group.slugs[currentLang.code], typeurl: item.slugs[currentLang.code]})" class="btn btn-block btn-info btn-flat btn-more">
+                    {{ 'show_more' | translate }}
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
