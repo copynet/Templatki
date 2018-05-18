@@ -10,7 +10,7 @@
                 <a href="mailto:bok@goprint24.pl">bok@goprint24.pl</a>
             </span>
         </div>
-        <form ng-controller="SearchFormCtrl" class="navbar-form navbar-left search-form hidden-sm" role="search" ng-submit="search()">
+        <form ng-controller="SearchFormCtrl" class="navbar-form navbar-left search-form" role="search" ng-submit="search()">
             <div class="input-group">
                 <input type="text" class="form-control" ng-model="searchText" name="q" placeholder="{{ 'search' | translate }}...">
                 <span class="input-group-btn">
@@ -154,8 +154,7 @@
                 </a> -->
 
                 <div class="login_header">
-                    <a ui-sref="login" alt="{{ 'login' | translate }}" class="navbarLink" ng-class="{ 'active': $state.includes('login')}"
-                    ng-show="!logged">
+                    <a href="/pl/klient/moja-strefa/zamowienia">
                         <i class="fa fa-user"></i>
                         <span class="caret"></span>
                     </a>

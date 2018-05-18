@@ -102,297 +102,7 @@ This must be run when you have at least 2 sprites.
 
 .sprites(@spritesheet-sprites);
 */
-.spr-01-biuro {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -2704px;
-    width: 137px;
-    height: 146px;
-}
-.spr-02-prepress {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -2865px;
-    width: 137px;
-    height: 147px;
-}
-.spr-03-druk {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -3351px;
-    width: 138px;
-    height: 147px;
-}
-.spr-04-introligatornia {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -3189px;
-    width: 137px;
-    height: 147px;
-}
-.spr-05-magazyn {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -3027px;
-    width: 137px;
-    height: 147px;
-}
-.spr-awaryjne-konto-ftp {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -1934px;
-    width: 158px;
-    height: 135px;
-}
-.spr-bg-awaryjne-konto-ftp {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -3704px;
-    width: 427px;
-    height: 209px;
-}
-.spr-bg-kalkulacje {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -3513px;
-    width: 414px;
-    height: 176px;
-}
-.spr-dreamsoft {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -301px;
-    width: 461px;
-    height: 65px;
-}
-.spr-faq {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -717px;
-    width: 102px;
-    height: 110px;
-}
-.spr-favicon {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -4213px;
-    width: 286px;
-    height: 287px;
-}
-.spr-fedex-express {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -229px;
-    width: 126px;
-    height: 57px;
-}
-.spr-fomaty-plikow {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -967px;
-    width: 104px;
-    height: 112px;
-}
-.spr-gadzety {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -130px;
-    width: 35px;
-    height: 31px;
-}
-.spr-historia-firmy {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -1503px;
-    width: 117px;
-    height: 125px;
-}
-.spr-inpost {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -381px;
-    width: 147px;
-    height: 88px;
-}
-.spr-jak-dostarczyc-plik {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -842px;
-    width: 102px;
-    height: 110px;
-}
-.spr-jak-przygotowac-plik {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -1094px;
-    width: 110px;
-    height: 119px;
-}
-.spr-kalendarze {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -84px;
-    width: 35px;
-    height: 31px;
-}
-.spr-kalkulacje {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -1228px;
-    width: 110px;
-    height: 121px;
-}
-.spr-lista {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -1643px;
-    width: 120px;
-    height: 130px;
-}
-.spr-najwyzsza-jakosc {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -2392px;
-    width: 150px;
-    height: 141px;
-}
-.spr-platnosci {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -1788px;
-    width: 121px;
-    height: 131px;
-}
-.spr-plik-miniatura {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -3928px;
-    width: 270px;
-    height: 270px;
-}
-.spr-poczta-polska {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -176px;
-    width: 176px;
-    height: 38px;
-}
-.spr-productholder {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -1364px;
-    width: 124px;
-    height: 124px;
-}
-.spr-przelewy-24 {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -2237px;
-    width: 150px;
-    height: 140px;
-}
-.spr-raben {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -39px;
-    width: 132px;
-    height: 30px;
-}
-.spr-szybka-dostawa {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -2548px;
-    width: 150px;
-    height: 141px;
-}
-.spr-vbranding {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px 0px;
-    width: 109px;
-    height: 24px;
-}
-.spr-zaloguj-sie {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -484px;
-    width: 93px;
-    height: 100px;
-}
-.spr-zarejestruj-konto {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -599px;
-    width: 95px;
-    height: 103px;
-}
-.spr-zaufali-nam {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -2084px;
-    width: 129px;
-    height: 138px;
-}
-/* kontakt-adam-cywicki */
-/* kontakt-adam-dziedzic */
-/* kontakt-agnieszka-bator */
-/* kontakt-aneta-pasich */
-/* kontakt-boguslaw-dziedzic */
-/* kontakt-kacper-kruczek */
-/* kontakt-krzysztof-majda */
-/* kontakt-lukasz-gornikowski */
-/* kontakt-marcin-antkowiak */
-/* kontakt-marzena-glogowska */
-/* kontakt-radomir-pytlik */
-/*
-The provided classes are intended to be used with the array-like variables
 
-.icon-home {
-  .sprite-width(@icon-home);
-}
-.icon-email {
-  .sprite(@icon-email);
-}
-*/
-/*
-The `.sprites` mixin generates identical output to the CSS template
-  but can be overridden inside of LESS
-
-.kontakt-sprites(@kontakt-sprites);
-*/
-.kontakt-adam-cywicki {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/kontakt.jpg);
-    background-position: 0px -204px;
-    width: 189px;
-    height: 189px;
-}
-.kontakt-adam-dziedzic {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/kontakt.jpg);
-    background-position: 0px -1020px;
-    width: 189px;
-    height: 189px;
-}
-.kontakt-agnieszka-bator {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/kontakt.jpg);
-    background-position: 0px -408px;
-    width: 189px;
-    height: 189px;
-}
-.kontakt-aneta-pasich {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/kontakt.jpg);
-    background-position: 0px -612px;
-    width: 189px;
-    height: 189px;
-}
-.kontakt-boguslaw-dziedzic {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/kontakt.jpg);
-    background-position: 0px -816px;
-    width: 189px;
-    height: 189px;
-}
-.kontakt-kacper-kruczek {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/kontakt.jpg);
-    background-position: 0px 0px;
-    width: 189px;
-    height: 189px;
-}
-.kontakt-krzysztof-majda {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/kontakt.jpg);
-    background-position: 0px -1224px;
-    width: 189px;
-    height: 189px;
-}
-.kontakt-lukasz-gornikowski {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/kontakt.jpg);
-    background-position: 0px -1428px;
-    width: 189px;
-    height: 189px;
-}
-.kontakt-marcin-antkowiak {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/kontakt.jpg);
-    background-position: 0px -1632px;
-    width: 189px;
-    height: 189px;
-}
-.kontakt-marzena-glogowska {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/kontakt.jpg);
-    background-position: 0px -1836px;
-    width: 189px;
-    height: 189px;
-}
-.kontakt-radomir-pytlik {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/kontakt.jpg);
-    background-position: 0px -2040px;
-    width: 189px;
-    height: 189px;
-}
 /* payment-alior */
 /* payment-bph */
 /* payment-citi */
@@ -432,144 +142,7 @@ The `.sprites` mixin generates identical output to the CSS template
 
 .payments-sprites(@payments-sprites);
 */
-.payment-alior {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -733px;
-    width: 100px;
-    height: 52px;
-}
-.payment-bph {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -671px;
-    width: 145px;
-    height: 47px;
-}
-.payment-citi {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -251px;
-    width: 132px;
-    height: 34px;
-}
-.payment-credit-agricole {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -205px;
-    width: 149px;
-    height: 31px;
-}
-.payment-deutsche {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -74px;
-    width: 144px;
-    height: 27px;
-}
-.payment-eurobank {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -557px;
-    width: 134px;
-    height: 39px;
-}
-.payment-getin {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -349px;
-    width: 140px;
-    height: 36px;
-}
-.payment-ing {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -400px;
-    width: 148px;
-    height: 36px;
-}
-.payment-invest {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -1017px;
-    width: 139px;
-    height: 60px;
-}
-.payment-karta-kredytowa {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -160px;
-    width: 124px;
-    height: 30px;
-}
-.payment-kb {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -944px;
-    width: 134px;
-    height: 58px;
-}
-.payment-meritum {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -116px;
-    width: 164px;
-    height: 29px;
-}
-.payment-millenium {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -300px;
-    width: 145px;
-    height: 34px;
-}
-.payment-mtransfer {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -871px;
-    width: 98px;
-    height: 58px;
-}
-.payment-multitransfer {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -800px;
-    width: 99px;
-    height: 56px;
-}
-.payment-paribas {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -35px;
-    width: 145px;
-    height: 24px;
-}
-.payment-pekao {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px 0px;
-    width: 122px;
-    height: 20px;
-}
-.payment-pko {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -1167px;
-    width: 56px;
-    height: 69px;
-}
-.payment-poczta-polska {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -1251px;
-    width: 104px;
-    height: 71px;
-}
-.payment-pocztowy {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -1092px;
-    width: 148px;
-    height: 60px;
-}
-.payment-polbank {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -504px;
-    width: 147px;
-    height: 38px;
-}
-.payment-przelewy24 {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -611px;
-    width: 135px;
-    height: 45px;
-}
-.payment-raiffeisen {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/payments.png);
-    background-position: 0px -451px;
-    width: 141px;
-    height: 38px;
-}
+
 /* variables from bootstrap */
 body {
     font-family: "Open Sans", verdana, arial, sans-serif;
@@ -1113,32 +686,6 @@ ul.products-list {
         /* margin: 0 24%; */
     }
 }
-/*
-.product-list-image img {
-        max-width: 95px; 
-}
-
-ul.products-list li {
-        display: inline-block;
-        width: 267px;
-        margin: 0 15px;
-        text-align: center;
-        letter-spacing: 0;
-        margin-top: 50px;
-        a.icon-box {
-                display:inline;
-        } 
-}
-
-ul.products-list li {
-        display: inline-block;
-        width: 267px;
-        margin: 0 15px;
-        text-align: center;
-        letter-spacing: 0;
-        margin-top: 50px;
-}
-*/
 ul.products-list.product-category.view-2 li {
     width: 263px;
 }
@@ -1331,14 +878,6 @@ div#header-top-sidebar .dropdown-toggle {
     width: 100%;
     height: 345px;
     background: #f3f3f3;
-}
-.container.slider-original {
-    /*padding-top: 10px;
-      padding-bottom: 10px;*/
-}
-.container.content-menu {
-    /* border-top: 1px solid @second-border-color; */
-    /*padding: 20px 0;*/
 }
 ul.content-menu.left,
 ul.content-menu.right {
@@ -1651,22 +1190,8 @@ ul[rn-carousel] {
 .box-danger .btn-view-red {
     line-height: 121px;
 }
-#box-kalkulacje {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -3513px;
-    width: 414px;
-    height: 176px;
-    width: auto;
-}
 #box-kalkulacje .spr-kalkulacje {
     margin: 0 auto;
-}
-#box-awaryjne-konto-ftp {
-    background-image: url(https://static.digitalprint.pro/697/images/sprites/main.png);
-    background-position: 0px -3704px;
-    width: 427px;
-    height: 209px;
-    width: auto;
 }
 #box-awaryjne-konto-ftp .spr-awaryjne-konto-ftp {
     margin: 0 auto;
@@ -1728,15 +1253,7 @@ ul[rn-carousel] {
     font-size: 14px;
     color: white;
 }
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 2016-10-24, 18:15:46
-    Author     : Sebastian Kargul <sebastian.kargul@gmail.com>
-*/
+
 .product-view {
     border: 0;
 }
@@ -1753,7 +1270,6 @@ h4.product-view {
     font-size: 18px;
     font-weight: 800;
     padding: 16px 20px;
-    /*box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.2);*/
     border: 0;
 }
 .row > h3 {
@@ -2000,11 +1516,6 @@ ul.products-list > li a img {
     margin: -10px auto 27px;
     display: block;
     max-height: 140px;
-    /* filter: grayscale(100%) brightness(170%);
-    -webkit-filter: grayscale(100%) brightness(170%);
-    -moz-filter: grayscale(100%) brightness(170%);
-    -o-filter: grayscale(100%) brightness(170%);
-    -ms-filter: grayscale(100%) brightness(170%); */
 }
 ul.products-list > li > .thumbnail > .transform {
     transition: all .5s ease-in-out;
@@ -2019,16 +1530,6 @@ ul.products-list > li > .thumbnail > .transform:after {
 ul.products-list > li:hover > .thumbnail > .transform {
     -webkit-transform: rotateY(360deg);
     transform: rotateY(360deg);
-}
-ul.products-list > li:hover > .thumbnail > .transform > a img {
-    /* filter: brightness(100%); */
-    /*    transform: translate(-50%,0%);*/
-    /* width: 210px;
-    max-width: 210px;
-    height: 166px;
-    max-height: 166px;
-    left: -14.5px;
-    top: -11px; */
 }
 ul.products-list > li a .list-content {
     height: 188px;
@@ -3671,7 +3172,15 @@ span.ng-scope a {
 .footer .address p a:focus {
     text-decoration: none;
 }
-.btn-success.active.focus, .btn-success.active:focus, .btn-success.active:hover, .btn-success:active.focus, .btn-success:active:focus, .btn-success:active:hover, .open>.dropdown-toggle.btn-success.focus, .open>.dropdown-toggle.btn-success:focus, .open>.dropdown-toggle.btn-success:hover {
+.btn-success.active.focus,
+.btn-success.active:focus,
+.btn-success.active:hover,
+.btn-success:active.focus,
+.btn-success:active:focus,
+.btn-success:active:hover,
+.open>.dropdown-toggle.btn-success.focus,
+.open>.dropdown-toggle.btn-success:focus,
+.open>.dropdown-toggle.btn-success:hover {
     background-color: #424242;
     border-color: #424242;
 }
@@ -4109,8 +3618,11 @@ ul.nav li{
 
 ul.nav li:hover ul.pomoc{
     display:block;
-    padding-left:0;
     z-index: 10;
+    background-color: #ffffff;
+    box-shadow: 0 0px 5px 0 rgba(0,0,0,0.2);
+    margin: 0px 0px 0px -40px;
+    padding: 10px;
 }
 
 ul.nav li:hover a{
@@ -4122,7 +3634,7 @@ ul.nav ul li{
     list-style:none;
 }
 ul.nav > li > ul.pomoc > li {
-    box-shadow: 0 0px 5px 0 rgba(0,0,0,0.2);
+    /* box-shadow: 0 0px 5px 0 rgba(0,0,0,0.2); */
 }
 ul.nav ul li a{
     display: block;
@@ -4159,8 +3671,13 @@ ul.nav ul li a:hover{
     background: url('cart_img.jpg') right center no-repeat;
     height: 31px;
     padding: 5px 40px 4px 0;
-    margin-right: 50px;
     position:relative;
+}
+
+@media screen and (max-width: 1199px) {
+    .c_cart a.myCartMenuTop {
+        background: url('cart_img.png') right center no-repeat;
+    }
 }
 
 .c_cart .text-danger{
@@ -4172,9 +3689,11 @@ ul.nav ul li a:hover{
     border-radius:2px;
     padding:0 3px;
 }
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1199px) {
     .c_cart {
-        padding: 5px 0px 5px 70px;
+        position: absolute;
+        top: -43px;
+        right: 35%;
     }
 }
 @media (max-width: 767px) {
@@ -4692,6 +4211,7 @@ h3.bold{
     margin: 0;
     list-style: none;
     -webkit-padding-start: 0px;
+    padding: 0px;
 }
 .footer .menu ul li {
     padding: 2px 0px;
@@ -5342,6 +4862,9 @@ p.register {
     background-color: #eee;
     padding: 20px 0px 20px 20px;
 }
+p.text-login {
+    padding: 20px 0px 0px 20px;
+}
 a.register {
     font-weight: bold;
 }
@@ -5619,12 +5142,12 @@ td.cart_plus {
     background: #fef4fa;
 }
 .btn-social.btn-lg {
-    width: 60%;
+    width: 75%;
     padding: 4px 30px 4px 61px;
 }
 .btn-social.btn-lg>:first-child {
     width: 40px;
-    font-size: 1.3em;
+    font-size: 22px;
     line-height: 33px;
 }
 .panel-login .btn-social.btn-lg, .koszyk-social .btn-social.btn-lg {
@@ -6143,6 +5666,11 @@ i.fa-info-circle {
 .menu-magenta .btn-magenta .magenta {
     margin: 0px 0px 0px 5px;
 }
+@media screen and (max-width: 1199px) {
+    .menu-magenta .btn-magenta {
+        margin: 0 5px 5px 5px;
+    }
+}
 @media (max-width: 991px) {
     .login {
         font-size: 25px;
@@ -6648,6 +6176,49 @@ table.table-volume .col-volume .volume-icon img.price-list-icon {
 #pasek_info .content_pasek .navbar-form .btn {
     padding: 4px 9px;
     font-size: 13px;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    #pasek_info .content_pasek .left_info {
+        margin: 4px 0 0 20px;
+    }
+    #pasek_info .content_pasek .navbar-form {
+        margin: 3px 180px 0 0;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    #pasek_info .content_pasek .left_info {
+        margin: 4px 0 0 10px;
+    }
+    #pasek_info .content_pasek .navbar-form {
+        float: left!important;
+    }
+}
+@media screen and (max-width: 767px) {
+    #pasek_info .content_pasek .navbar-left {
+        display: none;
+    }
+    .input-group .form-control {
+        display: block;
+    }
+}
+@media screen and (max-width: 500px) {
+    #pasek_info .content_pasek {
+        display: block;
+        width: 100%;
+        height: 35px;
+    }
+    #pasek_info .content_pasek .left_info {
+        width: 99%;
+        text-align: center;
+        font-size: 13px;
+        margin: 4px 0 0 4px;
+    }
+    #pasek_info .content_pasek .left_info span {
+        margin: 0 30px 0 0;
+    }
+    #pasek_info .content_pasek .left_info span.email {
+        margin: 0px;
+    }
 }
 /* PASEK INFO END */
 
@@ -7192,3 +6763,9 @@ tr#row-volume-1 td:last-child {
     box-shadow: 0 0px 5px 0 rgba(0,0,0,0.2);
 }
 /* LOGIN HEADER */
+
+/* SOCIAL LOGIN */
+.social-login {
+    text-align: center;
+}
+/* SOCIAL LOGIN */
