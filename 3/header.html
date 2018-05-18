@@ -86,6 +86,11 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="https://copynet.pl" target="_blank">
+                            {{ 'about_us' | translate }}
+                        </a>
+                    </li>
+                    <li>
                         <a ui-sref="statute">{{ 'statute' | translate }}</a>
                     </li>
                     <li>
@@ -144,32 +149,40 @@
                     </a>
                 </div>
 
-                <a id="www" class="right" href="https://copynet.pl/">
+                <!-- <a id="www" class="right" href="https://copynet.pl/">
                     <img src="https://static.digitalprint.pro/684/styles/www_btn.png" />
-                </a>
+                </a> -->
 
-                <ul class="nav navbar-nav navbar-right" id="auth-menu">
-                    <li>
-                        <a ui-sref="{{ myZoneStartPoint ? myZoneStartPoint : 'client-zone-orders' }}" class="navbarLink myZoneTop" title="{{ 'myzone' | translate }}"
-                            ng-class="{ 'active': $state.includes('client-zone-index')}" ng-show="logged && !oneTimeUser">
-                            <span>{{ 'myzone' | translate }}</span>
-                            <span class="line"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a ui-sref="login" title="{{ 'login' | translate }}" class="navbarLink" ng-class="{ 'active': $state.includes('login')}"
-                            ng-show="!logged">
-                            <span>{{ 'log_in' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a ui-sref="logout" title="{{ 'logout' | translate }}" tooltip="{{ 'logout' | translate }}" class="navbarLink" ng-class="{ 'active': $state.includes('logout')}"
-                            ng-show="logged">
-                            <span ng-if="!oneTimeUser">{{ 'logout' | translate }}</span>
-                            <span ng-if="oneTimeUser">{{ 'finish_session' | translate }}</span>
-                        </a>
-                    </li>
-                </ul>
+                <div class="login_header">
+                    <a ui-sref="login" alt="{{ 'login' | translate }}" class="navbarLink" ng-class="{ 'active': $state.includes('login')}"
+                    ng-show="!logged">
+                        <i class="fa fa-user"></i>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="nav navbar-nav navbar-right" id="auth-menu">
+                        <li>
+                            <a ui-sref="{{ myZoneStartPoint ? myZoneStartPoint : 'client-zone-orders' }}" class="navbarLink myZoneTop" title="{{ 'myzone' | translate }}"
+                                ng-class="{ 'active': $state.includes('client-zone-index')}" ng-show="logged && !oneTimeUser">
+                                <span>{{ 'myzone' | translate }}</span>
+                                <span class="line"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a ui-sref="login" alt="{{ 'login' | translate }}" class="navbarLink" ng-class="{ 'active': $state.includes('login')}"
+                                ng-show="!logged">
+                                <span>{{ 'log_in' | translate }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a ui-sref="logout" alt="{{ 'logout' | translate }}" tooltip="{{ 'logout' | translate }}" class="navbarLink" ng-class="{ 'active': $state.includes('logout')}"
+                                ng-show="logged">
+                                <span ng-if="!oneTimeUser">{{ 'logout' | translate }}</span>
+                                <span ng-if="oneTimeUser">{{ 'finish_session' | translate }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </div>
