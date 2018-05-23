@@ -27,8 +27,8 @@
                         </h2>
                     </div>
                     <div class="row products-list">
-                        <div class="product-list-rwd">
-                            <div class="col-xs-4 col-sm-4 col-md-3 product" ng-repeat="child in item.childs| orderBy: 'sort'">
+                        <ul class='products-list product-category'>
+                            <li ng-repeat="child in item.childs| orderBy: 'sort'">
                                 <a class="icon-box" ui-sref="category({categoryurl: child.langs[currentLang.code].url})">
                                     <div class="product-list-image">
                                         <div ng-show="child.icons[currentLang.code]" data-ng-bind-html="child.icons[currentLang.code]"></div>
@@ -42,8 +42,8 @@
                                 <!--<div class="product-list-price">
                                         {{ 'only_now_price_from' | translate }} 10{{ 'currency' | translate }}
                                 </div>-->
-                            </div>
-                            <div class="col-xs-4 col-sm-4 col-md-3 product" ng-repeat="product in products[item.ID]| orderBy: 'sort'">
+                            </li>
+                            <li ng-repeat="product in products[item.ID]| orderBy: 'sort'">
                                 <div class="thumbnail clearfix" ng-if="product.relType == 1">
                                     <div class="transform">
                                         <a target="_self" class="thumbnail-link" ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupurl: product.slugs[currentLang.code]})"
@@ -121,8 +121,8 @@
                                 <!--<div class="product-list-price">
                                             {{ 'only_now_price_from' | translate }} 10{{ 'currency' | translate }}
                                     </div>-->
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -1495,51 +1495,51 @@ fieldset[disabled] #contact-shipping a .btn-sprawdz.active {
 .spr-zaloguj-sie {
     margin: 0 auto 22px;
 }
-ul.products-list > li {
+.product-list-rwd > .product {
     /*border: 2px solid #f4f4f4;*/
     background-color: white;
     position: relative;
     padding-bottom: 12px;
 }
-ul.products-list > li a {
+.product-list-rwd > .product a {
     color: #424242;
     font-size: 12px;
 }
-ul.products-list > li a span.product-list-title {
+.product-list-rwd > .product a span.product-list-title {
     font-size: 21px;
     font-weight: 800;
     position: absolute;
     bottom: 32px;
     padding-left: 15px;
 }
-ul.products-list > li a img {
+.product-list-rwd > .product a img {
     margin: -10px auto 27px;
     display: block;
     max-height: 140px;
 }
-ul.products-list > li > .thumbnail > .transform {
+.product-list-rwd > .product > .thumbnail > .transform {
     transition: all .5s ease-in-out;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     -ms-transition: all .5s ease-in-out;
 }
-ul.products-list > li > .thumbnail > .transform:after {
+.product-list-rwd > .product > .thumbnail > .transform:after {
     content: '';
 }
-ul.products-list > li:hover > .thumbnail > .transform {
+.product-list-rwd > .product:hover > .thumbnail > .transform {
     -webkit-transform: rotateY(360deg);
     transform: rotateY(360deg);
 }
-ul.products-list > li a .list-content {
+.product-list-rwd > .product a .list-content {
     height: 188px;
 }
-ul.products-list > li span.view-product {
+.product-list-rwd > .product span.view-product {
     position: absolute;
     bottom: 20px;
     right: 15px;
 }
-ul.products-list > li a.btn-view-product {
+.product-list-rwd > .product a.btn-view-product {
     background-color: #e6aa15;
     border-radius: 15px !important;
     padding: 4px 26px;
@@ -1547,33 +1547,33 @@ ul.products-list > li a.btn-view-product {
     font-size: 14px;
     color: white;
 }
-ul.products-list > li a.btn-view-product:hover,
-ul.products-list > li a.btn-view-product:focus,
-ul.products-list > li a.btn-view-product:active,
-ul.products-list > li a.btn-view-product.active {
+.product-list-rwd > .product a.btn-view-product:hover,
+.product-list-rwd > .product a.btn-view-product:focus,
+.product-list-rwd > .product a.btn-view-product:active,
+.product-list-rwd > .product a.btn-view-product.active {
     border-color: #89650c;
     color: #cccccc;
     text-decoration: none;
 }
-ul.products-list > li a.btn-view-product.disabled,
-ul.products-list > li a.btn-view-product[disabled],
-fieldset[disabled] ul.products-list > li a.btn-view-product,
-ul.products-list > li a.btn-view-product.disabled:hover,
-ul.products-list > li a.btn-view-product[disabled]:hover,
-fieldset[disabled] ul.products-list > li a.btn-view-product:hover,
-ul.products-list > li a.btn-view-product.disabled:focus,
-ul.products-list > li a.btn-view-product[disabled]:focus,
-fieldset[disabled] ul.products-list > li a.btn-view-product:focus,
-ul.products-list > li a.btn-view-product.disabled:active,
-ul.products-list > li a.btn-view-product[disabled]:active,
-fieldset[disabled] ul.products-list > li a.btn-view-product:active,
-ul.products-list > li a.btn-view-product.disabled.active,
-ul.products-list > li a.btn-view-product[disabled].active,
-fieldset[disabled] ul.products-list > li a.btn-view-product.active {
+.product-list-rwd > .product a.btn-view-product.disabled,
+.product-list-rwd > .product a.btn-view-product[disabled],
+fieldset[disabled] .product-list-rwd > .product a.btn-view-product,
+.product-list-rwd > .product a.btn-view-product.disabled:hover,
+.product-list-rwd > .product a.btn-view-product[disabled]:hover,
+fieldset[disabled] .product-list-rwd > .product a.btn-view-product:hover,
+.product-list-rwd > .product a.btn-view-product.disabled:focus,
+.product-list-rwd > .product a.btn-view-product[disabled]:focus,
+fieldset[disabled] .product-list-rwd > .product a.btn-view-product:focus,
+.product-list-rwd > .product a.btn-view-product.disabled:active,
+.product-list-rwd > .product a.btn-view-product[disabled]:active,
+fieldset[disabled] .product-list-rwd > .product a.btn-view-product:active,
+.product-list-rwd > .product a.btn-view-product.disabled.active,
+.product-list-rwd > .product a.btn-view-product[disabled].active,
+fieldset[disabled] .product-list-rwd > .product a.btn-view-product.active {
     background-color: #e6aa15;
     border-color: #cf9913;
 }
-ul.products-list > li p {
+.product-list-rwd > .product p {
     padding: 0 15px;
 }
 .first-list {
@@ -2611,7 +2611,7 @@ a {
 #content-search .thumbnail .caption {
     width: 101%;
 }
-ul.products-list > li:hover > .thumbnail {
+.product-list-rwd > .product:hover > .thumbnail {
     border: 1px solid #ec008c;
     border-bottom: none;
 }
@@ -2983,20 +2983,21 @@ h2.second-title {
         width: 1200px;
     }
 }
-ul.products-list li {
+.product-list-rwd .product {
     width: 185px;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     -ms-transition: all .2s ease-in-out;
 }
-ul.products-list > li a {
+.product-list-rwd > .product a {
     color: #838585;
     font-weight: normal;
     text-transform: uppercase;
     /*padding: 6px 5px;*/
+    margin: 10px 0 10px 15px;
 }
-ul.products-list > li:hover a.product-list-link {
+.product-list-rwd > .product:hover a.product-list-link {
     border: 1px solid #ec008c;
     border-top: none;
 }
@@ -3732,7 +3733,7 @@ ul.nav ul li a:hover{
     transform: translate(-50%,-50%);
 }
 
-ul.products-list li{
+.product-list-rwd .product {
     width:185px;
     list-style:none;
     float:left;
@@ -3740,17 +3741,17 @@ ul.products-list li{
     position:relative;
 }
 @media (min-width: 768px) and (max-width: 1199px) {
-    ul.products-list li {
+    .product-list-rwd .product {
 
     }
 }
-@media (max-width: 767px) {
-    ul.products-list li {
+/* @media (max-width: 767px) {
+    .product-list-rwd .product {
         margin: 5px;
     }
-}
+} */
 @media (max-width:389px) {
-    ul.products-list li {
+    .product-list-rwd .product {
         width: 140px;
     }
     .thumbnail {
@@ -3762,7 +3763,7 @@ ul.products-list li{
     .thumbnail>img, .thumbnail > .transform > a>img {
         max-width: 138px;
     }
-    ul.products-list > li a {
+    .product-list-rwd > .product a {
         font-size: 11px;
     }
     a.product-list-link {
@@ -3771,7 +3772,7 @@ ul.products-list li{
     }
 }
 
-ul.products-list li:hover{
+.product-list-rwd .product:hover{
     /*    background:#ec008c;*/
 }
 
@@ -6442,9 +6443,9 @@ p.register .fa-user-plus {
     margin: 0;
 }
 
-select.one-element-select.form-control {
-    -webkit-appearance: menulist;
-}
+/* select.one-element-select.form-control {
+    padding: 6px 10px 6px 14px;
+} */
 
 /* tr#row-volume-1 td:first-child {
     float: left;
