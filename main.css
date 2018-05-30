@@ -3035,6 +3035,10 @@ span.ng-scope a {
     padding: 7px 5px 5px 5px;
     text-decoration: none;
 }
+span.ng-scope a img {
+    max-width: 58px;
+    max-height: 58px;
+}
 .container.footer {
     padding: 10px 0px 0px 0px;
     -webkit-transition: all .2s ease-in-out;
@@ -6779,3 +6783,12 @@ tr#row-volume-1 td:last-child {
     text-align: center;
 }
 /* SOCIAL LOGIN */
+#panel-product-volumes .calc-text {
+    background-color: #fcd1ea;
+    margin: 15px 0 0 0;
+}
+#panel-product-volumes .calc-text span {
+    display: block;
+    padding: 10px 15px;
+    text-align: justify;
+}

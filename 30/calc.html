@@ -457,7 +457,7 @@
                                             {{realisationTime.names[currentLang.code]}}
                                         </span>
                                         <span class="shipping-time">
-                                            <span class="text"> {{ 'delivery_send' | translate }}</span>
+                                            <span class="text"> {{ 'delivery_send' | translate }} / {{ 'reception' | translate }}</span>
                                             <span class="date" ng-if="!realisationTime.overwriteDate">{{realisationTime.date}}</span>
                                             <span class="text-danger date" ng-if="realisationTime.overwriteDate">{{realisationTime.overwriteDate}}</span>
                                         </span>
@@ -499,6 +499,11 @@
                                     class="form-control" placeholder="{{ 'volume' | translate }}" aria-describedby="basic-addon2">
                                 <span class="input-group-addon btn" ng-click="addVolume()" id="basic-addon2">+ {{ 'add_your_volume' | translate }}</span>
                             </div>
+                        </div>
+                        <div class="calc-text">
+                            <span>
+                                {{ 'calc-text' | translate }}
+                            </span>
                         </div>
                     </div>
                 </div>
