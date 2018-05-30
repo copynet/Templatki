@@ -6318,6 +6318,9 @@ a:after, a:focus {
  .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
      outline-color: transparent;
  }
+ #content-client-zone .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+     color: #333;
+ }
 
  /* REKLAMACJA PODSTRONA */
 .instrukcja-reklamacji {
@@ -6436,6 +6439,10 @@ hr.dostawa {
 
 .panel-heading .btn:active:focus, .panel-heading .btn:focus {
     color: #333;
+}
+#panel-product-delivery .panel-heading .btn:active:focus, .panel-heading .btn:focus,
+#panel-product-menu .panel-heading .btn:active:focus, .panel-heading .btn:focus {
+    color: #fff;
 }
 
 p.register .fa-user-plus {
@@ -6783,12 +6790,77 @@ tr#row-volume-1 td:last-child {
     text-align: center;
 }
 /* SOCIAL LOGIN */
-#panel-product-volumes .calc-text {
+#panel-product-volumes .calc-text,
+#panel-product-parameters .calc-text-project {
     background-color: #fcd1ea;
     margin: 15px 0 0 0;
 }
-#panel-product-volumes .calc-text span {
+#panel-product-volumes .calc-text span,
+#panel-product-parameters .calc-text-project span {
     display: block;
     padding: 10px 15px;
     text-align: justify;
 }
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+}
+#content-client-zone .btn:focus, .btn:active, .btn:active:focus {
+    color: #333;
+}
+
+/* BOCZNY WYSUWANY PASEK */
+.box {
+    background: #ec008c;
+    border-radius: 0px 4px 4px 0px;
+    left: -304px;
+    padding: 1px 1px 1px 0px;
+    position: fixed;
+    top: 100px;
+    transition: transform 0.75s;
+    width: 300px;
+    z-index: 999;
+}
+
+.box:hover {
+    transform: translateX(304px);
+}
+
+.box .box__content {
+    background: #fff;
+    min-height: 130px;
+    padding: 10px;
+    position: relative;
+}
+
+.box .box__title {
+    border-radius: 0px 0px 4px 4px;
+    border-width: 0px 4px 4px;
+    cursor: default;
+    font-size: 18px;
+    height: 50px;
+    line-height: 30px;
+    position: absolute;
+    right: -59px;
+    text-align: center;
+    top: 40px;
+    transform: rotate(-90deg);
+    width: 50px;
+}
+.box .box__title img {
+    max-width: 50px;
+    transform: rotate(90deg);
+}
+.box .box__content .box__description {
+    text-align: center;
+    line-height: 25px;
+}
+.box .box__content .box__description strong {
+    color: #ec008c;
+}
+/* BOCZNY WYSUWANY PASEK END */

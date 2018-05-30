@@ -126,7 +126,7 @@
                                         {{ 'pay_for_order' | translate }}
                                     </button>
                                     <b ng-show="order.paid == 1">{{ 'paid' | translate }}</b>
-                                    <button ng-if="order.invoiceID > 0" class="btn btn-default" ng-click="getOrderInvoice(order)">{{ 'download_invoice' | translate }}</button>
+                                    <button ng-if="order.invoiceID > 0" class="btn btn-default" ng-click="getOrderInvoice(order)">{{ 'download_invoice' | translate }} <i class="fa fa-download"></i></button>
                                 </td>
                                 <td>{{ order.created}}</td>
                                 <td>{{ order.status.langs[currentLang.code]}}</td>

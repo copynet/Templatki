@@ -1,3 +1,19 @@
+<div ng-if="$state.current.name != 'cart'" class="box">
+    <div class="box__content">
+        <div class="box__title">
+            <img src="https://static.digitalprint.pro/684/images/help.png">
+        </div>
+        <div class="box__description">
+            <strong>Zapytanie niestandardowe</strong>
+            <br> Nie znalazłeś produktu? Potrzebujesz specjalnego rozmiaru lub wykończenia?
+            <br>
+            <a href="/pl/kategoria/druk-cyfrowy/grupa/produkt-niestandardowy/zapytanie-niestandardowe/produkt-niestandardowy">
+                <strong>Stwórz zapytanie niestandardowe</strong>
+            </a>
+        </div>
+    </div>
+</div>
+
 <div id="pasek_info">
     <div class="content_pasek">
         <div class="left_info">
@@ -167,8 +183,7 @@
                             </a>
                         </li>
                         <li>
-                            <a ui-sref="login" alt="{{ 'login' | translate }}" class="navbarLink" ng-class="{ 'active': $state.includes('login')}"
-                                ng-show="!logged">
+                            <a ui-sref="login" alt="{{ 'login' | translate }}" class="navbarLink" ng-class="{ 'active': $state.includes('login')}" ng-show="!logged">
                                 <span>{{ 'log_in' | translate }}</span>
                             </a>
                         </li>
