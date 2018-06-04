@@ -3072,11 +3072,6 @@ span.ng-scope a img {
         min-height: 65px!important;
     }
 }
-@media (min-width: 599px) and (max-width: 693px) {
-    .footer .address p{
-        max-width: 320px;
-    }
-}
 @media screen and (max-width: 598px) {
     ul.nav {
         margin: 35px 0px 10px 0px;
@@ -3741,7 +3736,7 @@ ul.nav ul li a:hover{
     width:185px;
     list-style:none;
     float:left;
-    margin:27px;
+    margin:25px;
     position:relative;
 }
 @media (min-width: 768px) and (max-width: 1199px) {
@@ -4201,7 +4196,15 @@ h3.bold{
 @media (min-width: 768px) {
     .footer .address {
         float: right;
-        margin: 0px 20px;
+        margin: 7px 20px 0 20px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .footer .address {
+        float: left;
+        width: 100%;
+        text-align: center;
+        margin: 20px 0 0 0;
     }
 }
 
@@ -4239,8 +4242,11 @@ h3.bold{
     .footer .menu {
         clear: both;
         float: left;
+        width: 100%;
         left: 0px;
+        text-align: center;
         margin: 20px 0 0 0;
+        padding: 0;
     }
 }
 /* FOOTER MENU END */
@@ -4414,7 +4420,11 @@ h3.bold{
 
 .tab-pane .page-header{ margin-top:30px; }
 
-.lightpink{ color:#000 !important; background:#fcd1ea !important; }
+.lightpink {
+    color:#000 !important;
+    background:#fcd1ea !important;
+    padding: 8px;
+}
 @media screen and (max-width: 991px) {
     .lightpink {
         min-width: 200px;
@@ -6261,6 +6271,11 @@ a:after, a:focus {
         font-size: 8.5px;
     }
 }
+@media screen and (max-width: 560px) {
+    #row-product-description .thumbnail-margin .img-responsive {
+        width: 100%;
+    }
+}
 .thumbnail-margin {
     margin: 0;
 }
@@ -6463,9 +6478,9 @@ p.register .fa-user-plus {
     margin: 0;
 }
 
-/* select.one-element-select.form-control {
-    padding: 6px 10px 6px 14px;
-} */
+select.one-element-select.form-control {
+    background: url('https://static.digitalprint.pro/684/images/lock.png') no-repeat 92%;
+}
 
 /* tr#row-volume-1 td:first-child {
     float: left;
@@ -6486,6 +6501,11 @@ tr#row-volume-1 td:last-child {
 }
 .container.footer .copyright a:hover {
     color: #F5008E;
+}
+@media screen and (max-width: 767px) {
+    .container.footer .copyright {
+        margin: 25px 40px 0 0;
+    }
 }
 
 /* RODZAJE PAPIERÓW */
@@ -6815,52 +6835,157 @@ tr#row-volume-1 td:last-child {
 }
 
 /* BOCZNY WYSUWANY PASEK */
-.box {
-    background: #ec008c;
-    border-radius: 0px 4px 4px 0px;
-    left: -304px;
-    padding: 1px 1px 1px 0px;
-    position: fixed;
-    top: 100px;
-    transition: transform 0.75s;
-    width: 300px;
-    z-index: 999;
-}
+    /* LEFT */
+    .box {
+        background: #ec008c;
+        border-radius: 0px 4px 4px 0px;
+        left: -304px;
+        padding: 1px 1px 1px 0px;
+        position: fixed;
+        top: 100px;
+        transition: transform 0.75s;
+        width: 300px;
+        z-index: 999;
+    }
 
-.box:hover {
-    transform: translateX(304px);
-}
+    .box:hover {
+        transform: translateX(304px);
+    }
 
-.box .box__content {
-    background: #fff;
-    min-height: 130px;
-    padding: 10px;
-    position: relative;
-}
+    .box .box__content {
+        background: #fff;
+        min-height: 130px;
+        padding: 10px;
+        position: relative;
+    }
 
-.box .box__title {
-    border-radius: 0px 0px 4px 4px;
-    border-width: 0px 4px 4px;
-    cursor: default;
-    font-size: 18px;
-    height: 50px;
-    line-height: 30px;
-    position: absolute;
-    right: -59px;
-    text-align: center;
-    top: 40px;
-    transform: rotate(-90deg);
-    width: 50px;
-}
-.box .box__title img {
-    max-width: 50px;
-    transform: rotate(90deg);
-}
-.box .box__content .box__description {
-    text-align: center;
-    line-height: 25px;
-}
-.box .box__content .box__description strong {
-    color: #ec008c;
-}
+    .box .box__title {
+        border-radius: 0px 0px 4px 4px;
+        border-width: 0px 4px 4px;
+        cursor: default;
+        font-size: 18px;
+        height: 50px;
+        line-height: 30px;
+        position: absolute;
+        right: -59px;
+        text-align: center;
+        top: 40px;
+        transform: rotate(-90deg);
+        width: 50px;
+    }
+    .box .box__title img {
+        max-width: 50px;
+        transform: rotate(90deg);
+    }
+    .box .box__content .box__description {
+        text-align: center;
+        line-height: 25px;
+    }
+    .box .box__content .box__description strong {
+        color: #ec008c;
+    }
+    /* LEFT END */
+    /* RIGHT */
+    .box-right {
+        background-image: url('https://static.digitalprint.pro/684/images/bg_fb.png');
+        background-repeat: no-repeat;
+        border-radius: 0px 4px 4px 0px;
+        right: -303px;
+        padding: 1px 0px 1px 1px;
+        position: fixed;
+        top: 100px;
+        transition: transform 0.75s;
+        width: 313px;
+        z-index: 999;
+    }
+
+    .box-right:hover {
+        transform: translateX(-304px);
+    }
+
+    .box-right .box__content {
+        min-height: 290px;
+        padding: 10px;
+        position: relative;
+    }
+
+    .box-right .box__title {
+        border-radius: 0px 0px 4px 4px;
+        border-width: 0px 4px 4px;
+        cursor: default;
+        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        line-height: 30px;
+        position: absolute;
+        right: 315px;
+        text-align: center;
+        top: 40px;
+        transform: rotate(-90deg);
+    }
+    .box-right .box__title img {
+        max-width: 40px;
+        transform: rotate(90deg);
+        border-radius: 10px 0px 0px 10px;
+    }
+    .box-right .box__content .box__description {
+        text-align: center;
+        line-height: 25px;
+    }
+    .box-right .box__content .box__description img {
+        width: 205px;
+    }
+    .box-right .box__content .box__description strong {
+        color: #ec008c;
+    }
+    /* RIGHT END */
+    @media screen and (max-width: 991px) {
+        .box, .box-right {
+            display: none;
+        }
+    }
 /* BOCZNY WYSUWANY PASEK END */
+
+.form-horizontal .form-group {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+fieldset .form-group .padding0 input,
+fieldset .form-group .padding0 select {
+    border-radius: 0px 4px 4px 0px;
+}
+
+#panel-product-menu .btn.active.focus, 
+#panel-product-menu .btn.active:focus,
+#panel-product-menu .btn.focus,
+#panel-product-menu .btn:active,
+#panel-product-menu .btn:active.focus,
+#panel-product-menu .btn:active:focus,
+#panel-product-menu .btn:focus,
+#content-register .btn.active.focus, 
+#content-register .btn.active:focus,
+#content-register .btn.focus,
+#content-register .btn:active,
+#content-register .btn:active.focus,
+#content-register .btn:active:focus,
+#content-register .btn:focus,
+.tab-pane .btn.active.focus, 
+.tab-pane .btn.active:focus,
+.tab-pane .btn.focus,
+.tab-pane .btn:active,
+.tab-pane .btn:active.focus,
+.tab-pane .btn:active:focus,
+.tab-pane .btn:focus {
+    color: #fff;
+}
+
+/* VIEW MOBILE MAX-WIDTH: 500PX */
+@media screen and (max-width: 500px) {
+    .product-list-rwd .product {
+        margin: 8px;
+    }
+    .product-list-rwd > .product a {
+
+    }
+}
+/* VIEW MOBILE MAX-WIDTH: 500PX END */

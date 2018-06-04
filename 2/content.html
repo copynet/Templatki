@@ -116,7 +116,8 @@
                                 </span>
                                 <span ng-if="product.relType == 2">
                                     <!-- <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url, groupid: product.groupID, typeid: product.ID})" class="product-list-link">{{ 'show_more' | translate }}</a> -->
-                                    <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url, groupid: product.groupID, typeid: product.ID})" class="product-list-link">{{ product.names[currentLang.code]}}</a>
+                                    <a ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,
+                                        groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})" class="product-list-link">{{ product.names[currentLang.code]}}</a>
                                 </span>
                                 <!--<div class="product-list-price">
                                             {{ 'only_now_price_from' | translate }} 10{{ 'currency' | translate }}
