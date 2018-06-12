@@ -3038,6 +3038,7 @@ span.ng-scope a {
 span.ng-scope a img {
     max-width: 58px;
     max-height: 58px;
+    margin: 0 0 20px 0;
 }
 .container.footer {
     padding: 10px 0px 0px 0px;

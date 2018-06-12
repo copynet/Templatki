@@ -60,7 +60,7 @@
                                 </td>
                                 <td class="center">{{ product.ID}}</td>
                                 <td class="specification">
-                                    <div ng-repeat="calcProduct in product.calcProducts" class="pb-2 fontcolor addfile">
+                                    <!-- <div ng-repeat="calcProduct in product.calcProducts" class="pb-2 fontcolor addfile">
                                         <div>
                                             <span ng-show="!calcProduct.formatLangs[currentLang.code].name">{{ calcProduct.formatName}}</span>
                                             <span ng-show="calcProduct.formatLangs[currentLang.code].name">{{ calcProduct.formatLangs[currentLang.code].name}}</span>
@@ -71,9 +71,37 @@
                                             <span ng-show="attribute.optLangs[currentLang.code].name">{{ attribute.optLangs[currentLang.code].name}}</span>
                                             <span ng-show="!attribute.optLangs[currentLang.code].name">{{attribute.optName}}</span>
                                         </div>
-                                        <!--<div>
+                                        <div>
                                             {{ product.volume}}
-                                        </div>-->
+                                        </div>
+                                    </div> -->
+                                    <div ng-repeat="calcProduct in product.calcProducts" class="pb-2 fontcolor addfile">
+
+                                        <div ng-if="$index > 0" class="product-margin-top"></div>
+
+                                        <div ng-if="calcProduct.names[currentLang.code]">
+                                            <b>{{ calcProduct.names[currentLang.code] }}</b>
+                                        </div>
+                                        <div ng-if="!calcProduct.names[currentLang.code]">
+                                            <b>{{ calcProduct.typeName }}</b>
+                                        </div>
+                                        <div>
+                                            <span ng-if="calcProduct.customFormatName[currentLang.code]">{{calcProduct.customFormatName[currentLang.code]}}:</span>
+                                            <span ng-if="!calcProduct.customFormatName[currentLang.code]">{{ 'format' | translate }}:</span>
+                                            <span ng-if="!calcProduct.formatLangs[currentLang.code].name">{{ calcProduct.formatName }}</span>
+                                            <span ng-if="calcProduct.formatLangs[currentLang.code].name">{{ calcProduct.formatLangs[currentLang.code].name }}</span>
+                                        </div>
+                                        <div>
+                                            <span ng-if="calcProduct.customPageName[currentLang.code]">{{calcProduct.customPageName[currentLang.code]}}:</span>
+                                            <span ng-if="!calcProduct.customPageName[currentLang.code]">{{ 'pages' | translate }}:</span>
+                                            <span>{{ calcProduct.pages }}</span>
+                                        </div>
+                                        <div ng-repeat="attribute in calcProduct.attributes | filter:{ emptyChoice: 0 }">
+                                            <span ng-if="attribute.langs[currentLang.code].name">{{attribute.langs[currentLang.code].name}}</span>
+                                            <span ng-if="!attribute.langs[currentLang.code].name">{{attribute.attrName}}</span>:
+                                            <span ng-if="attribute.optLangs[currentLang.code].name">{{ attribute.optLangs[currentLang.code].name }}</span>
+                                            <span ng-if="!attribute.optLangs[currentLang.code].name">{{attribute.optName}}</span>
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="center">
