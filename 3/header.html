@@ -249,59 +249,34 @@
 
 <!-- MAGENTA MENU -->
 <div ng-if="['home', 'cart'].indexOf($state.current.name) == -1">
-    <div class="container-fluid backeee">
-        <div class="container bread_net">
-            <ul>
-                <li>
-                    <a href="/pl/kategoria/goraca-10tka">{{'recommended_products'| translate}}</a>
-                </li>
-                <li>
-                    <a href="/pl/kategoria/druk-cyfrowy">{{'digital_offest_printing'| translate}}</a>
-                </li>
-                <li>
-                    <a href="/pl/kategoria/druk-wielkoformatowy">{{'large_format_printing'| translate}}</a>
-                </li>
-                <li>
-                    <a href="/pl/kategoria/kreator-projektow">{{'project_wizard'| translate}}</a>
-                </li>
-                <li>
-                    <a href="/pl/kategoria/folie">{{'foils'| translate}}</a>
-                </li>
-            </ul>
-            <div class="clearfix"></div>
-        </div>
-        <nav role="navigation" class="navigation-magenta">
-            <div id="menuToggle">
-                <input type="checkbox">
-                <span></span>
-                <span></span>
-                <span></span>
-                <div class="text">
-                    {{'main_categories'| translate}}
-                </div>
-                <ul id="menu">
-                    <li>
-                        <a href="">{{'recommended_products'| translate}}</a>
-                    </li>
-                    <li>
-                        <a href="/pl/kategoria/druk-cyfrowy">{{'digital_offest_printing'| translate}}</a>
-                    </li>
-                    <li>
-                        <a href="/pl/kategoria/druk-wielkoformatowy">{{'large_format_printing'| translate}}</a>
-                    </li>
-                    <li>
-                        <a href="">{{'project_wizard'| translate}}</a>
-                    </li>
-                    <li>
-                        <a href="">{{'industries'| translate}}</a>
-                    </li>
-                    <li>
-                        <a href="">{{'others'| translate}}</a>
-                    </li>
-                </ul>
+    <div class="menu-magenta subpage">
+        <div class="col-xs-12">
+            <div class="btn-magenta btn-group-vertical">
+                <a href="/pl/kategoria/druk-cyfrowy">
+                    <button class="btn magenta btn-default">{{'digital_offest_printing'| translate}}</button>
+                </a>
             </div>
-        </nav>
-        <div class="clearfix"></div>
+            <div class="btn-magenta btn-group-vertical">
+                <a href="/pl/kategoria/druk-wielkoformatowy">
+                    <button class="btn magenta btn-default">{{'large_format_printing'| translate}}</button>
+                </a>
+            </div>
+            <div class="btn-magenta btn-group-vertical">
+                <a href="/pl/kategoria/polecamy">
+                    <button class="btn magenta btn-default">{{'recommended'| translate}}</button>
+                </a>
+            </div>
+            <div class="btn-magenta btn-group-vertical">
+                <a href="/pl/kategoria/kreator-projektow">
+                    <button class="btn magenta btn-default">{{'project_wizard'| translate}}</button>
+                </a>
+            </div>
+            <div class="btn-magenta btn-group-vertical">
+                <a href="/pl/kategoria/folie">
+                    <button class="btn magenta btn-default">{{'foils'| translate}}</button>
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 

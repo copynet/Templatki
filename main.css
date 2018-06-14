@@ -5364,24 +5364,14 @@ button.modalImage > i, button.calcModal > i {
     }
 }
 /* MENU MAGENTA */
-/*.menu-magenta {
-    background-color: #ec008c;
-    text-align: center;
-    margin-bottom: 30px;
-}*/
-
 .menu-magenta {
     /*background-color: #ec008c;*/
     text-align: center;
     margin-bottom: 30px;
 }
-/*.magenta {
-    background-color: transparent;
-    color: #fff;
-    padding: 10px 40px;
-    border-radius: 0px;
-    text-transform: uppercase;
-}*/
+.menu-magenta.subpage {
+    margin-bottom: 0;
+}
 
 .magenta {
     background-color: #ec008c;
@@ -5398,8 +5388,6 @@ button.modalImage > i, button.calcModal > i {
     background-color: #e6e6e6;
 }
 .magenta.active:hover {
-    /*    color: #fff;
-        background-color: #424242;*/
     border-color: transparent;
 }
 @media (max-width: 767px) {
