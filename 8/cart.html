@@ -91,7 +91,7 @@
                                             <span ng-if="!calcProduct.formatLangs[currentLang.code].name">{{ calcProduct.formatName }}</span>
                                             <span ng-if="calcProduct.formatLangs[currentLang.code].name">{{ calcProduct.formatLangs[currentLang.code].name }}</span>
                                         </div>
-                                        <div>
+                                        <div ng-if="calcProduct.pages != 2">
                                             <span ng-if="calcProduct.customPageName[currentLang.code]">{{calcProduct.customPageName[currentLang.code]}}:</span>
                                             <span ng-if="!calcProduct.customPageName[currentLang.code]">{{ 'pages' | translate }}:</span>
                                             <span>{{ calcProduct.pages }}</span>

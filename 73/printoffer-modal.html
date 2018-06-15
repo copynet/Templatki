@@ -17,7 +17,8 @@
                         <dd>{{ offerdate | date:'yyyy-MM-dd HH:mm:ss' }}</dd>
                         <dt>{{ group.names[currentLang.code]}}</dt>
                         <dd>{{ offerdata.cps[0].data.currentFormat.name}},
-                            {{offerdata.products[0].pages}} {{ 'pages' | translate }}, {{offerdata.volume}} {{ 'pieces' | translate }}
+                            <div ng-if="offerdata.products[0].pages != 2">{{offerdata.products[0].pages}} {{ 'pages' | translate }},</div>
+                            {{offerdata.volume}} {{ 'pieces' | translate }}
                         </dd>
                     </dl>
                 </div>

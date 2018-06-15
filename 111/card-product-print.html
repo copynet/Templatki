@@ -1,5 +1,4 @@
 <style>
-
     .keyCell {
         border: 0.2mm #000000 solid;
         font-size: 3mm;
@@ -24,7 +23,7 @@
         text-align: center;
         font-weight: bold;
         padding: 0 5px;
-        width: 50%;
+        width: 35%;
     }
 
     .cardTable {
@@ -55,7 +54,7 @@
     .cardTitle {
         text-align: center;
         padding-top: 5mm;
-        margin-bttom: 5mm;
+        margin-bottom: 5mm;
     }
 
     .deliveryHeadCell {
@@ -81,12 +80,15 @@
         font-size: 3mm;
         vertical-align: middle;
         padding: 1%;
-        width: 24%;
+        width: 25%;
+    }
+    .orderInfoCell.first {
+        text-align: left;
     }
 	
-    .orderInfoCellSix {
+    /* .orderInfoCellSix {
         width:16%;
-    }
+    } */
 
     .headerSection {
         width: 100%;
@@ -155,10 +157,14 @@
         color: #82828b;
     }
 
+    .text-left {
+        text-align: left;
+    }
+
 </style>
 
 <page style="font-family: freeserif;">
-    <p style="font-size:3mm; margin-bottom:10px;">{{ userData.name }} <b>{{ "now"|date('Y-m-d H:i:s') }}</b></p>
+    <p style="font-size:3mm; margin-bottom:10px; text-align: right;">Dokument wygenerowano: {{ userData.name }} <b>{{ "now"|date('Y-m-d H:i:s') }}</b></p>
 
     <div class="headerSection">
         <div class="logoSection">
@@ -168,12 +174,8 @@
         </div>
         <div class="titleSection">
             <div class="cardTitle">
-                {{ 'product_card' | translate(lang) }} - {{ cardID }}
+                {{ 'order_no' | translate(lang) }} - {{ calc.orderID }}
             </div>
-        </div>
-        <div class="barCodeSection">
-            <div class="code">{{ barCode | raw }}</div>
-            <div class="cardID">{{ cardID }}</div>
         </div>
     </div>
 
@@ -363,7 +365,7 @@
             </tr>
             <tr>
                 <th class="keyProductInfoCell">{{ 'page_number' | translate(lang) }}</th>
-                <td class="valueCell"> {{subProduct.pages}}</td>
+                <td class="valueCell">{{subProduct.pages}}</td>
             </tr>
             <tr>
                 <th class="keyProductInfoCell">{{ 'uploaded_files' | translate(lang) }}</th>
@@ -390,45 +392,29 @@
     <br>
     <table class="cardTable">
         <tr>
-            <th class="keyCell">{{ 'thumbnail_of_product' | translate(lang) }}</th>
             <th class="keyCell">{{ 'product_name' | translate(lang) }}</th>
-            <th class="keyCell">{{ 'product_id' | translate(lang) }}</th>
             <th class="keyCell">{{ 'order_id' | translate(lang) }}</th>
             <th class="keyCell">{{ 'date_of_order' | translate(lang) }}</th>
             <th class="keyCell">{{ 'user_data' | translate(lang) }}</th>
         </tr>
         <tr>
-            <td class="orderInfoCell orderInfoCellSix">
-                {% if productFile %}
-                <img src="data:image/jpeg;base64,{{ productFile }}" alt="{{productFile.name}}"/>
-                {% endif %}
-            </td>
-	    <td class="orderInfoCell orderInfoCellSix">
+	    <td class="orderInfoCell text-left">
 
                 {% if productsInfo %}
                     {% for productInfo in productsInfo %}
-                        <span class="{% if productInfo.selected %}product-selected{% else %}product-normal{% endif %}">{{ productInfo.name }}</span><br>
+                        <span class="{% if productInfo.selected %}product-selected{% else %}product-normal{% endif %}">• {{ productInfo.name }}</span><br>
                     {% endfor %}
                 {% endif %}
 
             </td>
-            <td class="orderInfoCell orderInfoCellSix">
-
-                {% if productsInfo %}
-                    {% for productInfo in productsInfo %}
-                        <span class="{% if productInfo.selected %}product-selected{% else %}product-normal{% endif %}">{{ productInfo.ID }}</span><br>
-                    {% endfor %}
-                {% endif %}
-
-            </td>
-            <td class="orderInfoCell orderInfoCellSix">{{ calc.orderID }}</td>
-            <td class="orderInfoCell orderInfoCellSix">{{ calc.created }}</td>
-            <td class="orderInfoCell orderInfoCellSix">
+            <td class="orderInfoCell">{{ calc.orderID }}</td>
+            <td class="orderInfoCell">{{ calc.created }}</td>
+            <td class="orderInfoCell">
                 {{ userData.name}} {{ userData.lastname }} <br>
                 {{ userData.zipcode }} {{ userData.city }} <br>
                 {{ userData.street }} {{ userData.house }}{% if userData.apartment %}/{{ userData.apartment }}{% endif
                 %}<br><br>
-                {{ userData.telephone }}<br>
+                Tel: {{ userData.telephone }}<br>
                 {{ userData.login }}
             </td>
         </tr>
