@@ -6968,6 +6968,10 @@ fieldset .form-group .padding0 select {
     color: #fff;
 }
 
+.loading {
+    color: #E03F9F;
+}
+
 /* VIEW MOBILE MAX-WIDTH: 500PX */
 @media screen and (max-width: 500px) {
     .product-list-rwd .product {
