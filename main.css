@@ -4738,6 +4738,9 @@ caption {
     border-top: none;
     vertical-align: middle;
 }
+#panel-product-menu > .panel-body > .table > tbody > tr > td {
+    vertical-align: top;
+}
 .product_in_order.table>tbody>tr>td, .product_in_order.table>tbody>tr>th, .product_in_order.table>tfoot>tr>td,
 .product_in_order.table>tfoot>tr>th, .product_in_order.table>thead>tr>td, .product_in_order.table>thead>tr>th {
     border-top: 1px solid #ddd;
@@ -4798,7 +4801,7 @@ tbody.add_files {
 button.delete {
     display: block;
     background: none;
-    padding: 6px 45px 0px 0px;
+    padding: 6px 45px 6px 0px;
 }
 button.delete:hover {
     color: #eee;
@@ -6283,6 +6286,10 @@ a:after, a:focus {
 /* CUSTOM PRODUCT END */
 
 /* KOSZYK DOSTAWA */
+table.dostawa_koszyk {
+    width: 50%;
+    float: right;
+}
 .dostawa_koszyk > tbody > tr > .dostawa_koszyk {
     text-align: center;
     font-weight: bold;
@@ -6971,6 +6978,21 @@ fieldset .form-group .padding0 select {
 .loading {
     color: #E03F9F;
 }
+
+.delivery-connect .delivery-item-1 {
+    color: #FCD1EA;
+}
+
+/* TOOLTIP TITLE KOSZYK */
+h3.koszyk_title .tooltip.top .tooltip-arrow {
+    border-top-color: #E5097F;
+}
+h3.koszyk_title .tooltip-inner {
+    background-color: #fcd1ea;
+    border: 1px solid #E5097F;
+    color: #333;
+}
+/* TOOLTIP TITLE KOSZYK END */
 
 /* VIEW MOBILE MAX-WIDTH: 500PX */
 @media screen and (max-width: 500px) {

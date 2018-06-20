@@ -35,7 +35,22 @@
                     </button>
                     <h3 class="panel-title koszyk_title">
                         <label>
-                            <!--<input type="checkbox" name="MyCheck" value="mycheck">-->{{ product.names[currentLang.code]}}</label>
+                            {{ product.names[currentLang.code]}}</label>
+                        <span tooltip="{{ 'product_in_connect_delivery' | translate }}" ng-if="product.addresses.length === 1 &&
+                            _.findIndex(addressToJoin[product.addresses[0].addressID], {productID: product.productID, join: true}) > -1"
+                            class="delivery-connect">
+                            <span class="delivery-item-{{connectedIndexes[product.addresses[0].addressID]}}">
+                                <i class="fa fa-truck" aria-hidden="true"></i> #{{connectedIndexes[product.addresses[0].addressID]}}
+                            </span>
+                        </span>
+                        <span class="coupon-info alert alert-info" tooltip="{{ 'discount_code' | translate }}" ng-if="product.coupons.length > 0" ng-init="actualCoupon = _.first(product.coupons);">
+                            <span>
+                                <i class="fa fa-gift" aria-hidden="true"></i>
+                                <span>{{ actualCoupon.couponID + ' - ' + actualCoupon.value }}</span>
+                                <span ng-if="actualCoupon.percent == 1">%</span>
+                                <span ng-if="actualCoupon.percent == 0">{{ cart.currencySymbol }}</span>
+                            </span>
+                        </span>
                     </h3>
                 </div>
                 <div class="panel-body">
@@ -199,7 +214,7 @@
     </div>
     <!--<hr>-->
 
-    <div class="row" ng-show="canJoinAddresses">
+    <div class="row" ng-show="canJoinAddresses && logged">
         <div class="col-md-12 row">
             <div class="col-md-offset-2 col-md-8 col-sm-12">
                 <div class="panel panel-default">
@@ -241,13 +256,13 @@
         </div>
     </div>
 
-    <div ng-if="userCanRecalculateCart && logged && cart.products.length > 1" class="row">
+    <!-- <div ng-if="userCanRecalculateCart && logged && cart.products.length > 1" class="row">
         <div class="col-md-6 col-md-offset-3">
             <button type="button" class="btn btn-primary btn-block reCountButton" ng-click="reCalculateCart()">
                 {{ 're-count_cart_value' | translate }}
             </button>
         </div>
-    </div>
+    </div> -->
 
     <div ng-if="userCanRecalculateCart && logged && reCountProductExist" class="row row-margin-top">
         <div class="col-md-6 col-md-offset-3">
