@@ -4803,6 +4803,12 @@ button.delete {
     background: none;
     padding: 6px 45px 6px 0px;
 }
+button.delete-with-coupon {
+    display: block;
+    background: none;
+    padding: 6px 45px 6px 0px;
+    height: 45px;
+}
 button.delete:hover {
     color: #eee;
 }
@@ -4813,6 +4819,15 @@ button.delete>span.delete {
     height: 36px;
     position: absolute;
     top: 13px;
+    right: 40px;
+}
+button.delete>span.delete-with-coupon {
+    display: block;
+    background: url(delete.png) no-repeat;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 20px;
     right: 40px;
 }
 .continue_shopping {
@@ -5236,7 +5251,10 @@ button.modalImage, button.calcModal {
     position: absolute;
     top: 1%;
     right: 1%;
-    background: rgba(204,204,204,0.9)
+    background: rgba(204,204,204,0.9);
+}
+button.modalImage:hover {
+    background: rgba(109, 109, 109, 0.9);
 }
 button.modalImage > i, button.calcModal > i {
     font-size: 30px;
@@ -6769,8 +6787,10 @@ tr#row-volume-1 td:last-child {
 
 .alert-info {
     background-color: #fcd1ea;
-    border-color: #ddd;
+    border: none;
     color: #333;
+    font-size: 15px;
+    margin-bottom: -2px;
 }
 
 /* LOGIN HEADER */
@@ -6880,6 +6900,15 @@ tr#row-volume-1 td:last-child {
     .box .box__content .box__description strong {
         color: #ec008c;
     }
+    .box .box__content .box__description a {
+        display: block;
+        background-color: #FCD1EA;
+        margin: 10px 0 0 0;
+        padding: 7px 15px;
+    }
+    .box .box__content .box__description a strong {
+        color: #333;
+    }
     /* LEFT END */
     /* RIGHT */
     .box-right {
@@ -6981,6 +7010,19 @@ fieldset .form-group .padding0 select {
 
 .delivery-connect .delivery-item-1 {
     color: #FCD1EA;
+}
+
+span.upload_text {
+    display: block;
+    margin-top: 25px;
+}
+
+.progress > .progress-bar > span.text-center {
+    padding: 0 0 0 10px;
+}
+
+input[type=file] {
+    border-radius: 0px;
 }
 
 /* TOOLTIP TITLE KOSZYK */

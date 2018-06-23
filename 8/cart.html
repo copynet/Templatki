@@ -43,7 +43,8 @@
                                 <i class="fa fa-truck" aria-hidden="true"></i> #{{connectedIndexes[product.addresses[0].addressID]}}
                             </span>
                         </span>
-                        <span class="coupon-info alert alert-info" tooltip="{{ 'discount_code' | translate }}" ng-if="product.coupons.length > 0" ng-init="actualCoupon = _.first(product.coupons);">
+                        <span class="coupon-info alert alert-info" tooltip="{{ 'discount_code' | translate }}" ng-if="product.coupons.length > 0"
+                            ng-init="actualCoupon = _.first(product.coupons);">
                             <span>
                                 <i class="fa fa-gift" aria-hidden="true"></i>
                                 <span>{{ actualCoupon.couponID + ' - ' + actualCoupon.value }}</span>
