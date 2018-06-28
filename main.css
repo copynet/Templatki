@@ -6736,20 +6736,12 @@ tr#row-volume-1 td:last-child {
 /* Pre-Loader END */
 
 /* PRZYGOTOWANIE PLIKÓW */
-.pliki-ikony {
+.ikony_pliki {
     text-align: center;
 }
-.pliki-ikony .box {
-    box-shadow: none;
-    padding: 0;
-}
-.pliki-ikony .box img {
-    max-width: 100px;
-    height: auto;
-    margin: 0 0 10px 0;
-}
-.pliki-ikony .box span {
-    font-weight: bold;
+.ikony_pliki img {
+    width: 100px;
+    height: 100px;
 }
 /* PRZYGOTOWANIE PLIKÓW END */
 
