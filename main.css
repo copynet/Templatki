@@ -2540,8 +2540,8 @@ a {
     max-width: 184px;
     max-height: 150px;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: -16px;
+    top: -2px;
     /*    transform: translate(-50%,-50%);    */
 }
 .thumbnail {
@@ -4950,8 +4950,8 @@ ul.koszyk-social>li {
 }
 .carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail>img, .thumbnail a>img {
     margin: 0 auto;
-    max-width: 540px;
-    max-height: 194px;
+    /* max-width: 540px;
+    max-height: 194px; */
 }
 @media (max-width: 400px) {
     .carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail>img, .thumbnail a>img {
@@ -7015,6 +7015,12 @@ span.upload_text {
 
 input[type=file] {
     border-radius: 0px;
+}
+
+.thumbnail .promotion-icon {
+    position: absolute;
+    top: -23px;
+    left: 0px;
 }
 
 /* TOOLTIP TITLE KOSZYK */

@@ -57,6 +57,7 @@
                                     </div>
                                 </div>
                                 <div class="thumbnail clearfix" ng-if="product.relType == 2 && !product.isEditor && !product.isCustomProduct">
+                                    <img class="promotion-icon img-responsive" ng-if="product.promotion.icon" src="{{product.promotion.icon.url}}" alt="" />
                                     <div class="transform">
                                         <a target="_self" class="thumbnail-link" ui-sref="calculate({categoryurl: item.langs[currentLang.code].url,
                                             groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"
@@ -72,6 +73,7 @@
                                 </div>
 
                                 <div class="thumbnail clearfix" ng-if="product.relType == 2 && product.isEditor && !product.isCustomProduct">
+                                        <img class="promotion-icon img-responsive" ng-if="product.promotion.icon" src="{{product.promotion.icon.url}}" alt="" />
                                     <div class="transform">
                                         <a target="_self" class="thumbnail-link" ui-sref="select-project({categoryurl: item.langs[currentLang.code].url,
                                     groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"
@@ -86,6 +88,7 @@
                                     </div>
                                 </div>
                                 <div class="thumbnail clearfix" ng-if="product.relType == 2 && !product.isEditor && product.isCustomProduct">
+                                        <img class="promotion-icon img-responsive" ng-if="product.promotion.icon" src="{{product.promotion.icon.url}}" alt="" />
                                     <div class="transform">
                                         <a target="_self" class="thumbnail-link" ui-sref="custom-product({categoryurl: item.langs[currentLang.code].url,
                                         groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"

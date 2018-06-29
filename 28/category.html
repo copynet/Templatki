@@ -1,7 +1,9 @@
 <div class="container" id="content-category">
     <div class="row" id="row-category-description">
         <div class="col-xs-12">
-            <h1 class="page-header">{{ 'category' | translate }} - {{ category.langs[currentLang.code].name }}</h1>
+            <div class="border-h1">
+                <h1 class="page-header">{{ 'category' | translate }} - {{ category.langs[currentLang.code].name }}</h1>
+            </div>
             <accordion>
                 <accordion-group ng-repeat="description in descriptions | orderBy: 'order' " is-open="description.isOpen" ng-class="{ 'panel-accordion':true, 'active':description.isOpen}">
                     <accordion-heading>
@@ -22,12 +24,15 @@
     <div class="row row-products-list" id="row-category-list" ng-if="subCategories.length>0 || items.length>0">
         <div ng-if="subCategories.length>0" class="col-xs-6 col-sm-4 col-md-3" ng-repeat="subcategory in subCategories | orderBy: 'sort'">
             <div class="thumbnail clearfix">
-                <a class="thumbnail-link" ui-sref="category({categoryurl: subcategory.langs[currentLang.code].url})" ng-if="!subcategory.icons[currentLang.code] && !subcategory.icon">
-                    <img src="{{STATIC_URL}}{{companyID}}/images/productholder.png" alt="" class="img-responsive" />
-                </a>
-                <a class="thumbnail-link" ui-sref="category({categoryurl: subcategory.langs[currentLang.code].url})" ng-if="subcategory.icon">
-                    <img ng-if="subcategory.icon" src="{{subcategory.icon.url}}" alt="" class="img-responsive" />
-                </a>
+                    <img class="promotion-icon img-responsive" ng-if="product.promotion.icon" src="{{product.promotion.icon.url}}" alt="" />
+                <div class="transform">
+                    <a class="thumbnail-link" ui-sref="category({categoryurl: subcategory.langs[currentLang.code].url})" ng-if="!subcategory.icons[currentLang.code] && !subcategory.icon">
+                        <img src="{{STATIC_URL}}{{companyID}}/images/productholder.png" alt="" class="img-responsive" />
+                    </a>
+                    <a class="thumbnail-link" ui-sref="category({categoryurl: subcategory.langs[currentLang.code].url})" ng-if="subcategory.icon">
+                        <img ng-if="subcategory.icon" src="{{subcategory.icon.url}}" alt="" class="img-responsive" />
+                    </a>
+                </div>
                 <div class="caption">
                     <h3>
                         <a ui-sref="category({categoryurl: subcategory.langs[currentLang.code].url})">
@@ -43,12 +48,15 @@
         </div>
         <div ng-if="items.length>0" class="col-xs-6 col-sm-4 col-md-3" ng-repeat="product in items | orderBy: 'sort'">
             <div class="thumbnail clearfix" ng-if="product.relType == 1">
-                <a class="thumbnail-link" ui-sref="group({categoryurl: category.langs[currentLang.code].url, groupurl: product.slugs[currentLang.code]})" ng-if="!product.icons[currentLang.code] && !product.icon">
-                    <img class="img-responsive" ng-show="!product.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" />
-                </a>
-                <a class="thumbnail-link" ui-sref="group({categoryurl: category.langs[currentLang.code].url, groupurl: product.slugs[currentLang.code]})" ng-if="product.icon">
-                    <img class="img-responsive" ng-if="product.icon" src="{{product.icon.url}}" alt="" />
-                </a>
+                    <img class="promotion-icon img-responsive" ng-if="product.promotion.icon" src="{{product.promotion.icon.url}}" alt="" />
+                <div class="transform">
+                    <a class="thumbnail-link" ui-sref="group({categoryurl: category.langs[currentLang.code].url, groupurl: product.slugs[currentLang.code]})" ng-if="!product.icons[currentLang.code] && !product.icon">
+                        <img class="img-responsive" ng-show="!product.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" />
+                    </a>
+                    <a class="thumbnail-link" ui-sref="group({categoryurl: category.langs[currentLang.code].url, groupurl: product.slugs[currentLang.code]})" ng-if="product.icon">
+                        <img class="img-responsive" ng-if="product.icon" src="{{product.icon.url}}" alt="" />
+                    </a>
+                </div>
                 <div class="caption">
                     <h3>
                         <a ui-sref="group({categoryurl: category.langs[currentLang.code].url, groupurl: product.slugs[currentLang.code]})">
@@ -62,15 +70,18 @@
                 </a>
             </div>
             <div class="thumbnail clearfix" ng-if="product.relType == 2 && !product.isEditor && !product.isCustomProduct">
-                <a class="thumbnail-link" ui-sref="calculate({categoryurl: category.langs[currentLang.code].url,
-                groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"
-                    ng-if="!product.icons[currentLang.code] && !product.icon">
-                    <img ng-if="!product.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive" />
-                </a>
-                <a class="thumbnail-link" ui-sref="calculate({categoryurl: category.langs[currentLang.code].url,
-                groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})" ng-if="product.icon">
-                    <img ng-if="product.icon" src="{{product.icon.url}}" alt="" class="img-responsive" />
-                </a>
+                    <img class="promotion-icon img-responsive" ng-if="product.promotion.icon" src="{{product.promotion.icon.url}}" alt="" />
+                <div class="transform">
+                    <a class="thumbnail-link" ui-sref="calculate({categoryurl: category.langs[currentLang.code].url,
+                    groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"
+                        ng-if="!product.icons[currentLang.code] && !product.icon">
+                        <img ng-if="!product.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive" />
+                    </a>
+                    <a class="thumbnail-link" ui-sref="calculate({categoryurl: category.langs[currentLang.code].url,
+                    groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})" ng-if="product.icon">
+                        <img ng-if="product.icon" src="{{product.icon.url}}" alt="" class="img-responsive" />
+                    </a>
+                </div>
                 <div class="caption">
                     <h3>
                         <a ui-sref="calculate({categoryurl: category.langs[currentLang.code].url,
@@ -88,15 +99,18 @@
                 </a>
             </div>
             <div class="thumbnail clearfix" ng-if="product.relType == 2 && product.isEditor && !product.isCustomProduct">
-                <a class="thumbnail-link" ui-sref="select-project({categoryurl: category.langs[currentLang.code].url,
-                groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"
-                    ng-if="!product.icons[currentLang.code] && !product.icon">
-                    <img ng-if="!product.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive" />
-                </a>
-                <a class="thumbnail-link" ui-sref="select-project({categoryurl: category.langs[currentLang.code].url,
-                groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})" ng-if="product.icon">
-                    <img ng-if="product.icon" src="{{product.icon.url}}" alt="" class="img-responsive" />
-                </a>
+                    <img class="promotion-icon img-responsive" ng-if="product.promotion.icon" src="{{product.promotion.icon.url}}" alt="" />
+                <div class="transform">
+                    <a class="thumbnail-link" ui-sref="select-project({categoryurl: category.langs[currentLang.code].url,
+                    groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"
+                        ng-if="!product.icons[currentLang.code] && !product.icon">
+                        <img ng-if="!product.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive" />
+                    </a>
+                    <a class="thumbnail-link" ui-sref="select-project({categoryurl: category.langs[currentLang.code].url,
+                    groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})" ng-if="product.icon">
+                        <img ng-if="product.icon" src="{{product.icon.url}}" alt="" class="img-responsive" />
+                    </a>
+                </div>
                 <div class="caption">
                     <h3>
                         <a ui-sref="select-project({categoryurl: category.langs[currentLang.code].url,
@@ -114,15 +128,18 @@
                 </a>
             </div>
             <div class="thumbnail clearfix" ng-if="product.relType == 2 && !product.isEditor && product.isCustomProduct">
-                <a class="thumbnail-link" ui-sref="custom-product({categoryurl: category.langs[currentLang.code].url,
-                groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"
-                   ng-if="!product.icons[currentLang.code] && !product.icon">
-                    <img ng-if="!product.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive" />
-                </a>
-                <a class="thumbnail-link" ui-sref="custom-product({categoryurl: category.langs[currentLang.code].url,
-                groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})" ng-if="product.icon">
-                    <img ng-if="product.icon" src="{{product.icon.url}}" alt="" class="img-responsive" />
-                </a>
+                    <img class="promotion-icon img-responsive" ng-if="product.promotion.icon" src="{{product.promotion.icon.url}}" alt="" />
+                <div class="transform">
+                    <a class="thumbnail-link" ui-sref="custom-product({categoryurl: category.langs[currentLang.code].url,
+                    groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"
+                    ng-if="!product.icons[currentLang.code] && !product.icon">
+                        <img ng-if="!product.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" class="img-responsive" />
+                    </a>
+                    <a class="thumbnail-link" ui-sref="custom-product({categoryurl: category.langs[currentLang.code].url,
+                    groupurl: product.group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})" ng-if="product.icon">
+                        <img ng-if="product.icon" src="{{product.icon.url}}" alt="" class="img-responsive" />
+                    </a>
+                </div>
                 <div class="caption">
                     <h3>
                         <a ui-sref="custom-product({categoryurl: category.langs[currentLang.code].url,

@@ -32,6 +32,7 @@
     <div class="row row-products-list">
         <div class="col-sm-6 col-md-3" ng-repeat="product in items| orderBy: 'order'">
             <div ng-if="!product.isEditor && !product.isCustomProduct" class="thumbnail clearfix">
+                    <img class="promotion-icon img-responsive" ng-if="product.promotion.icon" src="{{product.promotion.icon.url}}" alt="" />
                 <div class="transform">
                     <a ui-sref="calculate({categoryurl: category.langs[currentLang.code].url, groupurl: group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"
                         class="thumbnail-link" ng-if="!product.icons[currentLang.code] && !product.icon">
@@ -60,6 +61,7 @@
             </div>
 
             <div ng-if="product.isEditor && !product.isCustomProduct" class="thumbnail clearfix">
+                    <img class="promotion-icon img-responsive" ng-if="product.promotion.icon" src="{{product.promotion.icon.url}}" alt="" />
                 <div class="transform">
                     <a ui-sref="select-project({categoryurl: category.langs[currentLang.code].url, groupurl: group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"
                         class="thumbnail-link" ng-if="!product.icons[currentLang.code] && !product.icon">
@@ -87,6 +89,7 @@
             </div>
 
             <div ng-if="!product.isEditor && product.isCustomProduct" class="thumbnail clearfix">
+                    <img class="promotion-icon img-responsive" ng-if="product.promotion.icon" src="{{product.promotion.icon.url}}" alt="" />
                 <div class="transform">
                     <a ui-sref="custom-product({categoryurl: category.langs[currentLang.code].url, groupurl: group.slugs[currentLang.code], typeurl: product.slugs[currentLang.code]})"
                         class="thumbnail-link" ng-if="!product.icons[currentLang.code] && !product.icon">
