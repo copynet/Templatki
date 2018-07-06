@@ -158,7 +158,11 @@
                                             <i ng-if="complexProduct.selectedProduct.data.customFormatInfo.tooltip[currentLang.code]" class="fa fa-info-circle" aria-hidden="true"></i>
                                         </label>
                                         <div class="col-md-7 rwd_no-padding">
-                                                <select class="form-control" ng-model="complexProduct.selectedProduct.data.currentFormat" ng-disabled="complexProduct.selectedProduct.data.relatedFormats.length == 1" ng-class="{'one-element-select': complexProduct.selectedProduct.data.relatedFormats.length == 1}" ng-change="selectFormat(complexProduct.selectedProduct.data, complexProduct.selectedProduct.data.currentFormat)" ng-options="item as item.langs[currentLang.code].name for item in complexProduct.selectedProduct.data.relatedFormats"></select>
+                                                <select class="form-control" ng-model="complexProduct.selectedProduct.data.currentFormat"
+                                                ng-disabled="complexProduct.selectedProduct.data.relatedFormats.length == 1"
+                                                ng-class="{'one-element-select': complexProduct.selectedProduct.data.relatedFormats.length == 1}"
+                                                ng-change="selectFormat(complexProduct.selectedProduct.data, complexProduct.selectedProduct.data.currentFormat)"
+                                                ng-options="item as item.langs[currentLang.code].name for item in complexProduct.selectedProduct.data.relatedFormats"></select>
                                         </div>
                                     </div>
 

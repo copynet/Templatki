@@ -380,8 +380,22 @@
 
     <div class="row row-centered row-payments" ng-show="logged == true && cart.products.length > 0">
         <div ng-disabled="preventPayment" ng-click="paymentConfirm(payment.ID)" ng-repeat="payment in payments" class="col-lg-3 col-md-3 col-sm-6 col-centered">
-            <button class="btn btn-lg btn-success btn-block btn-payment">
-                {{ payment.names[currentLang.code]}}
+            <button ng-click="paymentConfirm(payment.ID)" ng-if="!payment.html[currentLang.code] && !payment.deferredPayment" class="btn btn-lg btn-success btn-block btn-payment"
+                ng-class="{'disabled': payment.limitExceeded}">
+                {{ payment.names[currentLang.code] }}
+                <span ng-if="!payment.limitExceeded && payment.deferredDays > 0">
+                    ({{ payment.deferredDays }} {{ 'days' | translate }})
+                </span>
+                <i ng-if="payment.limitExceeded" class="fa fa-lock"></i>
+                <i ng-if="!payment.limitExceeded && payment.deferredDays > 0" class="fa fa-info"></i>
+            </button>
+            <button tooltip="{{ payment.tooltipInfo }}" ng-click="paymentConfirm(payment.ID)" ng-if="!payment.html[currentLang.code] && oneTimeUser && payment.deferredPayment"
+                class="btn btn-lg btn-success btn-block btn-payment" ng-class="{'disabled': payment.limitExceeded}">
+                {{ payment.names[currentLang.code] }}
+                <span ng-if="!payment.limitExceeded && payment.deferredDays > 0">
+                    ({{ payment.deferredDays }} {{ 'days' | translate }})
+                </span>
+                <i ng-if="payment.limitExceeded" class="fa fa-lock"></i>
             </button>
         </div>
     </div>

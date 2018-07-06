@@ -3668,7 +3668,8 @@ ul.nav ul li a:hover{
     margin: 0px auto;
 }
 
-.c_cart a.myCartMenuTop{
+.c_cart a.myCartMenuTop {
+    float: left;
     background: url('cart_img.jpg') right center no-repeat;
     height: 31px;
     padding: 5px 40px 4px 0;
@@ -3705,6 +3706,24 @@ ul.nav ul li a:hover{
     .c_cart .text-danger {
         bottom: 0px;
     }
+}
+
+.c_cart .credit-limit {
+    display: block;
+    float: left;
+    margin: 0 0 0 15px;
+}
+.c_cart .credit-limit a {
+    background: none;
+    font-size: 20px;
+    height: auto;
+    padding: 0;
+}
+.c_cart .credit-limit a i {
+    color: #333;
+}
+.c_cart .credit-limit a:hover i {
+    color: #F5008E;
 }
 
 .breadcrumb{
@@ -6351,6 +6370,15 @@ table.dostawa_koszyk {
      color: #333;
  }
 
+.row-centered .btn.active.focus,
+.row-centered .btn.active:focus,
+.row-centered .btn.focus,
+.row-centered .btn:active.focus,
+.row-centered .btn:active:focus,
+.row-centered .btn:focus {
+    color: #fff;
+}
+
  /* REKLAMACJA PODSTRONA */
 .instrukcja-reklamacji {
 
@@ -7044,3 +7072,30 @@ h3.koszyk_title .tooltip-inner {
     }
 }
 /* VIEW MOBILE MAX-WIDTH: 500PX END */
+
+/* ROZMIARÓWKA */
+table.rozmiarowka {
+    width: 100%;
+    text-align: center;
+}
+table.rozmiarowka > thead > tr > td,
+table.rozmiarowka > tbody > tr > td {
+    border: 1px solid #b0b1b4;
+    font-size: 14px;
+    line-height: 30px;
+}
+table.rozmiarowka > thead > tr > td:nth-child(even),
+table.rozmiarowka > tbody > tr > td:nth-child(even) {
+    background-color: #fcd1ea;
+}
+table.rozmiarowka > thead > tr > td {
+    font-weight: bold;
+}
+table.dorosli > tbody > tr > td {
+    width: 19%;
+}
+table.dorosli > tbody > tr > td:first-child {
+    width: 5%;
+    font-weight: bold;
+}
+/* ROZMIARÓWKA END */

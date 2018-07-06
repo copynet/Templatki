@@ -83,8 +83,13 @@
             <div class="row">
                 <div ng-if="paymentsOffset > 0" class="col-md-{{paymentsOffset}} col-lg-{{paymentsOffset}}"></div>
                 <div class="col-lg-6 col-md-3 col-sm-6" ng-repeat="payment in payments">
-                    <button ng-disabled="preventPayment" ng-click="paymentConfirm(payment.ID)" class="btn btn-block btn-success btn-payment">
+                    <button ng-disabled="preventPayment" ng-click="paymentConfirm(payment.ID)" class="btn btn-block btn-success btn-payment" ng-class="{'disabled': payment.limitExceeded}"></button>
                         {{ payment.names[currentLang.code] }}
+                        <span ng-if="!payment.limitExceeded && payment.deferredDays > 0">
+                                ({{ payment.deferredDays }} {{ 'days' | translate }})
+                        </span>
+                        <i ng-if="payment.limitExceeded" class="fa fa-lock" tooltip="{{ payment.infoForUser | translate }} {{ payment.creditLimit }}/{{ payment.unpaidValue }} {{ payment.baseCurrency }}"></i>
+                        <i ng-if="!payment.limitExceeded && payment.deferredDays > 0" class="fa fa-info" tooltip="{{ 'credit_limit' | translate }}: {{ payment.creditLimit }}"></i>
                     </button>
                 </div>
             </div>

@@ -181,6 +181,11 @@
                             <small class="text-danger bold" ng-show="carts.length">{{ carts.length}}</small>
                         </span>
                     </a>
+                    <div ng-if="creditLimit && logged" class="credit-limit custom-tooltip hidden-xs">
+                        <a tooltip-html-unsafe="{{creditLimit.tooltipInfo}}" tooltip-placement="bottom" class="navbarLink myCartMenuTop">
+                            <i class="fa fa-money"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- <a id="www" class="right" href="https://copynet.pl/">
