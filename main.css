@@ -3682,6 +3682,19 @@ ul.nav ul li a:hover{
     }
 }
 
+.c_cart > ul.navbar-nav >li > a.myCartMenuTop {
+    background: none;
+    padding: 2px 0 0 10px!important;
+    color: #333;
+}
+
+.c_cart > ul.navbar-nav >li > a.myCartMenuTop > i {
+    font-size: 16px;
+}
+.c_cart > ul.navbar-nav >li > a.myCartMenuTop:hover > i {
+    color: #F5008E;
+}
+
 .c_cart .text-danger{
     position: absolute;
     right: -7px;
@@ -7061,6 +7074,12 @@ h3.koszyk_title .tooltip-inner {
     color: #333;
 }
 /* TOOLTIP TITLE KOSZYK END */
+
+/* TOOLTIP LIMIT KREDYTOWY */
+.custom-tooltip .tooltip {
+    width: 143px;
+}
+/* TOOLTIP LIMIT KREDYTOWY END */
 
 /* VIEW MOBILE MAX-WIDTH: 500PX */
 @media screen and (max-width: 500px) {
