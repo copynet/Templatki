@@ -162,7 +162,7 @@
 
                 </div>
                 <div class="panel-footer">
-                    <div class="row">
+                    <div class="row" ng-if="!(product.projectID || product.skipUpload)">
                         <div class="col-md-4">
                             {{ 'waiting_for_payment' | translate }}
                         </div>

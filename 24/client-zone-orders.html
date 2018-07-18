@@ -217,7 +217,7 @@
                                 </div>
 
                                 <!-- ODRZUCENIE PLIKÓW -->
-                                <div class="row">
+                                <div class="row" ng-if="!product.skipUpload">
                                     <div class="col-md-12">
                                         <div ng-if="product.accept == -1" class="panel panel-warning">
                                             <div class="panel-heading">
@@ -236,7 +236,7 @@
                                 </div>
                                 <!-- ODRZUCENIE PLIKÓW END -->
 
-                                <div class="row">
+                                <div class="row" ng-if="!product.skipUpload">
                                     <!-- add files -->
                                     <div ng-if="product.fileList.length > 0" class="col-xs-12">
                                         <table class="table table-responsive table-file-list">
