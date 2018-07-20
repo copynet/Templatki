@@ -7127,3 +7127,17 @@ table.dorosli > tbody > tr > td:first-child {
     font-weight: bold;
 }
 /* ROZMIARÓWKA END */
+
+#panel-product-parameters fieldset {
+    padding: 0 0 10px 0;
+}
+
+.prokonsumencki {
+    position: fixed;
+    display: block;
+    bottom: 15px;
+}
+
+.prokonsumencki img {
+    width: 110px;
+}

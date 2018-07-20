@@ -202,7 +202,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row" ng-if="!product.skipUpload">
                                     <div class="col-md-6">
                                         <p ng-if="product.fileList.length == 0">{{ 'waiting_for_files' | translate }}</p>
                                         <p ng-if="product.fileList.length > 0">{{ 'files_have_been_added' | translate }} {{ product.lastFile.created}} </p>
