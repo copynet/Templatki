@@ -443,6 +443,73 @@
                         </div>
                         </td>
                         </tr>
+
+                        <tr ng-if="realisationTimes.length == 1" class="one-line-price" ng-repeat="volume in volumes | orderBy:'volume'" id="row-volume-{{  volume.volume }}">
+		
+                            <td class="col-volume">
+                        
+                                <span class="volume-icon">
+                        
+                                    <img class="price-list-icon" alt="" src="{{ volume.calculation.priceListIcon.url }}" />
+                        
+                                </span>
+                        
+                                <span class="fa fa-pencil text-info custom-volume" ng-if="volume.custom"></span>
+                        
+                                {{ volume.volume }}
+                        
+                            </td>
+                        
+                            <td class="one-line-price-col" ng-repeat="realisationTime in realisationTimes | orderBy:'order'">
+                        
+                                <div class="col-box-volume" ng-class="(rtVolume.volume == activeVolume.volume && activeVolume.rtID == realisationTime.ID) ? 'bg-success' : '' "
+                        
+                                     ng-click="checkVolume(realisationTime, rtVolume)" ng-if="rtVolume.volume == volume.volume && rtVolume.active == true"
+                        
+                                     ng-repeat="rtVolume in realisationTime.volumes | orderBy:'volume'">
+                        
+                                    <span ng-class="{'price-special': rtVolume.oldPrice}" class="price-regular">
+                        
+                                        <span class="price-net">{{ rtVolume.price | priceFilter }} {{ currentCurrency.symbol }}</span>
+                        
+                                    </span>
+                        
+                                    <span ng-show="rtVolume.oldPrice" class="price-old">
+                        
+                                        <span class="price-old-net">{{ rtVolume.oldPrice | priceFilter }} {{ currentCurrency.symbol }}</span>
+                        
+                                    </span>
+                        
+                                </div>
+                        
+                            </td>
+                        
+                            <td class="one-line-price-col" ng-repeat="realisationTime in realisationTimes | orderBy:'order'">
+                        
+                                <div class="col-box-volume" ng-class="(rtVolume.volume == activeVolume.volume && activeVolume.rtID == realisationTime.ID) ? 'bg-success' : '' "
+                        
+                                     ng-click="checkVolume(realisationTime, rtVolume)" ng-if="rtVolume.volume == volume.volume && rtVolume.active == true"
+                        
+                                     ng-repeat="rtVolume in realisationTime.volumes | orderBy:'volume'">
+                        
+                                    <span ng-class="{'price-special': rtVolume.oldPrice}" class="price-regular">
+                        
+                                        <span class="price-gross">{{ rtVolume.priceBrutto }} {{ currentCurrency.symbol }}</span>
+                        
+                                    </span>
+                        
+                                    <span ng-show="rtVolume.oldPrice" class="price-old">
+                        
+                                        <span class="price-old-gross">{{ rtVolume.oldPriceBrutto | priceFilter }} {{ currentCurrency.symbol }}</span>
+                        
+                                    </span>
+                        
+                                </div>
+                        
+                            </td>
+                        
+                        </tr>
+
                         </tbody>
                         </table>
                     </script>
