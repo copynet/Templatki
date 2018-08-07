@@ -6954,25 +6954,25 @@ tr#row-volume-1 td:last-child {
     /* LEFT END */
     /* RIGHT */
     .box-right {
-        background-image: url('https://static.digitalprint.pro/684/images/bg_fb.png');
-        background-repeat: no-repeat;
+        /* background-image: url('https://static.digitalprint.pro/684/images/bg_fb.png');
+        background-repeat: no-repeat; */
         border-radius: 0px 4px 4px 0px;
-        right: -303px;
+        right: -250px;
         padding: 1px 0px 1px 1px;
         position: fixed;
         top: 100px;
         transition: transform 0.75s;
-        width: 313px;
+        width: 266px;
         z-index: 999;
     }
 
     .box-right:hover {
-        transform: translateX(-304px);
+        transform: translateX(-265px);
     }
 
     .box-right .box__content {
         min-height: 290px;
-        padding: 10px;
+        /* padding: 10px; */
         position: relative;
     }
 
@@ -6985,7 +6985,7 @@ tr#row-volume-1 td:last-child {
         height: 40px;
         line-height: 30px;
         position: absolute;
-        right: 315px;
+        right: 265px;
         text-align: center;
         top: 40px;
         transform: rotate(-90deg);
@@ -7000,7 +7000,7 @@ tr#row-volume-1 td:last-child {
         line-height: 25px;
     }
     .box-right .box__content .box__description img {
-        width: 205px;
+        width: 265px;
     }
     .box-right .box__content .box__description strong {
         color: #ec008c;
