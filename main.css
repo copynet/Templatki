@@ -4229,7 +4229,15 @@ h3.bold{
 @media (min-width: 768px) {
     .footer .address {
         float: right;
-        margin: 7px 20px 0 20px;
+        margin: 7px 0px 0 20px;
+    }
+    .footer .address .goprint24 {
+        float: left;
+        display: block;
+        margin: 0 0 0 -180px;
+    }
+    .footer .address .copynet {
+
     }
 }
 @media screen and (max-width: 767px) {
@@ -6558,7 +6566,7 @@ tr#row-volume-1 td:last-child {
 
 .container.footer .copyright {
     float: right;
-    margin: 25px 0 0 0;
+    margin: 5px 0 0 0;
 }
 .container.footer .copyright a {
     color: #ffffff;
@@ -7042,7 +7050,13 @@ fieldset .form-group .padding0 select {
 .tab-pane .btn:active,
 .tab-pane .btn:active.focus,
 .tab-pane .btn:active:focus,
-.tab-pane .btn:focus {
+.tab-pane .btn:focus,
+.contact_info_md-8 .btn.active.focus, 
+.contact_info_md-8 .btn.active:focus, 
+.contact_info_md-8 .btn.focus, 
+.contact_info_md-8 .btn:active.focus, 
+.contact_info_md-8 .btn:active:focus, 
+.contact_info_md-8 .btn:focus {
     color: #fff;
 }
 
@@ -7140,4 +7154,9 @@ table.dorosli > tbody > tr > td:first-child {
 
 .prokonsumencki img {
     width: 110px;
+}
+@media screen and (max-width: 991px) {
+    .prokonsumencki {
+        display: none;
+    }
 }
