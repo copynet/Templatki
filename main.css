@@ -3032,7 +3032,7 @@ a:hover {
     text-decoration: none;
 }
 span.ng-scope a {
-    padding: 7px 5px 5px 5px;
+    padding: 7px 5px 0px 5px;
     text-decoration: none;
 }
 span.ng-scope a img {
