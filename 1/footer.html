@@ -85,7 +85,9 @@
                     <a href="/pl/faq">FAQ</a>
                 </li>
                 <li>
-                    <a href="/pl/kategoria/druk-cyfrowy/grupa/produkt-niestandardowy/zapytanie-niestandardowe/produkt-niestandardowy">Prace niestandardowe</a>
+                    <a href="/pl/kategoria/druk-cyfrowy/grupa/produkt-niestandardowy/zapytanie-niestandardowe/produkt-niestandardowy">Prace
+                        niestandardowe
+                    </a>
                 </li>
             </ul>
         </div>
@@ -156,6 +158,15 @@
 
 <!-- CUSTOM JS -->
 <script>
+    var temp = "1";
+    var mySelect = document.getElementById('mySelect');
+
+    for (var i, j = 0; i = mySelect.options[j]; j++) {
+        if (i.value == temp) {
+            mySelect.selectedIndex = j;
+            break;
+        }
+    }
     $(function () {
         var targets = $('[rel~=tooltip]'),
             target = false,

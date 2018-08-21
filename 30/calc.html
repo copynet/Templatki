@@ -380,7 +380,7 @@
                                     <label class="col-md-5 control-label">{{ 'realizationTime' | translate }}</label>
                                     <div class="col-md-7 rwd_no-padding">
                                         <select ng-model="productItem.realisationTime" ng-change="changeRealisationTime()" ng-options="rt.ID as rt.names[currentLang.code] for rt in realisationTimes| orderBy:'order' | filter:filterRealisationTime"
-                                            class="form-control"></select>
+                                            class="form-control" id="mySelect"></select>
                                     </div>
                                 </div>
 

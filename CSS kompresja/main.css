@@ -1349,6 +1349,7 @@ hr.hr-magenta{border-top:2px solid #ec008c}
 .table>tbody>tr.success>td.file-size{display:none}
 .input-group-addon{font-size:12px}
 i.fa-info-circle{float:right;font-size:17px;color:#f5008e}
+.tooltip{font-family:"Open Sans",verdana,arial,sans-serif}
 .tooltip.in{opacity:.95}
 .tooltip-inner{background-color:#777;max-width:900px;text-align:left}
 .tooltip-inner>p{font-size:11px;margin:5px 0}

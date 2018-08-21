@@ -5663,6 +5663,9 @@ i.fa-info-circle {
     font-size: 17px;
     color: #F5008E;
 }
+.tooltip {
+    font-family: "Open Sans",verdana,arial,sans-serif;
+}
 .tooltip.in {
     opacity: .95;
 }
