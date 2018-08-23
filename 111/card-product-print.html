@@ -164,7 +164,7 @@
 </style>
 
 <page style="font-family: freeserif;">
-    <p style="font-size:3mm; margin-bottom:10px; text-align: right;">Dokument wygenerowano: {{ userData.name }} <b>{{ "now"|date('Y-m-d H:i:s') }}</b></p>
+    <p style="font-size:3mm; margin-bottom:10px; text-align: right;">Dokument wygenerowano: <b>{{ "now"|date('Y-m-d H:i:s') }}</b></p>
 
     <div class="headerSection">
         <div class="logoSection">
@@ -398,7 +398,7 @@
             <th class="keyCell">{{ 'user_data' | translate(lang) }}</th>
         </tr>
         <tr>
-	    <td class="orderInfoCell text-left">
+	        <td class="orderInfoCell text-left">
 
                 {% if productsInfo %}
                     {% for productInfo in productsInfo %}
@@ -495,5 +495,10 @@
     <strong>Cena brutto:</strong><br><br>
     <strong>Sposób płatności:</strong><br><br>
     <!-- INFO ZAMÓWIENIA END -->
+    
+    <!-- PLIKI DO ZAMÓWIENIA -->
+    Pliki do zamówienia znajdują się w poniższej lokalizacji:<br>
+    Sieć -> COPYNET -> Mateusz -> goprint24 -> {{ calc.orderID }}
+    <!-- PLIKI DO ZAMÓWIENIA END -->
 
 </page>

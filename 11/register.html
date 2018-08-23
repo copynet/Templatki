@@ -92,7 +92,10 @@
                             <div class="form-group ad-country">
                                 <label class="col-sm-3 control-label" for="user-countryCode">{{ 'country' | translate }} *</label>
                                 <div class="col-sm-7">
-                                    <select ng-change="selectCountry('ad')" ng-options="country.code as country.name_pl for country in countries" ng-model="form.ad_countryCode" class="form-control" id="user-countryCode"></select>
+                                    <!-- <select ng-change="selectCountry('ad')" ng-options="country.code as country.name_pl for country in countries" ng-model="form.ad_countryCode" class="form-control" id="user-countryCode"></select> -->
+                                    <select class="form-control" id="user-countryCode">
+                                        <option value="0" label="Polska" selected="selected" disabled="disabled">Polska</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -102,7 +105,7 @@
                                 <div class="col-sm-3">
                                     <div class="input-group">
                                         <span class="input-group-addon" tooltip="{{ 'without_plus_prefix' | translate }}"><i class="fa fa-plus"></i></span>
-                                        <input type="tel" ng-model="form.ad_areaCode" class="form-control" placeholder="{{ '48' | translate }}" id="user-ad-areaCode">
+                                        <input type="tel" ng-model="form.ad_areaCode" class="form-control" placeholder="{{ '48' | translate }}" id="user-ad-areaCode" disabled="disabled">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
