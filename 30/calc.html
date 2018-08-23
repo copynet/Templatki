@@ -37,13 +37,16 @@
 
                         <ul class="nav nav-tabs">
                             <li ng-repeat="description in descriptions | orderBy: 'order' | filter:hasFormats">
-                                <a data-target="{{'#description-tab-' + $index }}" href="#" data-toggle="tab">{{ description.langs[currentLang.code].name }}</a>
+                                <a data-target="{{'#description-tab-' + $index }}" href="#" data-toggle="tab">{{ description.langs[currentLang.code].name
+                                    }}</a>
                             </li>
                             <li ng-if="patterns.length">
-                                <a data-target="#patterns-tab" href="#" data-toggle="tab">{{ 'download_files' | translate }}</a>
+                                <a data-target="#patterns-tab" href="#" data-toggle="tab">{{ 'download_files' | translate
+                                    }}</a>
                             </li>
                             <li ng-repeat="gallery in galleries | orderBy: 'order' | filter:hasFormats " ng-if="gallery.items.length > 0">
-                                <a data-target="{{ '#gallery-tab-' + $index }}" href="#" data-toggle="tab">{{ gallery.langs[currentLang.code].name }}</a>
+                                <a data-target="{{ '#gallery-tab-' + $index }}" href="#" data-toggle="tab">{{ gallery.langs[currentLang.code].name
+                                    }}</a>
                             </li>
                         </ul>
 
@@ -158,8 +161,7 @@
                                             <i ng-if="complexProduct.selectedProduct.data.customFormatInfo.tooltip[currentLang.code]" class="fa fa-info-circle" aria-hidden="true"></i>
                                         </label>
                                         <div class="col-md-7 rwd_no-padding">
-                                                <select class="form-control" ng-model="complexProduct.selectedProduct.data.currentFormat"
-                                                ng-disabled="complexProduct.selectedProduct.data.relatedFormats.length == 1"
+                                            <select class="form-control" ng-model="complexProduct.selectedProduct.data.currentFormat" ng-disabled="complexProduct.selectedProduct.data.relatedFormats.length == 1"
                                                 ng-class="{'one-element-select': complexProduct.selectedProduct.data.relatedFormats.length == 1}"
                                                 ng-change="selectFormat(complexProduct.selectedProduct.data, complexProduct.selectedProduct.data.currentFormat)"
                                                 ng-options="item as item.langs[currentLang.code].name for item in complexProduct.selectedProduct.data.relatedFormats"></select>
@@ -532,12 +534,16 @@
                                             {{realisationTime.names[currentLang.code]}}
                                         </span>
                                         <span class="shipping-time">
-                                            <span class="text"> {{ 'delivery_send' | translate }} / {{ 'reception' | translate }}</span>
+                                            <span class="text"> {{ 'delivery_send' | translate }} / {{ 'reception' | translate
+                                                }}</span>
                                             <span class="date" ng-if="!realisationTime.overwriteDate">{{realisationTime.date}}</span>
                                             <span class="text-danger date" ng-if="realisationTime.overwriteDate">{{realisationTime.overwriteDate}}</span>
                                         </span>
                                         <span class="info">
                                             {{ 'price' | translate }} netto/{{ 'gross' | translate }}
+                                        </span>
+                                        <span class="time_info">
+                                            <i class="fa fa-info-circle" tooltip="Podana data jest maksymalnym terminem wykonana zlecenia"></i>
                                         </span>
                                     </th>
                                 </thead>
@@ -572,7 +578,8 @@
                             <div class="input-group" ng-if="customVolume.custom">
                                 <input max="{{customVolume.maxVolume}}" step="1" min="{{customVolume.minVolume}}" type="number" ng-model="customVolume.newVolume"
                                     class="form-control" placeholder="{{ 'volume' | translate }}" aria-describedby="basic-addon2">
-                                <span class="input-group-addon btn" ng-click="addVolume()" id="basic-addon2">+ {{ 'add_your_volume' | translate }}</span>
+                                <span class="input-group-addon btn" ng-click="addVolume()" id="basic-addon2">+ {{ 'add_your_volume'
+                                    | translate }}</span>
                             </div>
                         </div>
                         <div class="calc-text">
@@ -603,7 +610,8 @@
                             <thead>
                                 <tr>
                                     <th class="col-delivery">{{ 'cl_delivery' | translate }}</th>
-                                    <th class="col-delivery-address" ng-if="addresses.length > 0">{{ 'delivery_address' | translate }}</th>
+                                    <th class="col-delivery-address" ng-if="addresses.length > 0">{{ 'delivery_address' |
+                                        translate }}</th>
                                     <th class="col-volumes">{{ 'volumes' | translate }}</th>
                                     <th class="col-packages">{{ 'packages' | translate }}</th>
                                     <th class="col-weight">{{ 'weight' | translate }}</th>
@@ -718,11 +726,14 @@
                                 <dl class="dl-horizontal">
 
                                     <dt ng-if="tmpProduct.customFormatInfo.customName[currentLang.code]">{{ tmpProduct.customFormatInfo.customName[currentLang.code]}}</dt>
-                                    <dt ng-if="!tmpProduct.customFormatInfo.customName[currentLang.code]">{{ 'format' | translate }}</dt>
+                                    <dt ng-if="!tmpProduct.customFormatInfo.customName[currentLang.code]">{{ 'format' | translate
+                                        }}</dt>
                                     <dd>{{ tmpProduct.currentFormat.name}}</dd>
 
-                                    <dt ng-if="tmpProduct.currentPages > 0 && tmpProduct.customPageInfo.customName[currentLang.code]">{{ tmpProduct.customPageInfo.customName[currentLang.code]}}</dt>
-                                    <dt ng-if="tmpProduct.currentPages > 0 && !tmpProduct.customPageInfo.customName[currentLang.code]">{{'pages'| translate}}</dt>
+                                    <dt ng-if="tmpProduct.currentPages > 0 && tmpProduct.customPageInfo.customName[currentLang.code]">{{
+                                        tmpProduct.customPageInfo.customName[currentLang.code]}}</dt>
+                                    <dt ng-if="tmpProduct.currentPages > 0 && !tmpProduct.customPageInfo.customName[currentLang.code]">{{'pages'|
+                                        translate}}</dt>
                                     <dd ng-if="tmpProduct.currentPages > 0">{{tmpProduct.currentPages}}</dd>
 
                                     <div ng-repeat="attribute in complexProduct.selectedProduct.data.attributes">
@@ -750,8 +761,10 @@
                                     <dt ng-if="productItem.realisationTime > 0">{{ 'realization_time' | translate }}</dt>
                                     <dd ng-if="productItem.realisationTime > 0">{{ showRealizationTime(productItem.realisationTime)}}</dd>
 
-                                    <dt ng-if="getTotalThickness() > 0 && complexProducts.length > 1">{{'total_thickness'| translate}}</dt>
-                                    <dd ng-if="getTotalThickness() > 0 && complexProducts.length > 1">{{ getTotalThickness()}} mm</dd>
+                                    <dt ng-if="getTotalThickness() > 0 && complexProducts.length > 1">{{'total_thickness'|
+                                        translate}}</dt>
+                                    <dd ng-if="getTotalThickness() > 0 && complexProducts.length > 1">{{ getTotalThickness()}}
+                                        mm</dd>
                                 </dl>
                             </div>
                         </div>
@@ -820,7 +833,8 @@
                                     <a ng-if="!currentCalc" ng-click="printOffer()" class="btn btn-block btn-offer">
                                         <i class="fa fa-print" aria-hidden="true"></i> {{ 'print_offer' | translate }}</a>
                                     <a ng-if="!currentCalc" ng-disabled="deliveryLackOfVolume > 0" ng-click="toCart()" class="btn btn-success btn-block btn-lg">
-                                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>{{ 'add_to_cart' | translate }}
+                                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>{{ 'add_to_cart' | translate
+                                        }}
                                     </a>
                                 </div>
                             </div>

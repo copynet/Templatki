@@ -5007,6 +5007,13 @@ ul.koszyk-social>li {
 table.table-volume-header .th-realisation-time span {
     color: #333;
 }
+table.table-volume-header .th-realisation-time .time_info {
+    position: absolute;
+    top: 60px;
+}
+table.table-volume-header .th-realisation-time .tooltip.top {
+    width: 200px;
+}
 .col-box-volume {
     width: 100%;
     margin: -8px 0px;
@@ -5172,7 +5179,7 @@ legend {
 
 .table.table-volume-header>thead:first-child>tr:first-child>th.th-realisation-time>span.realization-time-label,
 .table.table-volume-header>thead:first-child>tr:first-child>th.th-realisation-time>span.shipping-time>span.date {
-    color: rgba(0,128,0,1);
+    color: rgba(63,137,232,1);
     font-size: 12px;
 }
 @media (max-width: 500px) {
@@ -5183,11 +5190,11 @@ legend {
 }
 .table.table-volume-header>thead:first-child>tr:first-child>th.th-realisation-time:nth-child(3)>span.realization-time-label,
 .table.table-volume-header>thead:first-child>tr:first-child>th.th-realisation-time:nth-child(3)>span.shipping-time>span.date {
-    color: rgba(63,137,232,1);
+    color: rgba(245,0,142,1);
 }
 .table.table-volume-header>thead:first-child>tr:first-child>th.th-realisation-time:last-child>span.realization-time-label,
 .table.table-volume-header>thead:first-child>tr:first-child>th.th-realisation-time:last-child>span.shipping-time>span.date {
-    color: rgba(245,0,142,1);
+    color: rgba(0,128,0,1);
 }
 /* STANDARD PION */
 @media (min-width: 992) {
