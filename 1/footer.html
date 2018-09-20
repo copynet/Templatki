@@ -150,23 +150,40 @@
 
 <div ng-cookie-information=""></div>
 
-<div class="scroll-to-top" ng-click="scrollToTop();">
+<!-- <div class="scroll-to-top" ng-click="scrollToTop();">
     <i class="fa fa-arrow-circle-o-up"></i>
-</div>
+</div> -->
+
+
 
 <!-- koniec footer -->
 
 <!-- CUSTOM JS -->
 <script>
-    var temp = "1";
-    var mySelect = document.getElementById('mySelect');
+    $(document).ready(function(){
+      $('body').append('<div id="toTop" class="btn btn-info"><span class="glyphicon glyphicon-upload"></span></div>');
+    	$(window).scroll(function () {
+			if ($(this).scrollTop() != 0) {
+				$('#toTop').fadeIn();
+			} else {
+				$('#toTop').fadeOut();
+			}
+		}); 
+    $('#toTop').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 600);
+        return false;
+    });
+});
 
-    for (var i, j = 0; i = mySelect.options[j]; j++) {
-        if (i.value == temp) {
-            mySelect.selectedIndex = j;
-            break;
-        }
-    }
+    // var temp = "1";
+    // var mySelect = document.getElementById('mySelect');
+
+    // for (var i, j = 0; i = mySelect.options[j]; j++) {
+    //     if (i.value == temp) {
+    //         mySelect.selectedIndex = j;
+    //         break;
+    //     }
+    // }
     $(function () {
         var targets = $('[rel~=tooltip]'),
             target = false,

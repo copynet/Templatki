@@ -26,6 +26,34 @@
                             {{ item.langs[currentLang.code].name}}
                         </h2>
                     </div>
+
+                    <div ng-show="activeCategoryID == item.ID || (_.contains(startCategories, item.ID) && mainButtonActive)" class="col-md-12">
+                        <div class='col-xs-12 no-padding opis-kategorii'>
+            
+                            <accordion>
+                                <accordion-group ng-repeat="description in item.descriptions | orderBy: 'order' " is-open="description.isOpen">
+                                    <accordion-heading>
+                                        {{ description.langs[currentLang.code].name }}
+                                        <i class="pull-right fa"
+                                           ng-class="{'fa-chevron-down': status.open, 'fa-info-circle': !status.open}"></i>
+                                    </accordion-heading>
+                                    <div ng-bind-html="description.langs[currentLang.code].description"></div>
+                                </accordion-group>
+                            </accordion>
+            
+                        </div>
+            
+                        <div class="col-xs-12 no-padding" ng-repeat="gallery in item.galleries | orderBy: 'order' | filter:hasFormats " ng-if="gallery.items.length > 0">
+            
+                            <h4 class='product-view'>{{ gallery.langs[currentLang.code].name }}</h4>
+                            <div class='product-gallery-content'>
+                                <ng-gallery images="gallery.items" thumbs-num="gallery.items.length">
+                                </ng-gallery>
+                            </div>
+            
+                        </div>
+                    </div>
+
                     <div class="row products-list">
                         <div class="product-list-rwd">
                             <div class="col-xs-4 col-sm-4 col-md-3 product" ng-repeat="child in item.childs| orderBy: 'sort'">
@@ -43,7 +71,7 @@
                                         {{ 'only_now_price_from' | translate }} 10{{ 'currency' | translate }}
                                 </div>-->
                             </div>
-                            <div class="col-xs-4 col-sm-4 col-md-3 product" ng-repeat="product in products[item.ID]| orderBy: 'sort'">
+                            <div class="col-xs-4 col-sm-4 col-md-3 product index_col_{{ item.ID }}_{{$index}}" ng-repeat="product in products[item.ID]| orderBy: 'sort'">
                                 <div class="thumbnail clearfix" ng-if="product.relType == 1">
                                     <div class="transform">
                                         <a target="_self" class="thumbnail-link" ui-sref="group({categoryurl: item.langs[currentLang.code].url, groupurl: product.slugs[currentLang.code]})"
