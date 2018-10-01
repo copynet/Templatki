@@ -211,9 +211,9 @@
                             <td class="valueCell"> {{ attribute.langs[lang].name }}</td>
 
                             {% if attribute.optLangs[lang] %}
-                            <td class="valueCell"> {{ attribute.optLangs[lang].name }}</td>
-                            {% else %}
                             <td class="valueCell"> {{ attribute.optName }}</td>
+                            {% else %}
+                            <td class="valueCell"> {{ attribute.optLangs[lang].name }}</td>
                             {% endif %}
 
                             {% endif %}

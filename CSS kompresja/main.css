@@ -4,7 +4,7 @@
 @font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(../images/fonts/open-sans-700-normal.eot);src:local('Open Sans Bold'),local('OpenSans-Bold'),url(../images/fonts/open-sans-700-normal.woff2) format('woff'),url(../images/fonts/open-sans-700-normal.woff) format('woff'),url(../images/fonts/open-sans-700-normal.ttf) format('truetype'),url(../images/fonts/open-sans-700-normal.svg#OpenSans) format('svg')}
 @font-face{font-family:'Open Sans';font-style:normal;font-weight:800;src:url(../images/fonts/open-sans-800-normal.eot);src:local('Open Sans Extrabold'),local('OpenSans-Extrabold'),url(../images/fonts/open-sans-800-normal.woff2) format('woff'),url(../images/fonts/open-sans-800-normal.woff) format('woff'),url(../images/fonts/open-sans-800-normal.ttf) format('truetype'),url(../images/fonts/open-sans-800-normal.svg#OpenSans) format('svg')}
 @font-face{font-family:'Open Sans';font-style:italic;font-weight:700;src:url(../images/fonts/open-sans-700-italic.eot);src:local('Open Sans Bold Italic'),local('OpenSans-BoldItalic'),url(../images/fonts/open-sans-700-italic.woff2) format('woff'),url(../images/fonts/open-sans-700-italic.woff) format('woff'),url(../images/fonts/open-sans-700-italic.ttf) format('truetype'),url(../images/fonts/open-sans-700-italic.svg#OpenSans) format('svg')}
-@font-face{font-family:Glyphicons Halflings;src:url(https://static.digitalprint.pro/684/styles/fonts/glyphicons_halflings-regular.eot);src:url(https://static.digitalprint.pro/684/styles/fonts/glyphicons_halflings-regular.eot?#iefix) format("embedded-opentype"),url(https://static.digitalprint.pro/684/styles/fonts/glyphicons_halflings-regular.woff2) format("woff2"),url(https://static.digitalprint.pro/684/styles/fonts/glyphicons_halflings-regular.woff) format("woff"),url(https://static.digitalprint.pro/684/styles/fonts/glyphicons_halflings-regular.ttf) format("truetype"),url(https://static.digitalprint.pro/684/styles/fonts/glyphicons_halflings-regular.svg#glyphicons_halflingsregular) format("svg")}
+@font-face{font-family:Glyphicons Halflings;src:url(https://static.dreamsoft.pro/684/styles/fonts/glyphicons_halflings-regular.eot);src:url(https://static.dreamsoft.pro/684/styles/fonts/glyphicons_halflings-regular.eot?#iefix) format("embedded-opentype"),url(https://static.dreamsoft.pro/684/styles/fonts/glyphicons_halflings-regular.woff2) format("woff2"),url(https://static.dreamsoft.pro/684/styles/fonts/glyphicons_halflings-regular.woff) format("woff"),url(https://static.dreamsoft.pro/684/styles/fonts/glyphicons_halflings-regular.ttf) format("truetype"),url(https://static.dreamsoft.pro/684/styles/fonts/glyphicons_halflings-regular.svg#glyphicons_halflingsregular) format("svg")}
 body{font-family:"Open Sans",verdana,arial,sans-serif;font-size:13px}
 .product-gallery-description-v3 .panel-body{background:#f8f8f8}
 a{text-decoration:none}
@@ -914,14 +914,14 @@ h3.bold{color:#ec008c;font-size:18px;text-transform:uppercase;font-weight:600}
 .container-fluid.boxy_pi{display:none}
 }
 .container .width2{box-sizing:border-box;width:40%;padding-right:70px;height:172px;float:left;-webkit-transition:scale .2s ease-in-out;-moz-transition:scale .2s ease-in-out;-o-transition:scale .2s ease-in-out;-ms-transition:scale .2s ease-in-out}
-.width1.eco{background:url(https://static.digitalprint.pro/684/styles/eco.jpg) 0 0 no-repeat}
-.width1.eco:hover{background:url(https://static.digitalprint.pro/684/styles/eco.jpg) 0 -172px no-repeat}
-.width2.rabat{background:url(https://static.digitalprint.pro/684/styles/rabat.jpg) 0 0 no-repeat}
-.width2.rabat:hover{background:url(https://static.digitalprint.pro/684/styles/rabat.jpg) 0 -172px no-repeat}
-.width1.program{background:url(https://static.digitalprint.pro/684/styles/program_partnerski.jpg) 0 0 no-repeat}
-.width1.program:hover{background:url(https://static.digitalprint.pro/684/styles/program_partnerski.jpg) 0 -172px no-repeat}
-.width1.termin{background:url(https://static.digitalprint.pro/684/styles/terminy.jpg) 0 0 no-repeat;padding-right:0;margin-right:0}
-.width1.termin:hover{background:url(https://static.digitalprint.pro/684/styles/terminy.jpg) 0 -172px no-repeat}
+.width1.eco{background:url(https://static.dreamsoft.pro/684/styles/eco.jpg) 0 0 no-repeat}
+.width1.eco:hover{background:url(https://static.dreamsoft.pro/684/styles/eco.jpg) 0 -172px no-repeat}
+.width2.rabat{background:url(https://static.dreamsoft.pro/684/styles/rabat.jpg) 0 0 no-repeat}
+.width2.rabat:hover{background:url(https://static.dreamsoft.pro/684/styles/rabat.jpg) 0 -172px no-repeat}
+.width1.program{background:url(https://static.dreamsoft.pro/684/styles/program_partnerski.jpg) 0 0 no-repeat}
+.width1.program:hover{background:url(https://static.dreamsoft.pro/684/styles/program_partnerski.jpg) 0 -172px no-repeat}
+.width1.termin{background:url(https://static.dreamsoft.pro/684/styles/terminy.jpg) 0 0 no-repeat;padding-right:0;margin-right:0}
+.width1.termin:hover{background:url(https://static.dreamsoft.pro/684/styles/terminy.jpg) 0 -172px no-repeat}
 .boxy_pi2 .width1{width:229px;height:186px}
 .boxy_pi2 .width1 a.link{display:block;width:229px;height:186px}
 .boxy_pi2 .width1.eco{background:url(eco_blue.jpg) 0 center no-repeat}
@@ -950,7 +950,7 @@ h3.bold{color:#ec008c;font-size:18px;text-transform:uppercase;font-weight:600}
 .footer .menu{float:left;display:inline-block;position:relative;padding:0 50px 0 0}
 .footer .menu ul{margin:0;list-style:none;-webkit-padding-start:0;padding:0}
 .footer .menu ul li{padding:2px 0}
-.footer .menu ul li::before{content:" ";padding:0 20px 0 0;background:url(https://static.digitalprint.pro/684/styles/footer_li.png);background-repeat:no-repeat;background-position:center}
+.footer .menu ul li::before{content:" ";padding:0 20px 0 0;background:url(https://static.dreamsoft.pro/684/styles/footer_li.png);background-repeat:no-repeat;background-position:center}
 .footer .menu ul li a{color:#fff;font-size:13px}
 .footer .menu ul li a:hover{color:#f5008e}
 @media screen and (max-width:767px){
@@ -1243,7 +1243,7 @@ option:not(:checked){background-color:#fbfbfb}
 }
 .empty-cart{margin-top:30px}
 .thumbnail-margin>a>span.zoom{display:none}
-.thumbnail-margin:hover>a>span.zoom{display:block;background:url(https://static.digitalprint.pro/684/styles/zoom.png) no-repeat 50% 50% #333;position:absolute;width:556px;height:100%;top:0;left:0;opacity:.4}
+.thumbnail-margin:hover>a>span.zoom{display:block;background:url(https://static.dreamsoft.pro/684/styles/zoom.png) no-repeat 50% 50% #333;position:absolute;width:556px;height:100%;top:0;left:0;opacity:.4}
 @media (max-width:991px){
 .thumbnail-margin:hover>a>span.zoom{width:100%}
 }
@@ -1547,7 +1547,7 @@ table.dostawa_koszyk{width:50%;float:right}
 .instrukcja-reklamacji span.text{text-align:justify;line-height:20px}
 .instrukcja-reklamacji ol.listowanie-rzymskie{list-style-type:upper-roman}
 .instrukcja-reklamacji .pliki-do-pobrania{border-top:1px solid;padding:10px 0 0 0;margin:20px 0 0 0}
-.instrukcja-reklamacji .pliki-do-pobrania a.pdf{background-image:url(https://static.digitalprint.pro/uploadedFiles/684/modelsIcons/pdf.png);background-repeat:no-repeat;background-position:right;display:block;width:230px;height:56px;padding:15px 0 0 0}
+.instrukcja-reklamacji .pliki-do-pobrania a.pdf{background-image:url({{STATIC_URL}}uploadedFiles/684/modelsIcons/pdf.png);background-repeat:no-repeat;background-position:right;display:block;width:230px;height:56px;padding:15px 0 0 0}
 .instrukcja-reklamacji-strona span.text{line-height:20px}
 .instrukcja-reklamacji-strona .text span.number{display:block;color:#333;font-size:15px;font-weight:700;padding:0 0 40px 0}
 .instrukcja-reklamacji-strona .image_big img{max-width:760px}
@@ -1572,7 +1572,7 @@ p.register .fa-user-plus{font-size:20px;margin:0 0 0 10px}
 .choose-img{display:flex;display:-webkit-flex;position:absolute;min-height:38px;bottom:0;text-align:left;align-items:center;-webkit-align-items:center}
 #content-group .caption .description{text-align:center}
 #content-group .caption .description p{font-size:10px;margin:0}
-select.one-element-select.form-control{background:url(https://static.digitalprint.pro/684/images/lock.png) no-repeat 92%}
+select.one-element-select.form-control{background:url(https://static.dreamsoft.pro/684/images/lock.png) no-repeat 92%}
 .container.footer .copyright{float:right;margin:5px 0 0 0}
 .container.footer .copyright a{color:#fff}
 .container.footer .copyright a:hover{color:#f5008e}
@@ -1604,7 +1604,7 @@ select.one-element-select.form-control{background:url(https://static.digitalprin
 .demo:hover,.rodzaje-papierow .active{opacity:1}
 .rodzaje-papierow img.hover-shadow{transition:.3s}
 .rodzaje-papierow .hover-shadow:hover{box-shadow:0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)}
-#mainLoader{opacity:1;background:#fff;background:url(https://static.digitalprint.pro/684/images/logo_only.png) no-repeat 50% 50%;width:100%;height:100%;z-index:1000;top:0;left:0;position:fixed;display:flex;align-items:center;justify-content:center}
+#mainLoader{opacity:1;background:#fff;background:url(https://static.dreamsoft.pro/684/images/logo_only.png) no-repeat 50% 50%;width:100%;height:100%;z-index:1000;top:0;left:0;position:fixed;display:flex;align-items:center;justify-content:center}
 #mainLoader .main-pre-loader{border:4px solid #f50057;border-left-color:transparent;border-bottom:0;width:120px;height:120px;border-radius:50%;-webkit-animation:spin 1s cubic-bezier(.42,.61,.58,.41) infinite;animation:spin 1s cubic-bezier(.42,.61,.58,.41) infinite}
 @keyframes spin{
 from{transform:rotate(0)}

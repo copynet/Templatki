@@ -42,8 +42,8 @@
 }
 @font-face {
     font-family:Glyphicons Halflings;
-    src:url(https://static.digitalprint.pro/684/styles/fonts/glyphicons_halflings-regular.eot);
-    src:url(https://static.digitalprint.pro/684/styles/fonts/glyphicons_halflings-regular.eot?#iefix) format("embedded-opentype"),url(https://static.digitalprint.pro/684/styles/fonts/glyphicons_halflings-regular.woff2) format("woff2"),url(https://static.digitalprint.pro/684/styles/fonts/glyphicons_halflings-regular.woff) format("woff"),url(https://static.digitalprint.pro/684/styles/fonts/glyphicons_halflings-regular.ttf) format("truetype"),url(https://static.digitalprint.pro/684/styles/fonts/glyphicons_halflings-regular.svg#glyphicons_halflingsregular) format("svg");
+    src:url(https://static.dreamsoft.pro/684/styles/fonts/glyphicons_halflings-regular.eot);
+    src:url(https://static.dreamsoft.pro/684/styles/fonts/glyphicons_halflings-regular.eot?#iefix) format("embedded-opentype"),url(https://static.dreamsoft.pro/684/styles/fonts/glyphicons_halflings-regular.woff2) format("woff2"),url(https://static.dreamsoft.pro/684/styles/fonts/glyphicons_halflings-regular.woff) format("woff"),url(https://static.dreamsoft.pro/684/styles/fonts/glyphicons_halflings-regular.ttf) format("truetype"),url(https://static.dreamsoft.pro/684/styles/fonts/glyphicons_halflings-regular.svg#glyphicons_halflingsregular) format("svg");
 }
 
 /*
@@ -4138,32 +4138,32 @@ h3.bold{
 }
 
 .width1.eco {
-    background:url('https://static.digitalprint.pro/684/styles/eco.jpg') 0px 0px no-repeat;
+    background:url('https://static.dreamsoft.pro/684/styles/eco.jpg') 0px 0px no-repeat;
 }
 .width1.eco:hover {
-    background:url('https://static.digitalprint.pro/684/styles/eco.jpg') 0px -172px no-repeat;
+    background:url('https://static.dreamsoft.pro/684/styles/eco.jpg') 0px -172px no-repeat;
 }
 
 .width2.rabat {
-    background:url('https://static.digitalprint.pro/684/styles/rabat.jpg') 0px 0px no-repeat;
+    background:url('https://static.dreamsoft.pro/684/styles/rabat.jpg') 0px 0px no-repeat;
 }
 .width2.rabat:hover {
-    background:url('https://static.digitalprint.pro/684/styles/rabat.jpg') 0px -172px no-repeat;
+    background:url('https://static.dreamsoft.pro/684/styles/rabat.jpg') 0px -172px no-repeat;
 }
 
 .width1.program {
-    background:url('https://static.digitalprint.pro/684/styles/program_partnerski.jpg') 0px 0px no-repeat;
+    background:url('https://static.dreamsoft.pro/684/styles/program_partnerski.jpg') 0px 0px no-repeat;
 }
 .width1.program:hover {
-    background:url('https://static.digitalprint.pro/684/styles/program_partnerski.jpg') 0px -172px no-repeat;
+    background:url('https://static.dreamsoft.pro/684/styles/program_partnerski.jpg') 0px -172px no-repeat;
 }
 .width1.termin {
-    background:url('https://static.digitalprint.pro/684/styles/terminy.jpg') 0px 0px no-repeat;
+    background:url('https://static.dreamsoft.pro/684/styles/terminy.jpg') 0px 0px no-repeat;
     padding-right: 0px;
     margin-right: 0px;
 }
 .width1.termin:hover {
-    background:url('https://static.digitalprint.pro/684/styles/terminy.jpg') 0px -172px no-repeat;
+    background:url('https://static.dreamsoft.pro/684/styles/terminy.jpg') 0px -172px no-repeat;
 }
 
 .boxy_pi2 .width1{
@@ -4271,7 +4271,7 @@ h3.bold{
 .footer .menu ul li::before {
     content: " ";
     padding: 0 20px 0 0;
-    background: url('https://static.digitalprint.pro/684/styles/footer_li.png');
+    background: url('https://static.dreamsoft.pro/684/styles/footer_li.png');
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -5273,7 +5273,7 @@ option:not(:checked) {
 }
 .thumbnail-margin:hover > a > span.zoom {
     display: block;
-    background: url(https://static.digitalprint.pro/684/styles/zoom.png) no-repeat 50% 50% #333;
+    background: url(https://static.dreamsoft.pro/684/styles/zoom.png) no-repeat 50% 50% #333;
     position: absolute;
     width: 556px;
     height: 100%;
@@ -6432,7 +6432,7 @@ table.dostawa_koszyk {
     margin: 20px 0 0 0;
 }
 .instrukcja-reklamacji .pliki-do-pobrania a.pdf {
-    background-image: url("https://static.digitalprint.pro/uploadedFiles/684/modelsIcons/pdf.png");
+    background-image: url("{{STATIC_URL}}uploadedFiles/684/modelsIcons/pdf.png");
     background-repeat: no-repeat;
     background-position: right;
     display: block;
@@ -6564,7 +6564,7 @@ p.register .fa-user-plus {
 }
 
 select.one-element-select.form-control {
-    background: url('https://static.digitalprint.pro/684/images/lock.png') no-repeat 92%;
+    background: url('https://static.dreamsoft.pro/684/images/lock.png') no-repeat 92%;
 }
 
 /* tr#row-volume-1 td:first-child {
@@ -6764,7 +6764,7 @@ tr#row-volume-1 td:last-child {
 #mainLoader {
     opacity:    1;
     background: #ffffff;
-    background: url('https://static.digitalprint.pro/684/images/logo_only.png') no-repeat 50% 50%;
+    background: url('https://static.dreamsoft.pro/684/images/logo_only.png') no-repeat 50% 50%;
     width:      100%;
     height:     100%;
     z-index:    1000;
@@ -6975,7 +6975,7 @@ tr#row-volume-1 td:last-child {
     /* LEFT END */
     /* RIGHT */
     .box-right {
-        /* background-image: url('https://static.digitalprint.pro/684/images/bg_fb.png');
+        /* background-image: url('https://static.dreamsoft.pro/684/images/bg_fb.png');
         background-repeat: no-repeat; */
         border-radius: 0px 4px 4px 0px;
         right: -250px;
