@@ -6432,7 +6432,7 @@ table.dostawa_koszyk {
     margin: 20px 0 0 0;
 }
 .instrukcja-reklamacji .pliki-do-pobrania a.pdf {
-    background-image: url("{{STATIC_URL}}uploadedFiles/684/modelsIcons/pdf.png");
+    background-image: url("https://static.dreamsoft.pro/uploadedFiles/684/modelsIcons/pdf.png");
     background-repeat: no-repeat;
     background-position: right;
     display: block;
