@@ -82,10 +82,11 @@
         padding: 1%;
         width: 25%;
     }
+
     .orderInfoCell.first {
         text-align: left;
     }
-	
+
     /* .orderInfoCellSix {
         width:16%;
     } */
@@ -115,10 +116,11 @@
     }
 
     .barCodeSection .code {
-        margin:0 auto;
+        margin: 0 auto;
     }
+
     .barCodeSection .cardID {
-        margin:0 auto;
+        margin: 0 auto;
         text-align: center;
     }
 
@@ -136,13 +138,13 @@
     .informationSection {
         min-height: 30mm;
         padding-left: 10px;
-        border:1px dotted black;
+        border: 1px dotted black;
         word-wrap: break-word;
         width: 50%;
     }
 
     .halfTableRow {
-        width:50%;
+        width: 50%;
     }
 
     .informationRow {
@@ -150,7 +152,7 @@
     }
 
     .product-selected {
-        color:#000000;
+        color: #000000;
     }
 
     .product-normal {
@@ -160,11 +162,11 @@
     .text-left {
         text-align: left;
     }
-
 </style>
 
 <page style="font-family: freeserif;">
-    <p style="font-size:3mm; margin-bottom:10px; text-align: right;">Dokument wygenerowano: <b>{{ "now"|date('Y-m-d H:i:s') }}</b></p>
+    <p style="font-size:3mm; margin-bottom:10px; text-align: right;">Dokument wygenerowano: <b>{{ "now"|date('Y-m-d
+            H:i:s') }}</b></p>
 
     <div class="headerSection">
         <div class="logoSection">
@@ -220,7 +222,7 @@
                         </tr>
                         {% endfor %}
 
-			{% for specialAttribute in subProduct.specialAttributes %}
+                        {% for specialAttribute in subProduct.specialAttributes %}
                         <tr>
 
                             <td class="keyCell"> {{ 'special_option' | translate(lang) }}</td>
@@ -252,7 +254,8 @@
                             {% endif %}
                         </tr>
                         <tr>
-                            <th class="keyProductInfoCell">{{ 'fromat' | translate(lang) }} {{ 'gross' | translate(lang) }} (mm)</th>
+                            <th class="keyProductInfoCell">{{ 'fromat' | translate(lang) }} {{ 'gross' |
+                                translate(lang) }} (mm)</th>
                             <td class="valueCell"> {{subProduct.formatWidth}} x {{subProduct.formatHeight}}</td>
                         </tr>
                         <tr>
@@ -291,7 +294,7 @@
 
                 {% if types[subProduct.typeID].cardGuide %}
                 {{ types[subProduct.typeID].cardGuide | raw }}
-                {% elseif  groups[subProduct.groupID].cardGuide %}
+                {% elseif groups[subProduct.groupID].cardGuide %}
                 {{ groups[subProduct.groupID].cardGuide | raw }}
                 {% endif %}
             </td>
@@ -312,7 +315,7 @@
                 {% if attribute.emptyChoice == 0 %}
                 <td class="valueCell"> {{ attribute.langs[lang].name }}</td>
                 {% if attribute.optLangs[lang] %}
-                <td class="valueCell"> {{ attribute.optLangs[lang].name }}</td>
+                <td class="valueCell"> {{ attribute.optLangs[lang].name }}<br> {{ attribute.optName }} </td>
                 {% else %}
                 <td class="valueCell"> {{ attribute.optName }}</td>
                 {% endif %}
@@ -320,7 +323,7 @@
             </tr>
             {% endfor %}
 
-	    {% for specialAttribute in subProduct.specialAttributes %}
+            {% for specialAttribute in subProduct.specialAttributes %}
             <tr>
 
                 <td class="keyCell"> {{ 'special_option' | translate(lang) }}</td>
@@ -398,12 +401,13 @@
             <th class="keyCell">{{ 'user_data' | translate(lang) }}</th>
         </tr>
         <tr>
-	        <td class="orderInfoCell text-left">
+            <td class="orderInfoCell text-left">
 
                 {% if productsInfo %}
-                    {% for productInfo in productsInfo %}
-                        <span class="{% if productInfo.selected %}product-selected{% else %}product-normal{% endif %}">• {{ productInfo.name }}</span><br>
-                    {% endfor %}
+                {% for productInfo in productsInfo %}
+                <span class="{% if productInfo.selected %}product-selected{% else %}product-normal{% endif %}">• {{
+                    productInfo.name }}</span><br>
+                {% endfor %}
                 {% endif %}
 
             </td>
@@ -421,7 +425,7 @@
     </table>
 
     {% if deliveryAddresses %}
-    <br/>
+    <br />
     <table class="cardTable">
         <tr>
             <th class="deliveryHeadCell">{{ 'delivery' | translate(lang) }}</th>
@@ -443,7 +447,7 @@
     </table>
     {% endif %}
 
-    <br/>
+    <br />
     <table class="cardTable" style="border-collapse: collapse; margin-bottom:5px; vertical-align: middle; width:100%">
         <tr>
             <th class="keyCell">{{ 'realization_time' | translate(lang) }}</th>
@@ -475,14 +479,14 @@
         </tr>
         <tr>
             <td class="valueCell">
-                {{invoice.companyName}}<br/>
-                {{invoice.name}} {{invoice.lastname}}<br/>
-                {{invoice.zipcode}} {{invoice.city}}<br/>
+                {{invoice.companyName}}<br />
+                {{invoice.name}} {{invoice.lastname}}<br />
+                {{invoice.zipcode}} {{invoice.city}}<br />
                 {{invoice.street}} {{invoice.house}}
                 {% if invoice.apartment %}
-                {{invoice.apartment}}<br/>
+                {{invoice.apartment}}<br />
                 {% endif %}
-                <br/>
+                <br />
                 {{ 'nip' | translate(lang) }}: {{invoice.nip}}
             </td>
         </tr>
@@ -495,7 +499,7 @@
     <strong>Cena brutto:</strong><br><br>
     <strong>Sposób płatności:</strong><br><br>
     <!-- INFO ZAMÓWIENIA END -->
-    
+
     <!-- PLIKI DO ZAMÓWIENIA -->
     Pliki do zamówienia znajdują się w poniższej lokalizacji:<br>
     Sieć -> COPYNET -> Mateusz -> goprint24 -> {{ calc.orderID }}
