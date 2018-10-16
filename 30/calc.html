@@ -6,7 +6,7 @@
             <div class="border-h1">
                 <h1 class="page-header">{{currentType.names[currentLang.code]}}</h1>
             </div>
-            <div class="col-md-6" style="padding-left: 0px;">
+            <div class="col-md-6 rwd_no-padding" style="padding-left: 0px;">
 
                 <div class="center-block thumbnail-margin" ng-repeat="thumbnail in thumbnails| orderBy: 'order' | filter:hasFormats" ng-if="thumbnail.files.length > 0">
                     <a ng-repeat="file in thumbnail.files" ng-click="setThumb(file)" data-target="#showThumbnail" data-toggle="modal" class="ng-scope">

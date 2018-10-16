@@ -1409,6 +1409,9 @@ table.platnosci>tbody>tr>td>img{width:100px}
 .panel-body h3 i.fa-angle-right{font-size:20px;vertical-align:middle;margin:-5px 0 0 0}
 .panel-body caption{background-color:#fcd1ea;color:#777}
 .panel-default .panel-body{border-top:none}
+@media screen and (max-width:767px){
+.panel-default .panel-body i.fa-info-circle{float:left}
+}
 .panel-body table.table-cart-price{margin-bottom:5px}
 .joinaddresses{padding:0!important}
 .dostawa_laczna{margin:10px 0 0 0!important}
@@ -1450,6 +1453,9 @@ ul.mega-dropdown-menu a.link-image .img-responsive{width:265px;height:auto;max-w
 .tooltip-footer .tooltiptext{right:-5px}
 }
 .row-payments .col-centered{width:32%;padding-left:0}
+@media screen and (max-width:767px){
+.row-payments .col-centered{width:100%;padding-left:15px}
+}
 .regulamin span.regulamin-spis{font-size:12px;text-transform:uppercase;font-weight:700}
 .regulamin ol.spis{margin-top:10px;-webkit-padding-start:15px}
 .regulamin span.spis-adnotacja{display:block;font-style:italic;font-weight:lighter;text-align:justify}
@@ -1537,6 +1543,10 @@ a:after,a:focus{text-decoration:none}
 table.dostawa_koszyk{width:50%;float:right}
 .dostawa_koszyk>tbody>tr>.dostawa_koszyk{text-align:center;font-weight:700;width:22%}
 .dostawa_koszyk>tbody>tr>td{border:1px solid #b0b1b4}
+@media screen and (max-width:800px){
+table.dostawa_koszyk{width:100%;text-align:left}
+.dostawa_koszyk>tbody>tr>.dostawa_koszyk{width:auto}
+}
 .instrukcja-zamawiania .text span.number{display:block;color:#ec008c;font-size:30px;font-weight:700;padding:0 0 40px 0}
 .instrukcja-zamawiania .text{text-align:center;padding:40px 0}
 .instrukcja-zamawiania .image img{max-width:540px}
@@ -1687,3 +1697,6 @@ table.dorosli>tbody>tr>td:first-child{width:5%;font-weight:700}
 .opis-kategorii .panel-default .panel-heading .panel-title a i{font-size:25px;margin:-35px 0 0 0}
 }
 #toTop{position:fixed;bottom:10px;right:10px;cursor:pointer;display:none;background:0 0;border-color:transparent;color:#f5008e;font-size:35px;opacity:.6}
+@media screen and (max-width:992px){
+.img_rwd{width:100%}
+}

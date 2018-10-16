@@ -5864,6 +5864,11 @@ table.platnosci > tbody > tr > td > img {
     border-top: none;
     /*    padding: 0px;*/
 }
+@media screen and  (max-width: 767px) {
+    .panel-default .panel-body i.fa-info-circle {
+        float: left;
+    }
+}
 .panel-body table.table-cart-price {
     margin-bottom: 5px;
 }
@@ -6038,6 +6043,12 @@ ul.mega-dropdown-menu a.link-image .img-responsive {
 .row-payments .col-centered {
     width: 32%;
     padding-left: 0px;
+}
+@media screen and (max-width: 767px) {
+    .row-payments .col-centered {
+        width: 100%;
+        padding-left: 15px;
+    }
 }
 
 /* REGULAMIN */
@@ -6373,6 +6384,15 @@ table.dostawa_koszyk {
 }
 .dostawa_koszyk > tbody > tr > td {
     border: 1px solid #b0b1b4;
+}
+@media screen and (max-width: 800px) {
+    table.dostawa_koszyk {
+        width: 100%;
+        text-align: left;
+    }
+    .dostawa_koszyk > tbody > tr > .dostawa_koszyk {
+        width: auto;
+    }
 }
 /* KOSZYK DOSTAWA END */
 
@@ -7210,4 +7230,9 @@ table.dorosli > tbody > tr > td:first-child {
     color: #f5008e;
     font-size: 35px;
     opacity: 0.6;
+}
+@media screen and (max-width: 992px) {
+    .img_rwd {
+        width: 100%;
+    }
 }
