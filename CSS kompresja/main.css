@@ -830,7 +830,7 @@ ul.nav{display:block}
 .c_cart{position:absolute;top:-43px;right:35%}
 }
 @media (max-width:767px){
-.c_cart{float:right;padding:0}
+.c_cart{position:absolute;float:right;padding:0;top:8px;right:125px}
 .c_cart .text-danger{bottom:0}
 }
 .c_cart .credit-limit{display:block;float:left;margin:0 0 0 15px}
@@ -1010,6 +1010,7 @@ fieldset.registr .lightpink{color:#fff!important;background:#ec008c!important}
 }
 .dropdown-menu{position:absolute;top:100%;left:0;z-index:13;display:none;float:left;min-width:160px;padding:5px 0;margin:2px 0 0;list-style:none;font-size:14px;text-align:left;background:rgba(255,255,255,.98);border:1px solid #ccc;border:1px solid rgba(0,0,0,.15);border-radius:4px;box-shadow:0 6px 12px rgba(0,0,0,.175);background-clip:padding-box}
 header .navbar-brand img{margin:0}
+.navbar-nav{margin:7.5px 0}
 @media (min-width:768px){
 .navbar-nav{margin:5px 0 0 0}
 }
@@ -1167,6 +1168,7 @@ table.table-volume-header .th-realisation-time .tooltip.top{width:200px}
 .center_boxy_pi{margin:30px 0 0 0}
 .center_boxy_pi .width1{display:block;float:left;margin:0 62px 0 0}
 @media (max-width:767px){
+.center_boxy_pi{display:none}
 .center_boxy_pi .width1{margin:0 10px 0 0;width:150px;height:150px}
 .center_boxy_pi>.width1>a>img{width:100%}
 }
@@ -1636,6 +1638,9 @@ to{transform:rotate(360deg)}
 .login_header #auth-menu{display:none}
 .login_header:hover #auth-menu{display:block;z-index:99}
 .login_header:hover #auth-menu li a{background-color:#fff;box-shadow:0 0 5px 0 rgba(0,0,0,.2)}
+@media screen and (max-width:767px){
+.login_header{position:absolute;top:0;right:80px}
+}
 .social-login{text-align:center}
 #panel-product-parameters .calc-text-project,#panel-product-volumes .calc-text{background-color:#fcd1ea;margin:15px 0 0 0}
 #panel-product-parameters .calc-text-project span,#panel-product-volumes .calc-text span{display:block;padding:10px 15px;text-align:justify}

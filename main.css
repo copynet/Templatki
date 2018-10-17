@@ -3716,8 +3716,11 @@ ul.nav ul li a:hover{
 }
 @media (max-width: 767px) {
     .c_cart {
+        position: absolute;
         float: right;
         padding: 0px;
+        top: 8px;
+        right: 125px;
     }
     .c_cart .text-danger {
         bottom: 0px;
@@ -4536,6 +4539,9 @@ fieldset.registr .lightpink{
 header .navbar-brand img {
     margin: 0px;
 }
+.navbar-nav {
+    margin: 7.5px 0px;
+}
 @media (min-width: 768px) {
     .navbar-nav {
         margin: 5px 0px 0px 0px;
@@ -5031,6 +5037,9 @@ table.table-volume-header .th-realisation-time .tooltip.top {
     margin: 0px 62px 0px 0px;
 }
 @media (max-width: 767px) {
+    .center_boxy_pi {
+        display: none;
+    }
     .center_boxy_pi .width1 {
         margin: 0px 10px 0px 0px;
         width: 150px;
@@ -6901,6 +6910,13 @@ tr#row-volume-1 td:last-child {
 .login_header:hover #auth-menu li a {
     background-color: #ffffff;
     box-shadow: 0 0px 5px 0 rgba(0,0,0,0.2);
+}
+@media screen and (max-width: 767px) {
+    .login_header {
+        position: absolute;
+        top: 0px;
+        right: 80px;
+    }
 }
 /* LOGIN HEADER */
 
