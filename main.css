@@ -1313,6 +1313,11 @@ h4.product-view {
 .breadcrumb a:after, .breadcrumb a:focus {
     text-decoration: none;
 }
+@media screen and (max-width: 767px) {
+    .breadcrumb a, .breadcrumb>.active {
+        font-size: 20px;
+    }
+}
 .box p.abstract,
 .box-right p.abstract {
     font-size: 16px;
@@ -3901,6 +3906,11 @@ h3.bold{
         margin-bottom: 0px;
     }
 }
+@media screen and (max-width: 500px) {
+    .border-h1, .border-h2, .border-h3, .border-h4 {
+        margin-bottom: 10px;
+    }
+}
 .border-h4>h4 {
     position: absolute;
     top: 25%;
@@ -5484,6 +5494,11 @@ button.modalImage > i, button.calcModal > i {
         padding: 7px 7px;
     }
 }
+@media screen and (max-width: 500px) {
+    .menu-magenta {
+        display: none;
+    }
+}
 /* MENU MAGENTA END */
 .input-group-addon:last-child, .input-group-btn:first-child>.btn-group:not(:first-child)>.btn, .input-group-btn:first-child>.btn:not(:first-child), .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn, .input-group-btn:last-child>.dropdown-toggle {
     border: 1px solid #ccc;
@@ -5740,7 +5755,7 @@ i.fa-info-circle {
 }
 @media (max-width: 767px) {
     .nav-tabs>li>a {
-        font-size: 10px;
+        font-size: 15px;
         padding: 10px 7px;
     }
 }
@@ -6294,6 +6309,9 @@ table.table-volume .col-volume .volume-icon img.price-list-icon {
     }
 }
 @media screen and (max-width: 767px) {
+    #pasek_info .content_pasek .left_info {
+        margin: 6px 0px 0px 10px;
+    }
     #pasek_info .content_pasek .navbar-left {
         display: none;
     }
@@ -7250,5 +7268,13 @@ table.dorosli > tbody > tr > td:first-child {
 @media screen and (max-width: 992px) {
     .img_rwd {
         width: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    #toTop {
+        bottom: -5px;
+        right: 0px;
+        padding: 0 5px 0 0;
+        font-size: 40px;
     }
 }
