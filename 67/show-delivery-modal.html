@@ -29,7 +29,7 @@
                         {{ address.details.street }} {{ address.details.house }}
                         <span ng-if="address.details.apartment.length > 0">/{{address.details.apartment}}</span>
                     </td>
-                    <td>{{ address.volume }}</td>
+                    <td>{{ address.allVolume }}</td>
                     <td>
                         {{ address.no_of_pkgs }}
                     </td>
@@ -55,7 +55,7 @@
                 <tbody>
                 <tr ng-repeat="address in selectedProduct.addresses">
                     <td>{{ address.deliveryID }}</td>
-                    <td>{{ address.volume }}</td>
+                    <td>{{ address.allVolume }}</td>
                     <td>{{ address.no_of_pkgs }}</td>
                     <td class="text-nowrap">{{ address.grossweight }}kg</td>
                     <td class="price text-nowrap">{{ address.price }} {{ currentCurrency.symbol }}</td>

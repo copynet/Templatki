@@ -196,8 +196,13 @@
                                                 <span ng-show="attribute.optLangs[currentLang.code].name">{{ attribute.optLangs[currentLang.code].name}}</span>
                                                 <span ng-show="!attribute.optLangs[currentLang.code].name">{{attribute.optName}}</span>
                                             </div>
+                                            <div ng-repeat="specialAttribute in calcProduct.specialAttributes">
+                                                <span>{{ specialAttribute.name }}</span>
+                                            </div>
                                             <div>
-                                                {{ 'volume' | translate }}: {{ product.volume}}
+                                                {{ 'volume' | translate }}:
+                                                <span ng-if="product.amount > 1">{{ product.amount }} x </span>
+                                                {{ product.volume }}
                                             </div>
                                         </div>
                                     </div>
