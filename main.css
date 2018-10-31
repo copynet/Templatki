@@ -7278,3 +7278,6 @@ table.dorosli > tbody > tr > td:first-child {
         font-size: 40px;
     }
 }
+.client-zone-offers {
+    margin: 0 10px 0 0;
+}
