@@ -381,16 +381,13 @@
 
                         <div class="row offer-separator">
 
-                            <div class="col-lg-offset-6 col-lg-6 col-md-offset-6 col-md-6 col-xs-12">
-
-                                <button ng-click="rejectOffer(offer)" class="btn btn-danger">
-                                    {{ 'reject_offer' | translate }}
-                                </button>
-
+                            <div class="col-lg-offset-5 col-lg-7 col-md-offset-7 col-md-7 col-xs-12 offer_buttons">
                                 <button ng-click="acceptOffer(offer)" class="btn btn-success">
-                                    {{ 'accept_offer' | translate }}
+                                    <i class="fa fa-thumbs-up"></i> {{ 'accept_offer' | translate }}
                                 </button>
-
+                                <button ng-click="rejectOffer(offer)" class="btn btn-danger second">
+                                    <i class="fa fa-thumbs-down"></i> {{ 'reject_offer' | translate }}
+                                </button>
                             </div>
 
                         </div>
@@ -444,7 +441,7 @@
                 </div>
 
             </div>
-
+            <hr class="hr-magenta">
         </div>
 
     </div>

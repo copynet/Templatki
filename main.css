@@ -24,9 +24,8 @@
     font-style: normal;
     font-weight: 700;
     src: url(./../images/fonts/open-sans-700-normal.eot);
-    src: local('Open Sans Bold'), local('OpenSans-Bold'), url(./../images/fonts/open-sans-700-normal.woff2) format('woff'), url(./../images/fonts/open-sans-700-normal.woff) format('woff'), url(./../images/fonts/open-sans-700-normal.ttf) format('truetype'), url(./../images/fonts/open-sans-700-normal.svg#OpenSans) format('svg');
-}
-@font-face {
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url(./../images/fonts/open-sans-700-normal.svg#OpenSans) format('svg');
+} @font-face {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 800;
@@ -7123,8 +7122,20 @@ fieldset .form-group .padding0 select {
 .contact_info_md-8 .btn.focus, 
 .contact_info_md-8 .btn:active.focus, 
 .contact_info_md-8 .btn:active:focus, 
-.contact_info_md-8 .btn:focus {
-    color: #fff;
+.contact_info_md-8 .btn:focus,
+.client-zone-offers .btn.active.focus, 
+.client-zone-offers .btn.active:focus, 
+.client-zone-offers .btn.focus, 
+.client-zone-offers .btn:active.focus, 
+.client-zone-offers .btn:active:focus, 
+.client-zone-offers .btn:focus,
+.offer_buttons .btn.active.focus, 
+.offer_buttons .btn.active:focus, 
+.offer_buttons .btn.focus, 
+.offer_buttons .btn:active.focus, 
+.offer_buttons .btn:active:focus, 
+.offer_buttons .btn:focus {
+    color: #fff!important;
 }
 
 .loading {
@@ -7280,4 +7291,7 @@ table.dorosli > tbody > tr > td:first-child {
 }
 .client-zone-offers {
     margin: 0 10px 0 0;
+}
+.offer_buttons button.second {
+    float: right;
 }
