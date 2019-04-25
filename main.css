@@ -1499,6 +1499,16 @@ fieldset[disabled] #contact-shipping a .btn-sprawdz.active {
 .spr-zaloguj-sie {
     margin: 0 auto 22px;
 }
+.products-list > .product-list-rwd > .product > a > .product-list-image > .transform > img {
+    max-width: 190px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.products-list > .product-list-rwd > .product:hover > a > .product-list-image > .transform > img {
+    position: absolute;
+}
 .product-list-rwd > .product {
     /*border: 2px solid #f4f4f4;*/
     background-color: white;
@@ -1517,21 +1527,24 @@ fieldset[disabled] #contact-shipping a .btn-sprawdz.active {
     padding-left: 15px;
 }
 .product-list-rwd > .product a img {
-    margin: -10px auto 27px;
+    margin: -18px auto 27px;
     display: block;
     max-height: 140px;
 }
-.product-list-rwd > .product > .thumbnail > .transform {
+.product-list-rwd > .product > .thumbnail > .transform,
+.product-list-rwd > .product > a > .product-list-image > .transform {
     transition: all .5s ease-in-out;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     -ms-transition: all .5s ease-in-out;
 }
-.product-list-rwd > .product > .thumbnail > .transform:after {
+.product-list-rwd > .product > .thumbnail > .transform:after,
+.product-list-rwd > .product > a > .product-list-image > .transform:after {
     content: '';
 }
-.product-list-rwd > .product:hover > .thumbnail > .transform {
+.product-list-rwd > .product:hover > .thumbnail > .transform,
+.product-list-rwd > .product:hover > a > .product-list-image > .transform {
     -webkit-transform: rotateY(360deg);
     transform: rotateY(360deg);
 }
@@ -2538,14 +2551,18 @@ a {
     margin: 13px;
     min-height: 50px;
 }*/
-.thumbnail>img, .thumbnail > .transform > a>img {
+.thumbnail > img,
+.thumbnail > .transform > a > img,
+.thumbnail > .transform > img {
     display: block;
-    margin: 0 auto 27px;
+    width: 184px;
+    height: 145px;
+    /* margin: 0 auto 27px;
     max-width: 184px;
     max-height: 150px;
     position: absolute;
     left: -16px;
-    top: -2px;
+    top: -2px; */
     /*    transform: translate(-50%,-50%);    */
 }
 .thumbnail {
@@ -2615,7 +2632,8 @@ a {
 #content-search .thumbnail .caption {
     width: 101%;
 }
-.product-list-rwd > .product:hover > .thumbnail {
+.product-list-rwd > .product:hover > .thumbnail,
+.product-list-rwd > .product:hover > a > .product-list-image {
     border: 1px solid #ec008c;
     border-bottom: none;
 }
@@ -3760,9 +3778,9 @@ ul.nav ul li a:hover{
 }
 
 .product-list-image{
-    border-left:1px solid #ec008c;
+    /*border-left:1px solid #ec008c;
     border-top:1px solid #ec008c;
-    border-right:1px solid #ec008c;
+    border-right:1px solid #ec008c;*/
     height: 170px;
     position: relative;
 }
@@ -3837,7 +3855,7 @@ a.product-list-link{
     border-top: none;
 }
 
-h2.second-title{
+h1.second-title, h2.second-title {
     text-align: center;
     color: #ec008c;
     border: none;
@@ -5374,14 +5392,16 @@ button.modalImage > i, button.calcModal > i {
 }
 #row-category-list > .col-xs-6:hover > .thumbnail > .transform,
 .row-products-list > .col-sm-6:hover > .thumbnail > .transform,
-#content-search > .row > .col-md-3:hover > .thumbnail > .transform
+#content-search > .row > .col-md-3:hover > .thumbnail > .transform,
+.product-list-rwd > .col-xs-4:hover > a > .thumbnail > .transform
  {
     -webkit-transform: rotateY(360deg);
     transform: rotateY(360deg);
 }
 #row-category-list > .col-xs-6:hover > .thumbnail > .transform a img,
 .row-products-list > .col-sm-6:hover > .thumbnail > .transform a img,
-#content-search > .row > .col-md-3:hover > .thumbnail > .transform a img
+#content-search > .row > .col-md-3:hover > .thumbnail > .transform a img,
+.product-list-rwd > .col-xs-4:hover > a > .thumbnail > .transform a img
  {
     max-width: 183px;
     max-height: 150px;
@@ -7294,4 +7314,8 @@ table.dorosli > tbody > tr > td:first-child {
 }
 .offer_buttons button.second {
     float: right;
+}
+.drop_files_here_text {
+    font-size: 12px;
+    padding: 10px 0 0 0;
 }

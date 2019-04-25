@@ -74,7 +74,11 @@
 
                                 <dt ng-if="tmpProduct.customFormatInfo.customName[currentLang.code]">{{ tmpProduct.customFormatInfo.customName[currentLang.code] }}</dt>
                                 <dt ng-if="!tmpProduct.customFormatInfo.customName[currentLang.code]">{{ 'format' | translate }}</dt>
-                                <dd>{{ tmpProduct.currentFormat.name }}</dd>
+                                <dd>{{ tmpProduct.currentFormat.name }}
+                                    <div ng-if="tmpProduct.currentFormat.custom">
+                                        {{ tmpProduct.currentFormat.customWidth }} x {{ tmpProduct.currentFormat.customHeight }} {{ tmpProduct.currentFormat.unit == 2 ? 'cm' : 'mm' }}
+                                    </div>
+                                </dd>
 
                                 <dt ng-if="tmpProduct.currentPages > 0 && tmpProduct.customPageInfo.customName[currentLang.code]">{{ tmpProduct.customPageInfo.customName[currentLang.code] }}</dt>
                                 <dt ng-if="tmpProduct.currentPages > 0 && !tmpProduct.customPageInfo.customName[currentLang.code]">{{'pages' | translate}}</dt>

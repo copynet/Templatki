@@ -106,6 +106,7 @@
                                             <span ng-if="!calcProduct.customFormatName[currentLang.code]">{{ 'format' | translate }}:</span>
                                             <span ng-if="!calcProduct.formatLangs[currentLang.code].name">{{ calcProduct.formatName }}</span>
                                             <span ng-if="calcProduct.formatLangs[currentLang.code].name">{{ calcProduct.formatLangs[currentLang.code].name }}</span>
+                                            <span ng-if="calcProduct.customFormat">{{ calcProduct.formatWidth }} x {{ calcProduct.formatHeight }} {{ calcProduct.formatUnit == 2 ? 'cm' : 'mm' }}</span>
                                         </div>
                                         <div ng-if="calcProduct.pages != 2">
                                             <span ng-if="calcProduct.customPageName[currentLang.code]">{{calcProduct.customPageName[currentLang.code]}}:</span>

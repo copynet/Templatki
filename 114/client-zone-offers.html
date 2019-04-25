@@ -188,6 +188,13 @@
                                             <div>
                                                 <span ng-show="!calcProduct.formatLangs[currentLang.code].name">{{ calcProduct.formatName }}</span>
                                                 <span ng-show="calcProduct.formatLangs[currentLang.code].name">{{ calcProduct.formatLangs[currentLang.code].name }}</span>
+                                                <b>
+                                                    {{ calcProduct.formatWidth }} x {{ calcProduct.formatHeight }}
+                                                    <b>
+                                                        {{ calcProduct.formatWidth }} x {{ calcProduct.formatHeight }}
+                                                        {{ calcProduct.formatUnit == 2 ? 'cm' : 'mm' }}
+                                                    </b>
+                                                </b>
                                             </div>
                                             <div>
                                                 {{ 'pages' | translate }}: {{ calcProduct.pages }}

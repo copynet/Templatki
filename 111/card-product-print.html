@@ -162,6 +162,11 @@
     .text-left {
         text-align: left;
     }
+    /* WYKONAWCA ZAMÓWIENIA */
+    table.madeby {
+        border: none;
+    }
+    /* WYKONAWCA ZAMÓWIENIA END */
 </style>
 
 <page style="font-family: freeserif;">
@@ -504,5 +509,19 @@
     Pliki do zamówienia znajdują się w poniższej lokalizacji:<br>
     Sieć -> COPYNET -> Mateusz -> goprint24 -> {{ calc.orderID }}
     <!-- PLIKI DO ZAMÓWIENIA END -->
+
+    <!-- WYKONAWCA ZAMÓWIENIA -->
+    <br><br>
+    <table class="madeby">
+        <tr>
+            <td class="left">
+                Wykonał: 
+            </td>
+            <td class="right">
+                ....................................................
+            </td>
+        </tr>
+    </table>
+    <!-- WYKONAWCA ZAMÓWIENIA END -->
 
 </page>

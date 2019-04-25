@@ -21,10 +21,10 @@
         <div class="row">
             <div class="row" ng-repeat="item in items| orderBy: 'sort'">
                 <div ng-show="activeCategoryID == item.ID || (_.contains(startCategories, item.ID) && mainButtonActive)" class="col-xs-12">
-                    <div class="border-h2">
-                        <h2 class='second-title'>
+                    <div class="border-h1">
+                        <h1 class='second-title'>
                             {{ item.langs[currentLang.code].name}}
-                        </h2>
+                        </h1>
                     </div>
 
                     <div ng-show="activeCategoryID == item.ID || (_.contains(startCategories, item.ID) && mainButtonActive)" class="col-md-12">
@@ -56,11 +56,13 @@
 
                     <div class="row products-list">
                         <div class="product-list-rwd">
-                            <div class="col-xs-4 col-sm-4 col-md-3 product" ng-repeat="child in item.childs| orderBy: 'sort'">
+                            <div class="col-xs-4 col-sm-4 col-md-3 product index_col_{{ item.ID }}_{{$index}}" ng-repeat="child in item.childs| orderBy: 'sort'">
                                 <a class="icon-box" ui-sref="category({categoryurl: child.langs[currentLang.code].url})">
-                                    <div class="product-list-image">
-                                        <div ng-show="child.icons[currentLang.code]" data-ng-bind-html="child.icons[currentLang.code]"></div>
-                                        <img ng-show="!child.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" />
+                                    <div class="thumbnail product-list-image">
+                                        <div class="transform">
+                                            <div ng-show="child.icons[currentLang.code]" data-ng-bind-html="child.icons[currentLang.code]"></div>
+                                            <img ng-show="!child.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" />
+                                        </div>
                                     </div>
                                 </a>
                                 <!-- <div class="product-list-title">{{ child.langs[currentLang.code].name }}</div> -->

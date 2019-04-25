@@ -30,7 +30,7 @@
                         <ul class='products-list product-category'>
                             <li ng-repeat="child in item.childs| orderBy: 'sort'">
                                 <a class="icon-box" ui-sref="category({categoryurl: child.langs[currentLang.code].url})">
-                                    <div class="product-list-image">
+                                    <div class="product-list-image thumbnail">
                                         <div ng-show="child.icons[currentLang.code]" data-ng-bind-html="child.icons[currentLang.code]"></div>
                                         <img ng-show="!child.icons[currentLang.code]" src="{{STATIC_URL}}{{companyID}}/images/productholder.png" />
                                     </div>

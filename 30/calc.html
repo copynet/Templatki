@@ -188,7 +188,7 @@
                                     <!-- custom format width -->
                                     <div class="form-group" ng-if="!!complexProduct.selectedProduct.data.currentFormat.custom">
                                         <label class="col-md-5 control-label">
-                                            {{ 'width' | translate }} (mm)
+                                                {{ 'width' | translate }} ({{ complexProduct.selectedProduct.data.currentFormat.unit == 2 ? 'cm' : 'mm' }})
                                         </label>
                                         <div class="col-md-7 rwd_no-padding">
                                             <div class="input-group spincontainer">
@@ -221,7 +221,7 @@
                                     <!-- custom format height -->
                                     <div class="form-group" ng-if="!!complexProduct.selectedProduct.data.currentFormat.custom">
                                         <label class="col-md-5 control-label">
-                                            {{ 'height' | translate }} (mm)
+                                                {{ 'height' | translate }} ({{ complexProduct.selectedProduct.data.currentFormat.unit == 2 ? 'cm' : 'mm' }})
                                         </label>
                                         <div class="col-md-7 rwd_no-padding">
                                             <div class="input-group spincontainer">
@@ -412,6 +412,8 @@
                                     </div>
                                 </fieldset>
 
+                                <div class="calc-separator"></div>
+
                                 <div class="form-group">
                                     <label class="col-md-5 control-label">{{ 'volume' | translate }}</label>
                                     <div class="col-md-7 rwd_no-padding">
@@ -470,6 +472,11 @@
                                 </div>
                             </form>
                         </div>
+                        <!-- Koszulki Flex -->
+                        <div ng-if="$state.current.name == 'calc' && 192 == [typeID]">
+                            tutaj ???
+                        </div>
+                        <!-- Koszulki Flex END -->
                         <div class="calc-text-project">
                             <span>
                                 <strong>{{ 'important' | translate }}!</strong> {{ 'calc-text-project' | translate }}
