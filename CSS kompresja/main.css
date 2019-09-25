@@ -9,6 +9,7 @@ body{font-family:"Open Sans",verdana,arial,sans-serif;font-size:13px}
 .product-gallery-description-v3 .panel-body{background:#f8f8f8}
 a{text-decoration:none}
 .clearfix{clear:both;width:100%}
+.bold-text{font-weight:700}
 span.delete-button{background:#da585a;padding:8px 12px;cursor:pointer;color:#fff}
 span.submit-button{width:130px;display:block;float:right;background:#00aa9f;padding:7px 10px;text-align:center;color:#fff;cursor:pointer;margin-top:10px;margin-bottom:10px}
 select{border:1px solid #e4e4e4;height:38px}
@@ -1107,14 +1108,14 @@ td.dostawa,td.price>span.price-old{font-size:14px}
 }
 .price .price-regular{line-height:30px}
 .price .price-special{color:#f5008e}
-span.delete{background:url(delete.png) no-repeat;display:block;width:36px;height:36px}
+span.delete{background:url(delete.svg) 2px 2px no-repeat;background-color:#fff;background-size:30px;display:block;width:36px;height:36px;border:1px solid #e459ac}
 td.file-remover>button{background:0 0;border-radius:3px}
 .delete-client-zone{background-color:#d9534f!important}
 tbody.add_files{display:block;border:1px solid #a7a9ac;border-top:none;padding:0;margin:-3px -3px 0 -3px}
 button.delete{display:block;background:0 0;padding:6px 45px 6px 0}
 button.delete-with-coupon{display:block;background:0 0;padding:6px 45px 6px 0;height:45px}
 button.delete:hover{color:#eee}
-button.delete>span.delete{display:block;background:url(delete.png) no-repeat;width:36px;height:36px;position:absolute;top:13px;right:40px}
+button.delete>span.delete{display:block;background:url(delete.svg) 2px 2px no-repeat;background-size:30px;background-color:#fff;width:36px;height:36px;position:absolute;top:13px;right:40px;border:1px solid #e459ac}
 button.delete>span.delete-with-coupon{display:block;background:url(delete.png) no-repeat;width:36px;height:36px;position:absolute;top:20px;right:40px}
 .continue_shopping{margin-left:0}
 .cart_buttons{padding:0}
@@ -1555,7 +1556,7 @@ a:after,a:focus{text-decoration:none}
 #cookie-block .cookies-close{right:50px}
 #content-custom-product .photo{text-align:center;margin:0 0 40px 0}
 table.dostawa_koszyk{width:50%;float:right}
-.dostawa_koszyk>tbody>tr>.dostawa_koszyk{text-align:center;font-weight:700;width:22%}
+.dostawa_koszyk>tbody>tr>.dostawa_koszyk{text-align:center;vertical-align:middle!important;font-weight:700;width:22%}
 .dostawa_koszyk>tbody>tr>td{border:1px solid #b0b1b4}
 @media screen and (max-width:800px){
 table.dostawa_koszyk{width:100%;text-align:left}

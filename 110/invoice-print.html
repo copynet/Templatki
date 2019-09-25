@@ -3,122 +3,122 @@
         width: 50%;
         font-size: 12em;
     }
-
+    
     .header {
         display: inline;
     }
-
+    
     .header .logo {
         display: inline;
         width: 33%;
     }
-
+    
     .header .middle {
         display: inline;
         width: 33%;
     }
-
+    
     .header .createDate {
         display: inline;
         width: 31%;
         text-align: right;
     }
-
+    
     .clear {
         clear: both;
     }
-
+    
     .title {
         margin-top: 15px;
     }
-
+    
     .title h2 {
         text-align: center;
     }
-
+    
     .products {
         margin: 0 1%;
     }
-
+    
     .products .table {
         width: 100%;
         font-size: 11px;
     }
-
+    
     .products .table tr.productHead th {
         padding: 4px;
     }
-
+    
     tr.productHead {
         background: #3d3d3d;
         color: #ffffff;
     }
-
+    
     tr.even {
         background: #F1F3FA;
     }
-
+    
     tr.odd {
         background: #FFFFFF;
     }
-
+    
     tr.productRow {
         padding: 3px;
     }
-
+    
     .summary {
         margin-top: 15px;
     }
-
+    
     .payment {
         margin-top: 15px;
     }
-
+    
     .info {
         margin-top: 15px;
     }
-
+    
     .addressesBox {
         width: 100%;
     }
-
+    
     .addressesBox .userAddress {
         text-align: right;
         width: 50%;
     }
-
+    
     .addressesBox .companyAddress {
         width: 50%;
     }
-
+    
     .productRow td {
         padding: 5px;
     }
-
+    
     .vatSummary {
         float: right;
         display: block;
     }
-
+    
     .vatSummary table {
         float: right;
         width: 33%;
         font-size: 11px;
     }
-
+    
     .vatSummary .vatHead {
         background: #3d3d3d;
         color: #ffffff;
     }
-
+    
     .vatSummary table th {
         padding: 4px;
     }
-
+    
     .vatSummary table td {
         padding: 5px;
     }
-
+    
     .vatSummary .empty {
         display: block;
         width: 67%;
@@ -129,8 +129,9 @@
     <div class="container">
         <div class="header">
             <div class="logo">
-                {% if logo %}
+                <!--{% if logo %}
                 <img class="logoImage" src="data:image/jpeg;base64,{{ logo }}" alt="Logo"> {% endif %}
+                -->
             </div>
             <div class="middle"></div>
             <div class="createDate">
@@ -139,8 +140,8 @@
         </div>
         <div class="clear"></div>
         <div class="title">
-            <h2>{{ 'invoice' | translate(lang) }} {% if invoice.type == 1 %}proforma{% else%}VAT{% endif %} {{ invoiceNumber
-                }}</h2>
+            <h2>{{ 'invoice' | translate(lang) }} {% if invoice.type == 1 %}proforma{% else%}VAT{% endif %} {{ invoiceNumber }}
+            </h2>
         </div>
         <div class="clear"></div>
 
@@ -152,8 +153,7 @@
                     <br>
                     <b>{{ companyData.companyName.value }}</b>
                     <br>
-                    <br> {{ companyData.street.value }} {{ companyData.houseNumber.value }}{% if companyData.flatNumber.value
-                    %}/{{ companyData.flatNumber.value }}{% endif %}
+                    <br> {{ companyData.street.value }} {{ companyData.houseNumber.value }}{% if companyData.flatNumber.value %}/{{ companyData.flatNumber.value }}{% endif %}
                     <br> {{ companyData.postalCode.value }} {{ companyData.location.value }}
                     <br> {{ 'nip' | translate(lang) }}: {{ companyData.nip.value }}
                 </td>
@@ -166,8 +166,7 @@
                     <br> {% else %}
                     <b>{{invoiceAddress.name}} {{ invoiceAddress.lastname }}</b>
                     <br>
-                    <br> {% endif %} {{ invoiceAddress.street }} {{ invoiceAddress.house }}{% if invoiceAddress.apartment %}/{{
-                    invoiceAddress.apartment }}{% endif %}
+                    <br> {% endif %} {{ invoiceAddress.street }} {{ invoiceAddress.house }}{% if invoiceAddress.apartment %}/{{ invoiceAddress.apartment }}{% endif %}
                     <br> {{ invoiceAddress.zipcode }} {{ invoiceAddress.city }}
                     <br> {{ 'nip' | translate(lang) }}: {{ invoiceAddress.nip }}
                 </td>
@@ -198,14 +197,15 @@
                         <td>{{ product.names[lang] }}</td>
                         <td>{{ product.volume }}</td>
                         <td>{{ 'piece_symbol' | translate }}</td>
-                        <td><!--{{ product.pricePerUnit }}--></td>
+                        <td>
+                            <!--{{ product.pricePerUnit }}-->
+                        </td>
                         <td>{{ product.price }}</td>
                         <td>{{ product.tax.value }}%</td>
                         <td>{{ product.tax.onlyTaxValueCounted }}</td>
                         <td>{{ product.grossPrice }}</td>
                     </tr>
-                    {% set productIndex = productIndex + 1 %} {% endfor %} {% for delivery in deliveries %} {% set deliveryIndex = loop.index
-                    + productIndex %}
+                    {% set productIndex = productIndex + 1 %} {% endfor %} {% for delivery in deliveries %} {% set deliveryIndex = loop.index + productIndex %}
                     <tr class="productRow {% if deliveryIndex % 2 == 0 %}even{% else %}odd{% endif %}">
                         <td>{{deliveryIndex}}</td>
                         <td>{{ 'delivery_of_products' | translate(lang) }}</td>

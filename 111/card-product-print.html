@@ -7,7 +7,7 @@
         font-weight: bold;
         padding: 0 5px;
     }
-
+    
     .valueCell {
         width: 50%;
         border: 0.2mm #000000 solid;
@@ -15,7 +15,7 @@
         font-size: 3mm;
         vertical-align: middle;
     }
-
+    
     .keyProductInfoCell {
         border: 0.2mm #000000 solid;
         font-size: 3mm;
@@ -25,14 +25,14 @@
         padding: 0 5px;
         width: 35%;
     }
-
+    
     .cardTable {
         border-collapse: collapse;
         margin-bottom: 5px;
         vertical-align: middle;
         width: 100%
     }
-
+    
     .mainHeadCell {
         width: 100%;
         border: 0.2mm #000000 solid;
@@ -41,7 +41,7 @@
         vertical-align: middle;
         padding: 5px 0;
     }
-
+    
     .mainValueCell {
         width: 100%;
         text-align: center;
@@ -50,13 +50,13 @@
         padding: 5px 0;
         border: 0.2mm #000000 solid;
     }
-
+    
     .cardTitle {
         text-align: center;
         padding-top: 5mm;
         margin-bottom: 5mm;
     }
-
+    
     .deliveryHeadCell {
         width: 33%;
         border: 0.2mm #000000 solid;
@@ -65,7 +65,7 @@
         vertical-align: middle;
         padding: 5px;
     }
-
+    
     .deliveryValueCell {
         width: 33%;
         border: 0.2mm #000000 solid;
@@ -73,7 +73,7 @@
         font-size: 3mm;
         vertical-align: middle;
     }
-
+    
     .orderInfoCell {
         border: 0.2mm #000000 solid;
         text-align: center;
@@ -82,59 +82,58 @@
         padding: 1%;
         width: 25%;
     }
-
+    
     .orderInfoCell.first {
         text-align: left;
     }
-
     /* .orderInfoCellSix {
         width:16%;
     } */
-
+    
     .headerSection {
         width: 100%;
         min-height: 30mm;
     }
-
+    
     .logoSection {
         display: inline;
         width: 33%;
     }
-
+    
     .logoSection .logoImage {
         width: 50mm;
     }
-
+    
     .titleSection {
         display: inline;
         width: 33%;
     }
-
+    
     .barCodeSection {
         display: inline;
         width: 33%;
     }
-
+    
     .barCodeSection .code {
         margin: 0 auto;
     }
-
+    
     .barCodeSection .cardID {
         margin: 0 auto;
         text-align: center;
     }
-
+    
     .infoTable {
         border-collapse: collapse;
         margin-bottom: 5px;
         vertical-align: middle;
         width: 100%
     }
-
+    
     .dataSectionContainer {
         width: 100%;
     }
-
+    
     .informationSection {
         min-height: 30mm;
         padding-left: 10px;
@@ -142,27 +141,28 @@
         word-wrap: break-word;
         width: 50%;
     }
-
+    
     .halfTableRow {
         width: 50%;
     }
-
+    
     .informationRow {
         vertical-align: top;
     }
-
+    
     .product-selected {
         color: #000000;
     }
-
+    
     .product-normal {
         color: #82828b;
     }
-
+    
     .text-left {
         text-align: left;
     }
     /* WYKONAWCA ZAMÓWIENIA */
+    
     table.madeby {
         border: none;
     }
@@ -176,8 +176,7 @@
     <div class="headerSection">
         <div class="logoSection">
             {% if logo %}
-            <img class="logoImage" src="data:image/jpeg;base64,{{ logo }}" alt="Logo">
-            {% endif %}
+            <img class="logoImage" src="data:image/jpeg;base64,{{ logo }}" alt="Logo"> {% endif %}
         </div>
         <div class="titleSection">
             <div class="cardTitle">
@@ -198,9 +197,7 @@
     </table>
     {% endif %}
 
-    <br>
-
-    {% if types[subProduct.typeID].cardGuide or groups[subProduct.groupID].cardGuide %}
+    <br> {% if types[subProduct.typeID].cardGuide or groups[subProduct.groupID].cardGuide %}
     <table style="width:100%;">
         <tr>
             <td class="informationRow halfTableRow">
@@ -221,13 +218,9 @@
                             <td class="valueCell"> {{ attribute.optName }}</td>
                             {% else %}
                             <td class="valueCell"> {{ attribute.optLangs[lang].name }}</td>
-                            {% endif %}
-
-                            {% endif %}
+                            {% endif %} {% endif %}
                         </tr>
-                        {% endfor %}
-
-                        {% for specialAttribute in subProduct.specialAttributes %}
+                        {% endfor %} {% for specialAttribute in subProduct.specialAttributes %}
                         <tr>
 
                             <td class="keyCell"> {{ 'special_option' | translate(lang) }}</td>
@@ -259,8 +252,7 @@
                             {% endif %}
                         </tr>
                         <tr>
-                            <th class="keyProductInfoCell">{{ 'fromat' | translate(lang) }} {{ 'gross' |
-                                translate(lang) }} (mm)</th>
+                            <th class="keyProductInfoCell">{{ 'fromat' | translate(lang) }} {{ 'gross' | translate(lang) }} (mm)</th>
                             <td class="valueCell"> {{subProduct.formatWidth}} x {{subProduct.formatHeight}}</td>
                         </tr>
                         <tr>
@@ -283,12 +275,7 @@
                         <tr>
                             <th class="keyProductInfoCell">{{ 'coupon_info' | translate(lang) }}</th>
                             <td class="valueCell">
-                                {{ coupon.couponID }} - {{ coupon.value }}
-                                {% if coupon.percent %}
-                                %
-                                {% else %}
-                                {{calc.currency}}
-                                {% endif %}
+                                {{ coupon.couponID }} - {{ coupon.value }} {% if coupon.percent %} % {% else %} {{calc.currency}} {% endif %}
                             </td>
                         </tr>
                         {% endif %}
@@ -297,11 +284,7 @@
             </td>
             <td class="informationRow informationSection">
 
-                {% if types[subProduct.typeID].cardGuide %}
-                {{ types[subProduct.typeID].cardGuide | raw }}
-                {% elseif groups[subProduct.groupID].cardGuide %}
-                {{ groups[subProduct.groupID].cardGuide | raw }}
-                {% endif %}
+                {% if types[subProduct.typeID].cardGuide %} {{ types[subProduct.typeID].cardGuide | raw }} {% elseif groups[subProduct.groupID].cardGuide %} {{ groups[subProduct.groupID].cardGuide | raw }} {% endif %}
             </td>
         </tr>
     </table>
@@ -323,12 +306,9 @@
                 <td class="valueCell"> {{ attribute.optLangs[lang].name }}<br> {{ attribute.optName }} </td>
                 {% else %}
                 <td class="valueCell"> {{ attribute.optName }}</td>
-                {% endif %}
-                {% endif %}
+                {% endif %} {% endif %}
             </tr>
-            {% endfor %}
-
-            {% for specialAttribute in subProduct.specialAttributes %}
+            {% endfor %} {% for specialAttribute in subProduct.specialAttributes %}
             <tr>
 
                 <td class="keyCell"> {{ 'special_option' | translate(lang) }}</td>
@@ -383,12 +363,7 @@
             <tr>
                 <th class="keyProductInfoCell">{{ 'coupon_info' | translate(lang) }}</th>
                 <td class="valueCell">
-                    {{ coupon.couponID }} - {{ coupon.value }}
-                    {% if coupon.percent %}
-                    %
-                    {% else %}
-                    {{calc.currency}}
-                    {% endif %}
+                    {{ coupon.couponID }} - {{ coupon.value }} {% if coupon.percent %} % {% else %} {{calc.currency}} {% endif %}
                 </td>
             </tr>
             {% endif %}
@@ -408,23 +383,16 @@
         <tr>
             <td class="orderInfoCell text-left">
 
-                {% if productsInfo %}
-                {% for productInfo in productsInfo %}
+                {% if productsInfo %} {% for productInfo in productsInfo %}
                 <span class="{% if productInfo.selected %}product-selected{% else %}product-normal{% endif %}">• {{
-                    productInfo.name }}</span><br>
-                {% endfor %}
-                {% endif %}
+                    productInfo.name }}</span><br> {% endfor %} {% endif %}
 
             </td>
             <td class="orderInfoCell">{{ calc.orderID }}</td>
             <td class="orderInfoCell">{{ calc.created }}</td>
             <td class="orderInfoCell">
-                {{ userData.name}} {{ userData.lastname }} <br>
-                {{ userData.zipcode }} {{ userData.city }} <br>
-                {{ userData.street }} {{ userData.house }}{% if userData.apartment %}/{{ userData.apartment }}{% endif
-                %}<br><br>
-                Tel: {{ userData.telephone }}<br>
-                {{ userData.login }}
+                {{ userData.name}} {{ userData.lastname }} <br> {{ userData.zipcode }} {{ userData.city }} <br> {{ userData.street }} {{ userData.house }}{% if userData.apartment %}/{{ userData.apartment }}{% endif %}
+                <br><br> Tel: {{ userData.telephone }}<br> {{ userData.login }}
             </td>
         </tr>
     </table>
@@ -440,11 +408,8 @@
         {% for deliveryAddress in deliveryAddresses %}
         <tr>
             <td class="deliveryValueCell">{{deliveryAddress.delivery.deliveryNames[lang]}}</td>
-            <td class="deliveryValueCell"><br>
-                {{deliveryAddress.address.name}} {{ deliveryAddress.address.lastname }}<br>
-                {{ deliveryAddress.address.zipcode }} {{ deliveryAddress.address.city }} <br>
-                {{ deliveryAddress.address.street }} {{ deliveryAddress.address.house }}{% if
-                deliveryAddress.address.apartment %}/{{ deliveryAddress.address.apartment }}{% endif %}<br><br>
+            <td class="deliveryValueCell"><br> {{deliveryAddress.address.name}} {{ deliveryAddress.address.lastname }}<br> {{ deliveryAddress.address.zipcode }} {{ deliveryAddress.address.city }} <br> {{ deliveryAddress.address.street }} {{ deliveryAddress.address.house }}{% if deliveryAddress.address.apartment
+                %}/{{ deliveryAddress.address.apartment }}{% endif %}<br><br>
             </td>
             <td class="deliveryValueCell">{{ deliveryAddress.volume }}</td>
         </tr>
@@ -474,9 +439,7 @@
             <td class="valueCell">{{ orderMessage.content }}</td>
         </tr>
     </table>
-    {% endif %}
-
-    {% if invoice %}
+    {% endif %} {% if invoice %}
     <br>
     <table class="cardTable">
         <tr>
@@ -484,15 +447,9 @@
         </tr>
         <tr>
             <td class="valueCell">
-                {{invoice.companyName}}<br />
-                {{invoice.name}} {{invoice.lastname}}<br />
-                {{invoice.zipcode}} {{invoice.city}}<br />
-                {{invoice.street}} {{invoice.house}}
-                {% if invoice.apartment %}
-                {{invoice.apartment}}<br />
-                {% endif %}
-                <br />
-                {{ 'nip' | translate(lang) }}: {{invoice.nip}}
+                {{invoice.companyName}}<br /> {{invoice.name}} {{invoice.lastname}}<br /> {{invoice.zipcode}} {{invoice.city}}<br /> {{invoice.street}} {{invoice.house}} {% if invoice.apartment %} {{invoice.apartment}}
+                <br /> {% endif %}
+                <br /> {{ 'nip' | translate(lang) }}: {{invoice.nip}}
             </td>
         </tr>
     </table>
@@ -506,8 +463,7 @@
     <!-- INFO ZAMÓWIENIA END -->
 
     <!-- PLIKI DO ZAMÓWIENIA -->
-    Pliki do zamówienia znajdują się w poniższej lokalizacji:<br>
-    Sieć -> COPYNET -> Mateusz -> goprint24 -> {{ calc.orderID }}
+    Pliki do zamówienia znajdują się w poniższej lokalizacji:<br> Sieć -> COPYNET -> Mateusz -> goprint24 -> {{ calc.orderID }}
     <!-- PLIKI DO ZAMÓWIENIA END -->
 
     <!-- WYKONAWCA ZAMÓWIENIA -->
@@ -515,7 +471,7 @@
     <table class="madeby">
         <tr>
             <td class="left">
-                Wykonał: 
+                Wykonał:
             </td>
             <td class="right">
                 ....................................................
